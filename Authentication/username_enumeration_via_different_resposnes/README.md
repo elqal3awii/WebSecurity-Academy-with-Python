@@ -20,7 +20,7 @@ See how much time the script will take to find a valid credentials
 2. put the valid credentials at the bottom of both lists (simulating the worst case).
 
 ### Run tests
-When running this script on a Core i7, 4G laptop with 16G RAM, I obtain the following results:
+When running this script on a Core i7, 4th generation laptop with 16G RAM, I obtain the following results:
 ### 1000 users & 1000 password
 It toke approximately **16.6** minutes 
 

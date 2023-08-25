@@ -15,7 +15,6 @@
 import requests
 import re
 import time
-import math
 from colorama import Fore
 
 # change this to your lab URL
