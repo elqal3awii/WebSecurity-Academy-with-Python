@@ -1,5 +1,5 @@
 # Hack Steps
-1. Obtain a valid username via subtly different error messages
+1. Obtain a valid username via response timing
 2. Brute force password of that valid username
 
 # Run Script
@@ -8,8 +8,9 @@
 3. change the PATH for you passwords list
 4. Start script
 ```
-~$ python username_enumeration_via_different_resposnes.py
+~$ python username_enumeration_via_response_timing.py
 ```
+
 # Expected Output
 ```
 [#] Enumerate usernames..
@@ -27,6 +28,6 @@ Failed passwords: [  ]
 ```
 
 # Want to go faster?
-Check the [Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/username_enumeration_via_subtly_different_responses) for this lab in both single-threaded and multi-threaded approaches.
+Check the [Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/username_enumeration_via_response_timing) for this lab in both single-threaded and multi-threaded approaches.
 
 ### Happy Hacking 👾

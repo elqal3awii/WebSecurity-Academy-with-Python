@@ -11,6 +11,22 @@
 ~$ python username_enumeration_via_different_resposnes.py
 ```
 
+# Expected Output
+```
+[#] Enumerate usernames..
+Elapsed: 0 minutes || Failed: 0 || Trying (6/101): adam                                              
+[#] Brute forcing password..
+✅ Valid user: adam
+Elapsed: 0 minutes || Failed: 0 || Trying (74/102): joshua                                            
+✅ Login successfully:  username: adam, password: joshua
+✅ Finished in: 0 minutes
+Results was saved to: results
+Failed users count: 0
+Failed users: [  ]
+Failed passwords count: 0
+Failed passwords: [  ]
+```
+
 # Test Samples
 ### Objective
 See how much time the script will take to find a valid credentials

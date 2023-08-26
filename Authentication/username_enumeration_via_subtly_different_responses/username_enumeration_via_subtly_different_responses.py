@@ -120,11 +120,10 @@ def brute_force_password(start_time, url, valid_user, passwords):
             FAILED_PASSWORDS.append(password)
     None
 
+
 ##################################
 # Function to save results
 ##################################
-
-
 def save_results(elapsed_time, file_name, valid_user, valid_password):
     global FAILED_USERS
     global FAILED_USERS_COUNTER
@@ -160,7 +159,7 @@ if valid_user != None:
                            60)  # calculate elapsed time
         print("")
         print(Fore.GREEN + "✅ Login successfully: " + Fore.WHITE + " username: " +
-              Fore.GREEN + valid_user + Fore.WHITE + ",password: " + Fore.GREEN + valid_password)
+              Fore.GREEN + valid_user + Fore.WHITE + ", password: " + Fore.GREEN + valid_password)
         print(Fore.GREEN + "✅ Finished in: " +
               Fore.WHITE + str(elapsed_time) + " minutes")
         save_results(elapsed_time, "results", valid_user, valid_password)
