@@ -4,7 +4,7 @@
 #
 # Date: 26/8/2023
 #
-# PortSwigger LAB: Username enumeration via different responses
+# PortSwigger LAB: 2FA simple bypass
 #
 # Steps: 1. Login as carlos
 #        2. Extract the session from the Set-Cookie header
