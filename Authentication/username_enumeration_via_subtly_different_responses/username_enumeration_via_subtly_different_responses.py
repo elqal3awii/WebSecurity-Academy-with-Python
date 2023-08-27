@@ -132,16 +132,16 @@ def save_results(elapsed_time, file_name, valid_user, valid_password):
     to_save = f"""
     ✅ Finished in: {elapsed_time} minutes \n\n\
     Username: {valid_user}, Password: {valid_password} \n\n\
-    [!] Failed users count: {FAILED_USERS_COUNTER} \n\n\
+    [!] Failed users count: {FAILED_USERS_COUNTER} \n\
     [!] Failed users: {FAILED_USERS} \n\n\
-    [!] Failed passwords count: {FAILED_PASSWORDS_COUNTER} \n\n\
+    [!] Failed passwords count: {FAILED_PASSWORDS_COUNTER} \n\
     [!] Failed passwords: {FAILED_PASSWORDS} \n\n"""
     try:
         new_file = open(file_name, "x")
         new_file.write(to_save)
         print(Fore.YELLOW + f"Results was saved to: {file_name}")
     except:
-        print(Fore.RED + "Couldn't open file to save results")
+        print(Fore.RED + "Couldn't create the file to save results")
 
 
 ###############################
