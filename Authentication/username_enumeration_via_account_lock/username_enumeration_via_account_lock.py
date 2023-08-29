@@ -1,4 +1,4 @@
-################################################################
+####################################################################
 #
 # Author: Ahmed Elqalawii
 #
@@ -6,10 +6,11 @@
 #
 # PortSwigger LAB: Username enumeration via different responses
 #
-# Steps: 1. enum usernames to get a valid one
-#        2. brute force the valid username password
+# Steps: 1. Try all users multiple times until on account is locked
+#        2. Brute force password of that valid username
+#        3. Wait 1 minute every 3 password tries to bypass blocking
 #
-#################################################################
+#####################################################################
 
 # imports
 import requests
