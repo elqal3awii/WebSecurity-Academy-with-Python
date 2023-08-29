@@ -11,18 +11,13 @@
 #
 #################################################################
 
+###########
 # imports
+###########
 import requests
 import random
 import time
 from colorama import Fore
-
-# change this to your lab URL
-url = "https://0a4b00af03053a4d827e3849007d003b.web-security-academy.net/login"
-# change the paths to your lists
-usernames = open("/home/ahmed/users", 'rt').read().splitlines()
-passwords = open("/home/ahmed/passwords",
-                 'rt').read().splitlines()
 
 #############################
 # Global Variables
@@ -31,6 +26,14 @@ FAILED_USERS = []
 FAILED_USERS_COUNTER = 0
 FAILED_PASSWORDS = []
 FAILED_PASSWORDS_COUNTER = 0
+
+
+# change this to your lab URL
+url = "https://0a4b00af03053a4d827e3849007d003b.web-security-academy.net/login"
+# change the paths to your lists
+usernames = open("/home/ahmed/users", 'rt').read().splitlines()
+passwords = open("/home/ahmed/passwords",
+                 'rt').read().splitlines()
 
 
 #########################################

@@ -12,11 +12,19 @@
 #
 #################################################################
 
+###########
 # imports
+###########
 import requests
 import re
 import time
 from colorama import Fore
+
+#############################
+# Global Variables
+#############################
+FAILED_PASSWORDS = []
+FAILED_PASSWORDS_COUNTER = 0
 
 # change this to your lab URL
 url = "https://0a1b00e4045d76eb8237443600e900d8.web-security-academy.net/login"
@@ -24,11 +32,6 @@ url = "https://0a1b00e4045d76eb8237443600e900d8.web-security-academy.net/login"
 passwords = open("/home/ahmed/passwords",
                  'rt').read().splitlines()
 
-#############################
-# Global Variables
-#############################
-FAILED_PASSWORDS = []
-FAILED_PASSWORDS_COUNTER = 0
 
 
 #####################################
