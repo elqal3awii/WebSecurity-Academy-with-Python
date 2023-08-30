@@ -11,7 +11,7 @@
 3. Start script
 
 ```
-~$ cargo run
+~$ python password_reset_poisoning_via_middleware.py
 ```
 
 # Expected Output

@@ -5,7 +5,7 @@
 
 # Run Script
 1. change the URL of the lab
-4. Start script
+2. Start script
 ```
 ~$ python 2fa_broken_logic.py
 ```
@@ -20,4 +20,3 @@
 ✅ Finished in: 4 minutes
 ```
 
-### Happy Hacking 👾

@@ -9,7 +9,7 @@
 2. Change the URL of the exploit server
 3. Start script
 ```
-~$ cargo run
+~$ python offline_password_cracking.py
 ```
 
 # Expected Output

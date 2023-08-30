@@ -65,5 +65,3 @@ From the above test, we infere that it should take about **25.7** hours. Of cour
 
 With mutli-threaded rust script you can reduce the time to only **2.5** hours! things begin to be interesting now.
 Check [Multi-threaded Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/Multi-threaded/username_enumeration_via_different_responses_multithread) for this lab and run it yourself to see the difference.
-
-### Happy Hacking 👾

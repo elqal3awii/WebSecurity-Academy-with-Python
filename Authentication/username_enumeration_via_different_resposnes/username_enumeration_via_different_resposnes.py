@@ -6,8 +6,8 @@
 #
 # PortSwigger LAB: Username enumeration via different responses
 #
-# Steps: 1. enum usernames to get a valid one
-#        2. brute force the valid username password
+# Steps: 1. Obtain a valid username via different error messages
+#        2. Brute force password of that valid username
 #
 #################################################################
 

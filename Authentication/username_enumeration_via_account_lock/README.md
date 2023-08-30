@@ -31,5 +31,3 @@ Failed passwords: [  ]
 
 # Want to go faster?
 Check the [Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/username_enumeration_via_account_lock) for this lab in both single-threaded and multi-threaded approaches.
-
-### Happy Hacking 👾

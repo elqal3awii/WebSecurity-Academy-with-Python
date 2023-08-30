@@ -17,5 +17,3 @@
 3. GET /my-account directly bypassing 2FA.. ☑️
 ✅ Logged in successfully as Carlos
 ```
-
-### Happy Hacking 👾

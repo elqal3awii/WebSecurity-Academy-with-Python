@@ -19,4 +19,3 @@
 Carlos password changed succussfully to: Hacked
 ```
 
-### Happy Hacking 👾
