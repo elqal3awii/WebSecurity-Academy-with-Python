@@ -16,7 +16,7 @@
 1. Send forgot-password request as wiener.. ☑️
 2. Extract the token from the email client.. ☑️
 3. Send change-password request as carlos.. ☑️
-Carlos password changed succussfully to: Hola!
+Carlos password changed succussfully to: Hacked
 ```
 
 ### Happy Hacking 👾

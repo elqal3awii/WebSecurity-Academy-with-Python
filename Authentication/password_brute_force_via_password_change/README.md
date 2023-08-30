@@ -16,7 +16,7 @@
 [#] Brute forcing password of carlos..
 [*] (30/100) mobilemail => Incorrect
 [#] mom => Correct
-[#] Password changed to: Hola Hola
+[#] Password changed to: Hacked
 
 ✅ Finished in: 1 minutes
 ```

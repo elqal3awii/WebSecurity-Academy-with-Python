@@ -5,8 +5,9 @@
 4. Crack the hash to get the plain password
 
 # Run Script
-1. change the URL of the lab
-2. Start script
+1. Change the URL of the lab
+2. Change the URL of the exploit server
+3. Start script
 ```
 ~$ cargo run
 ```
