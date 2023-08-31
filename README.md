@@ -5,7 +5,7 @@
 
 This repository is for educational purposes only, and I am not responsible for using any of the techniques described here for illegal usage.
 
-# Burp Suite for Labs
+# Using Burp Suite for Labs
 
 You can, of course, solve the labs using Burp Suite, but this repository is for those who want to take their scripting skills up to a higher level.
 
@@ -16,9 +16,9 @@ You will not find a detailed description of how the lab should be solved; instea
 
 Python is very easy to learn and you can write a script in a few minutes capable of doing interesting things.
 
-When you are a penetration tester, what you care about is speed and efficiency not the ease in writing scripts, In terms of speed, Python doesn't play well.
+When you are a penetration tester, what you care about is speed and efficiency not the ease in writing scripts. In terms of speed, Python doesn't play well.
 
-If you don't care about speed and you want to write a script as fast as possible then this repository may help you.
+If you don't care about speed and you want to write a script as fast as possible, then this repository may help you.
 
 # Error Handling
 
@@ -30,7 +30,7 @@ If you go through all the scripts, you will notice that they utilize different c
 
 # Python Alternatives
 
-If you are a penetration tester and are looking for more robust and faster scripts in terms of runtime, I recommend checking out the [PortSwigger Labs with Rust](https://github.com/elqalawii/portswigger_labs_with_rust) repository in which I have solved the same labs using Rust in both single-threaded and multi-threaded programming approaches.
+If you are a penetration tester and are looking for more robust and faster scripts in terms of runtime, I recommend checking out the [PortSwigger Labs with Rust](https://github.com/elqalawii/portswigger_labs_with_rust) repository in which I have solved the same labs using **Rust** in both single-threaded and multi-threaded programming approaches.
 
 # Watch & Star 🌟
 
