@@ -21,7 +21,7 @@ import re
 from colorama import Fore
 
 # change this url to your lab
-url = "https://0a020028032fa62687a07e23009a00a0.web-security-academy.net"
+url = "https://0a5b004603cddab7802d2110003f002e.web-security-academy.net"
 
 try:
     inject_payload = requests.get(
@@ -50,6 +50,9 @@ try:
                 if submit_answer.status_code == 200:
                     print(Fore.WHITE + "5. Submitting the answer.. " +
                           Fore.GREEN + "OK")
+                    print(
+                        Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+
             except:
                 print(
                     Fore.RED + "[!] Failed to submit the answer through exception")

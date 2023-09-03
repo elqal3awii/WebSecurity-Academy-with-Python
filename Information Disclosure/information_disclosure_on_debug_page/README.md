@@ -22,4 +22,5 @@
 3. Fetching the debug page.. OK
 4. Extracting the secret key.. OK => 8ewgag7yl0vf8dfbti11d0gy6rr1ie37
 5. Submitting the answer.. OK
+[#] Check your browser, it should be marked now as solved
 ```

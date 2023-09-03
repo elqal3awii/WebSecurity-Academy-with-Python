@@ -19,4 +19,5 @@
 1. Injecting the payload.. OK
 2. Extracting the framework name.. OK => Apache Struts *.*.*
 3. Submitting the answer.. OK
+[#] Check your browser, it should be marked now as solved
 ```

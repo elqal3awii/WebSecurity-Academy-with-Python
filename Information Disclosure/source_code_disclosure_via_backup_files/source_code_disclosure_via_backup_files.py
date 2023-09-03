@@ -22,7 +22,7 @@ import re
 from colorama import Fore
 
 # change this url to your lab
-url = "https://0afc00ef04877e108542811f0018009d.web-security-academy.net"
+url = "https://0a0d004f03069dc08131cf9d0064000a.web-security-academy.net"
 
 try:
     robots = requests.get(
@@ -60,6 +60,9 @@ try:
                     if submit_answer.status_code == 200:
                         print(Fore.WHITE + "7. Submitting the answer.. " +
                               Fore.GREEN + "OK")
+                        print(
+                            Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+
                 except:
                     print(
                         Fore.RED + "[!] Failed to submit the answer through exception")
