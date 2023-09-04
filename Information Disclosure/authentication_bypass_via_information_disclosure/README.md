@@ -9,7 +9,7 @@
 
 # Run Script
 
-1. change the URL of the lab
+1. Change the URL of the lab
 2. Start script
 
 ```
