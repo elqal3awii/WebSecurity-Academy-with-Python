@@ -39,7 +39,7 @@ try:  # fetch carlos profile using id URL parameter
                 Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
         except:
             print(
-                Fore.RED + "[!] Failed to change the email roleid through exception")
+                Fore.RED + "[!] Failed to submit solution through exception")
     else:
         print(Fore.RED + "[!] Failed to fetch carlos profile")
 except:
