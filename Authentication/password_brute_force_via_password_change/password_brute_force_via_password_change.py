@@ -39,7 +39,7 @@ def login(url, username, password):
         }
         return requests.post(url, data, allow_redirects=False)
     except:
-        print(Fore.RED + "Failed to login in as wiener through exception")
+        print(Fore.RED + "Failed to login as wiener through exception")
 
 
 ###############################################
@@ -83,7 +83,7 @@ for (index, password) in enumerate(passwords):
             print(Fore.BLUE + f"[*] {password:10} => " +
                   Fore.RED + "Incorrect", end='\r', flush=True)
     else:
-        print(Fore.RED + "Failed to login in as wiener")
+        print(Fore.RED + "Failed to login as wiener")
 
 elapsed_time = int(time.time() - start_time / 60)
 print(Fore.GREEN + "✅ Finished in: " +

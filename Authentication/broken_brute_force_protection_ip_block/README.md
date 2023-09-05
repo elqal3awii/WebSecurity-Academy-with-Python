@@ -1,6 +1,6 @@
 # Hack Steps
 1. Brute force carlos password
-2. After every 2 tries, login in with correct credentials to bypass blocking
+2. After every 2 tries, login with correct credentials to bypass blocking
 
 # Run Script
 1. Change the URL of the lab
