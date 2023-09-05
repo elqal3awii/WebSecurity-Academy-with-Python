@@ -8,7 +8,7 @@
 1. Change the URL of the lab
 2. Start script
 ```
-~$ cargo run
+~$ python 2fa_simple_bypass.py
 ```
 # Expected output
 ```

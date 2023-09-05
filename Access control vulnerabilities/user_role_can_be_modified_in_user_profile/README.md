@@ -11,7 +11,7 @@
 2. Start script
 
 ```
-~$ cargo run
+~$ python user_role_can_be_modified_in_user_profile.py
 ```
 
 # Expected Output
