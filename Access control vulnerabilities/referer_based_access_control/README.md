@@ -1,7 +1,7 @@
 # Hack Steps
 
 1. Login as wiener
-2. Upgrade wiener to be an admin bypassing the first step
+2. Upgrade wiener to be an admin by adding Referer header
 
 # Run Script
 
@@ -9,13 +9,13 @@
 2. Start script
 
 ```
-~$ cargo run
+~$ python referer_based_access_control.py
 ```
 
 # Expected Output
 
 ```
 1. Logging in as wiener.. OK
-2. Upgrading wiener to be an admin bypassing the first step.. OK
+2. Upgrading wiener to be an admin by adding Referer header.. OK
 [#] Check your browser, it should be marked now as solved
 ```
