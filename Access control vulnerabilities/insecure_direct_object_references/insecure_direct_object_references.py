@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: Insecure direct object references
+# Lab: Insecure direct object references
 #
 # Steps: 1. Fetch 1.txt log file
 #        2. Extract carlos password from the log file

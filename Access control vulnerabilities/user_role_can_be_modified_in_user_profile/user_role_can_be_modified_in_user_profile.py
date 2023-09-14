@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: User role can be modified in user profile
+# Lab: User role can be modified in user profile
 #
 # Steps: 1. Login as wiener
 #        2. Change the roleid of wiener

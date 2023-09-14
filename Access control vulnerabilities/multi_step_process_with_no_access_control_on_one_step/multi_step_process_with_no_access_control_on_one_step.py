@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: Multi-step process with no access control on one step
+# Lab: Multi-step process with no access control on one step
 #
 # Steps: 1. Login as wiener
 #        2. Upgrade wiener to be an admin bypassing the first step

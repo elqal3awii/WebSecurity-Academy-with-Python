@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: User ID controlled by request parameter with password disclosure
+# Lab: User ID controlled by request parameter with password disclosure
 #
 # Steps: 1. Fetch administrator page via URL id parameter
 #        2. Extract the password from source code

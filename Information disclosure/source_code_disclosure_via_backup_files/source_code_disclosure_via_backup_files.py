@@ -4,7 +4,7 @@
 #
 # Date: 3/9/2023
 #
-# PortSwigger LAB: Source code disclosure via backup files
+# Lab: Source code disclosure via backup files
 #
 # Steps: 1. Fetch /robots.txt file
 #        2. List the hidden directory

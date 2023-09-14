@@ -4,7 +4,7 @@
 #
 # Date: 2/9/2023
 #
-# PortSwigger LAB: Information disclosure on debug page
+# Lab: Information disclosure on debug page
 #
 # Steps: 1. Check the source code of a product page
 #        2. GET the href of the commented a tag named "Debug"

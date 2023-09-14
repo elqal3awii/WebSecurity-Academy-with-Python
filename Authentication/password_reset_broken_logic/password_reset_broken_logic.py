@@ -4,7 +4,7 @@
 #
 # Date: 26/8/2023
 #
-# PortSwigger LAB: Password reset broken logic
+# Lab: Password reset broken logic
 #
 # Steps: 1. Send forgot-password request as wiener
 #        2. Extract the token from the email client

@@ -4,7 +4,7 @@
 #
 # Date: 4/9/2023
 #
-# PortSwigger LAB: User role controlled by request parameter
+# Lab: User role controlled by request parameter
 #
 # Steps: 1. Change the cookie 'Admin' to 'true'
 #        2. Fetch the admin panel

@@ -4,7 +4,7 @@
 #
 # Date: 25/8/2023
 #
-# PortSwigger LAB: Broken brute-force protection, IP block
+# Lab: Broken brute-force protection, IP block
 #
 # Steps: 1. Brute force carlos password
 #        2. After every 2 tries, login with correct

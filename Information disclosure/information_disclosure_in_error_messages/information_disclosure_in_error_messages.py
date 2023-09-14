@@ -4,7 +4,7 @@
 #
 # Date: 2/9/2023
 #
-# PortSwigger LAB:  Information disclosure in error messages
+# Lab:  Information disclosure in error messages
 #
 # Steps: 1. Inject a single quote in the product ID parameter to cause an error
 #        2. Extract the framework name

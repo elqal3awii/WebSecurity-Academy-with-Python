@@ -4,7 +4,7 @@
 #
 # Date: 4/9/2023
 #
-# PortSwigger LAB: Unprotected admin functionality
+# Lab: Unprotected admin functionality
 #
 # Steps: 1. Fetch the /robots.txt file
 #        2. Get the admin panel hidden path

@@ -4,7 +4,7 @@
 #
 # Date: 30/8/2023
 #
-# PortSwigger LAB: Brute-forcing a stay-logged-in cookie
+# Lab: Brute-forcing a stay-logged-in cookie
 #
 # Steps: 1. Hash every the password
 #        2. Encrypt every tha hash with the username in the cookie

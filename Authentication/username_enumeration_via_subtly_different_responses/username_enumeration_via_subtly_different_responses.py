@@ -4,7 +4,7 @@
 #
 # Date: 26/8/2023
 #
-# PortSwigger LAB: Username enumeration via subtly different responses
+# Lab: Username enumeration via subtly different responses
 #
 # Steps: 1. Obtain a valid username via subtly different error messages
 #        2. Brute force password of that valid username

@@ -4,7 +4,7 @@
 #
 # Date: 30/8/2023
 #
-# PortSwigger LAB: Broken brute-force protection,
+# Lab: Broken brute-force protection,
 #                  multiple credentials per request
 #
 # Steps: 1. Send multiple passwords in the same login request

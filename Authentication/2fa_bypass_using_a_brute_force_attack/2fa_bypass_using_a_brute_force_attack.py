@@ -4,7 +4,7 @@
 #
 # Date: 31/8/2023
 #
-# PortSwigger LAB: 2FA bypass using a brute-force attack
+# Lab: 2FA bypass using a brute-force attack
 #
 # Steps: 1. GET /login page and extract the session from cookie header
 #           and csrf token from the body

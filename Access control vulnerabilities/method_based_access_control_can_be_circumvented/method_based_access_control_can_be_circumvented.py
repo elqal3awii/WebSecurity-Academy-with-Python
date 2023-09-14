@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: Method-based access control can be circumvented
+# Lab: Method-based access control can be circumvented
 #
 # Steps: 1. Login as wiener
 #        2. Upgrade wiener to be an admin via GET method instead of POST

@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: User ID controlled by request parameter
+# Lab: User ID controlled by request parameter
 #
 # Steps: 1. Fetch the carlos profile using id URL parameter
 #        2. Extract the API key

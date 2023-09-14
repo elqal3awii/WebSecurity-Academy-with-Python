@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: User ID controlled by request parameter,
+# Lab: User ID controlled by request parameter,
 #                  with unpredictable user IDs
 #
 # Steps: 1. Fetch a post published by carlos

@@ -4,7 +4,7 @@
 #
 # Date: 30/8/2023
 #
-# PortSwigger LAB: Password reset poisoning via middleware
+# Lab: Password reset poisoning via middleware
 #
 # Steps: 1. Change the dynamically-generating link of password change
 #           functionality via X-Forwarded-Host header to point to your

@@ -4,7 +4,7 @@
 #
 # Date: 4/9/2023
 #
-# PortSwigger LAB: Unprotected admin functionality with unpredictable URL
+# Lab: Unprotected admin functionality with unpredictable URL
 #
 # Steps: 1. Fetch the /login page
 #        2. Extract the admin panel path from the source code

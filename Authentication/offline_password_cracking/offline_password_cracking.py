@@ -4,7 +4,7 @@
 #
 # Date: 30/8/2023
 #
-# PortSwigger LAB: Offline password cracking
+# Lab: Offline password cracking
 #
 # Steps: 1. Exploit XSS vulnerability in comment functionlity
 #        2. Extract victim cookie from the exploit server logs

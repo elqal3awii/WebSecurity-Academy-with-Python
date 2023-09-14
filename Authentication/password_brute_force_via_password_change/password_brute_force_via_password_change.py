@@ -4,7 +4,7 @@
 #
 # Date: 30/8/2023
 #
-# PortSwigger LAB: Password brute-force via password change
+# Lab: Password brute-force via password change
 #
 # Steps: 1. Login with correct creds
 #        2. Change username when requesting change password API

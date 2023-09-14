@@ -4,7 +4,7 @@
 #
 # Date: 4/9/2023
 #
-# PortSwigger LAB:  Information disclosure in version control history
+# Lab:  Information disclosure in version control history
 #
 # Steps: 1. Fetch the .git directory
 #        2. Reset to the previous commit

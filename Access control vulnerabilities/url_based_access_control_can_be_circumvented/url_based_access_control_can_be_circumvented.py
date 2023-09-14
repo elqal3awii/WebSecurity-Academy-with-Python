@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: URL-based access control can be circumvented
+# Lab: URL-based access control can be circumvented
 #
 # Steps: 1. Fetch admin panel via X-Original-URL header
 #        2. Delete carlos

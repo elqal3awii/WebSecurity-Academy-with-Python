@@ -4,7 +4,7 @@
 #
 # Date: 5/9/2023
 #
-# PortSwigger LAB: Referer-based access control
+# Lab: Referer-based access control
 #
 # Steps: 1. Login as wiener
 #        2. Upgrade wiener to be an admin by adding Referer header

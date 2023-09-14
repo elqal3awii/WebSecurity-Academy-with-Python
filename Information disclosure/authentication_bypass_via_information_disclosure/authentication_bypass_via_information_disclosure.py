@@ -4,7 +4,7 @@
 #
 # Date: 3/9/2023
 #
-# PortSwigger LAB: Authentication bypass via information disclosure
+# Lab: Authentication bypass via information disclosure
 #
 # Steps: 1. Fetch /login page
 #        2. Extract the session and the csrf token
