@@ -1,7 +1,7 @@
 # Hack Steps
 
 1. Inject payload in 'category' query parameter
-2. Retrieve all products without filtering
+2. Retrieve database banner in the response
 
 # Run Script
 
@@ -9,13 +9,13 @@
 2. Start script
 
 ```
-~$ python sql_injection_vulnerability_in_where_clause_allowing_retrieval_of_hidden_data.py
+~$ python sql_injection_attack_querying_the_database_type_and_version_on_mysql_and_microsoft.py
 ```
 
 # Expected Output
 
 ```
 1. Injecting payload in 'category' query parameter.. OK
-2. Retrieving all products without filtering.. OK
+2. Retrieving database version in the response.. OK
 [#] Check your browser, it should be marked now as solved
 ```

