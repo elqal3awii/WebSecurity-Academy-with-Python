@@ -34,6 +34,4 @@ try:
     else:
         print(Fore.RED + "[!] Failed to inject the payload")
 except:
-    # this is the place where you should handle the exception
-    # I just print a message here for simplicity
     print(Fore.RED + "[!] Failed to inject the payload through exception")
