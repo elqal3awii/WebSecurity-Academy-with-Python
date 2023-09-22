@@ -12,7 +12,7 @@
 2. Start script
 
 ```
-~$ cargo run
+~$ python sql_injection_union_attack_retrieving_data_from_other_tables.py
 ```
 
 # Expected Output

@@ -12,7 +12,7 @@
 2. Start script
 
 ```
-~$ cargo run
+~$ python sql_injection_union_attack_retrieving_multiple_values_in_a_single_column.py
 ```
 
 # Expected Output
