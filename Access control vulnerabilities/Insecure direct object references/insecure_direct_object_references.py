@@ -19,7 +19,7 @@ import requests
 import re
 from colorama import Fore
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a05000e04213bdf82746f4400b80068.web-security-academy.net"
 
 try:  # fetch 1.txt log file

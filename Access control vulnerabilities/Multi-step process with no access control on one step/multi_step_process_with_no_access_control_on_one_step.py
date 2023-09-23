@@ -17,7 +17,7 @@
 import requests
 from colorama import Fore
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a2e009703e633a78243512f006800f2.web-security-academy.net"
 
 

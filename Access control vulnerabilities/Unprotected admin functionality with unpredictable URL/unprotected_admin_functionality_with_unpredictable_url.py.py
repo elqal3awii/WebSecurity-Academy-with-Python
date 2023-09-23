@@ -20,7 +20,7 @@ import requests
 import re
 from colorama import Fore
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a2700ad04b28e7d8799eef000a80066.web-security-academy.net"
 
 try:  # fetch /login page

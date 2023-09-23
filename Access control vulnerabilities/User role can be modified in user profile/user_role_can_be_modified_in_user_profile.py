@@ -19,7 +19,7 @@
 import requests
 from colorama import Fore
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0ac700cb04e7d2e680f1c60200340090.web-security-academy.net"
 
 try:  # login as wiener

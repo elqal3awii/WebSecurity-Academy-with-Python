@@ -21,7 +21,7 @@ import re
 from colorama import Fore
 import base64
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0aae0015043c699e82c475ae00ce0062.web-security-academy.net"
 # change this url to your exploit server
 exploit_server_url = "https://exploit-0aa8004804046931820674d701c00032.exploit-server.net"

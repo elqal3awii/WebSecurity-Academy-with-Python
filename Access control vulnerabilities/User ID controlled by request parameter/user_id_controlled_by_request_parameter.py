@@ -19,7 +19,7 @@ import requests
 import re
 from colorama import Fore
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a78004d03a8ccf480c2d02a001600b4.web-security-academy.net"
 
 try:  # fetch carlos profile using id URL parameter

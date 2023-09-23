@@ -20,7 +20,7 @@ import requests
 import re
 from colorama import Fore
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a4a00c003b919c1847df99a00b10055.web-security-academy.net"
 
 try:  # fetch administrator profile

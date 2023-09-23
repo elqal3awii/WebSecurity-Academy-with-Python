@@ -20,7 +20,7 @@ import re
 from colorama import Fore
 import base64
 
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a6200ae03689c69807a45420018005f.web-security-academy.net"
 passwords = open("/home/ahmed/passwords",
                  'rt').read().splitlines()

@@ -22,7 +22,7 @@ import re
 from colorama import Fore
 import os
 
-# change this url to your lab
+# change this to your lab URL
 domain = "0a88000e03d4458e80275dcd00c600be.web-security-academy.net"
 
 try:

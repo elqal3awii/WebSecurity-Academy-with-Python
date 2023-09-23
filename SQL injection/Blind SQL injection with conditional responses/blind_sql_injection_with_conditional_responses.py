@@ -94,7 +94,7 @@ def brute_force_password(url, password_length):
 #########
 # Main
 #########
-# change this url to your lab
+# change this to your lab URL
 url = "https://0a1b0058035c3e5788f6163d00b60064.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "TrackingId")
 

