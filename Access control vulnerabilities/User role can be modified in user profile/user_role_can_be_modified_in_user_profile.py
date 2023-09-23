@@ -1,6 +1,6 @@
 #################################################################
 #
-# Author: Ahmed Elqalawii
+# Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 5/9/2023
 #
