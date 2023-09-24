@@ -9,7 +9,7 @@
 2. Start script
 
 ```
-~$ cargo run
+~$ python blind_sql_injection_with_time_delays.py
 ```
 
 # Expected Output
