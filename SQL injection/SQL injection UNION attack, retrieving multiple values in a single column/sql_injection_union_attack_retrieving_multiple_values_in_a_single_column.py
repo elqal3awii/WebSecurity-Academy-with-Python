@@ -27,6 +27,7 @@ import re
 #########
 # change this to your lab URL
 url = "https://0a8f001903fe274381af614c008900dc.web-security-academy.net"
+
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 
 try:

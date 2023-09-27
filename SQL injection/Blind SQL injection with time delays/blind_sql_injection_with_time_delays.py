@@ -23,6 +23,7 @@ import re
 #########
 # change this to your lab URL
 url = "https://0a190021041a2e7b8b21e936008200ca.web-security-academy.net"
+
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "TrackingId")
 
 # payload to cause a 10 seconds delay

