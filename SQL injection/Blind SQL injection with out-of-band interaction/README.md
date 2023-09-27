@@ -10,7 +10,7 @@
 3. Start script
 
 ```
-~$ cargo run
+~$ python blind_sql_injection_with_out_of_band_interaction.py
 ```
 
 # Expected Output
