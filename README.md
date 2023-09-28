@@ -1,6 +1,7 @@
 ![Static Badge](https://img.shields.io/badge/Developed%20on-GNU%20Linux-red)
-![Static Badge](https://img.shields.io/badge/Python-v3.11.5-green)
-![Static Badge](https://img.shields.io/badge/License-GNU%20GPLv3-blue)
+![Static Badge](https://img.shields.io/badge/Python-v3.11.5-bright)
+![Static Badge](https://img.shields.io/badge/License-GPLv3-blue)
+![Static Badge](https://img.shields.io/badge/Number%20of%20labs-50-yellow)
 
 ![WebScurity Academy](./web-security-python.png)
 
@@ -33,7 +34,7 @@ If you go through all the scripts, you may notice that they exhibit various styl
 
 # Python Alternatives
 
-If you are a penetration tester and are looking for more robust and faster scripts in terms of runtime, I recommend checking out the [PortSwigger Labs with Rust](https://github.com/elqalawii/portswigger_labs_with_rust) repository in which I have solved the same labs using **Rust** in both single-threaded and multi-threaded programming approaches.
+If you are a penetration tester and are looking for more robust and faster scripts in terms of runtime, I recommend checking out the [WebSecurity Academy with Rust](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust) repository in which I have solved the same labs using **Rust** in both single-threaded and multi-threaded programming approaches.
 
 # Support & Star ✨
 

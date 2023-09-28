@@ -55,13 +55,13 @@ It toke approximately **154.7** minutes
 
 You can reduce the time to **135** minutes 
 using single-threaded rust script.
-Check [Single-threaded Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/Single-threaded/username_enumeration_via_different_responses) for this lab and run it yourself to see the difference.
+Check [Single-threaded Rust script](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust/tree/main/Authentication/Single-threaded/username_enumeration_via_different_responses) for this lab and run it yourself to see the difference.
 
 With mutli-threaded rust script you can reduce the time to only **13** minutes! things begin to be interesting now.
-Check [Multi-threaded Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/Multi-threaded/username_enumeration_via_different_responses_multithread) for this lab and run it yourself to see the difference.
+Check [Multi-threaded Rust script](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust/tree/main/Authentication/Multi-threaded/username_enumeration_via_different_responses_multithread) for this lab and run it yourself to see the difference.
 
 ### 100K users & 100K passwords
 From the above test, we infere that it should take about **25.7** hours. Of course no one will even think to try it.
 
 With mutli-threaded rust script you can reduce the time to only **2.5** hours! things begin to be interesting now.
-Check [Multi-threaded Rust script](https://github.com/elqalawii/portswigger_labs_with_rust/tree/main/Authentication/Multi-threaded/username_enumeration_via_different_responses_multithread) for this lab and run it yourself to see the difference.
+Check [Multi-threaded Rust script](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust/tree/main/Authentication/Multi-threaded/username_enumeration_via_different_responses_multithread) for this lab and run it yourself to see the difference.
