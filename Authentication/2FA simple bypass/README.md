@@ -12,8 +12,8 @@
 ```
 # Expected output
 ```
-1. Logged in as carlos.. ☑️
-2. GET /login2 using extracted session.. ☑️
-3. GET /my-account directly bypassing 2FA.. ☑️
+1. Logged in as carlos.. OK
+2. GET /login2 using extracted session.. OK
+3. GET /my-account directly bypassing 2FA.. OK
 ✅ Logged in successfully as Carlos
 ```

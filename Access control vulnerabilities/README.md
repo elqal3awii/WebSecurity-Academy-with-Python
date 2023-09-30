@@ -1,5 +1,5 @@
 # Access control vulnerabilities
-This folder contains scripts for all labs in the Access control vulnerabilities section on PortSwigger Academy.
+This folder contains scripts for all labs in the Access control vulnerabilities section on WebSecurity Academy of PortSwigger company.
 
 ### Happy Hacking 👾
 

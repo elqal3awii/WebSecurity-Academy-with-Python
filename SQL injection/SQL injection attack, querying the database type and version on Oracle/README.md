@@ -17,5 +17,5 @@
 ```
 1. Injecting payload in 'category' query parameter.. OK
 2. Retrieving database banner in the response.. OK
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

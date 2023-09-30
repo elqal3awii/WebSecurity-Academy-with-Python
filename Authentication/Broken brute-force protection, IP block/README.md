@@ -4,7 +4,7 @@
 
 # Run Script
 1. Change the URL of the lab
-2. Change the PATH for you passwords list
+2. Change the PATH of your password list
 3. Start script
 ```
 ~$ python broken_brute_force_protection_ip_block.py
@@ -13,13 +13,12 @@
 # Expected Output
 ```
 ✅ Valid user: carlos
-Elapsed:   0 minutes || Failed:   0 || Trying (47/102): robert                                            
+Elapsed:   0 minutes || Failed:   0 || Trying (47/102):                                     
 
 ✅ Login successfully: username: ae, password: robert
+✅ Finished in: 0 minutes
 
 Restults was saved to: results
-
-✅ Finished in: 0 minutes
 
 [!] Failed password count: 0 
 [!] Failed password : []
@@ -28,4 +27,4 @@ Restults was saved to: results
 This test is done using only 100 passwods. What about 10K passwords?
 Or what about 100K passwords?
 
-You can see the comparison I made with these numbers when solving the [Lab: Username enumeration via different responses](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust/tree/main/Authentication/username_enumeration_via_different_responses) to see the big difference in speed between Rust and Python and also between single-threaded and multi-threaded approaches in Rust.
+You can see the comparison I made with these numbers when solving the [Lab: Username enumeration via different responses](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust/tree/main/Authentication/Username%20enumeration%20via%20different%20responses) to see the big difference in speed between Rust and Python and also between single-threaded and multi-threaded approaches in Rust.

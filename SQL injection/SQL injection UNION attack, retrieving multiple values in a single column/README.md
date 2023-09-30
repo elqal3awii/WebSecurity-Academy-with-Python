@@ -24,5 +24,5 @@
 3. Extracting csrf token and session cookie.. OK
 4. Logging in as the administrator.. OK
 5. Fetching the administrator profile.. OK
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

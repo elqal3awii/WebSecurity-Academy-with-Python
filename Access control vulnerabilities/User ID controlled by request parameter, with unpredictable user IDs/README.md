@@ -23,5 +23,5 @@
 3. Fetching carlos profile page.. OK
 4. Extracting the API key.. OK
 5. Submitting solution.. OK
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

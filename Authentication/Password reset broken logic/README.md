@@ -13,9 +13,9 @@
 
 # Expected Output
 ```
-1. Send forgot-password request as wiener.. ☑️
-2. Extract the token from the email client.. ☑️
-3. Send change-password request as carlos.. ☑️
-Carlos password changed succussfully to: Hacked
+1. Send forgot-password request as wiener.. OK
+2. Extract the token from the email client.. OK
+3. Send change-password request as carlos.. OK
+Carlos's password is changed successfully to: Hacked
 ```
 

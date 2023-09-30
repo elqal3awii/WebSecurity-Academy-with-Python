@@ -21,5 +21,5 @@
 3. Fetching login page to get valid session and csrf token.. OK
 4. Logging in as carlos.. OK
 5. Fetching carlos profile.. OK
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

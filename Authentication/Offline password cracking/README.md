@@ -14,9 +14,9 @@
 
 # Expected Output
 ```
-1. Exploit XSS in comment functionality.. ☑️
-2. Get stay-logged-in cookie of the victim from exploit sever logs.. ☑️
-3. Decoding the encrypted cookie.. ☑️
+1. Exploit XSS in comment functionality.. OK
+2. Get stay-logged-in cookie of the victim from exploit sever logs.. OK
+3. Decoding the encrypted cookie.. OK
 ✅ Password hash: 26323c16d5f4dabff3bb136f2460a943
 Crack this hash using any online hash cracker
 ```

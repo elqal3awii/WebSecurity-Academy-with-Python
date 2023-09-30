@@ -17,8 +17,8 @@
 # Expected Output
 
 ```
-1. Change the dynamically generated link via X-Forwarded-Host header.. ☑️
-2. Get temp-forgot-password-token of the carlos from exploit sever logs.. ☑️
-3. Changing the password of the carlos.. ☑️
+1. Change the dynamically generated link via X-Forwarded-Host header.. OK
+2. Get temp-forgot-password-token of the carlos from exploit sever logs.. OK
+3. Changing the password of the carlos.. OK
 ✅ Password changed to: Hacked
 ```

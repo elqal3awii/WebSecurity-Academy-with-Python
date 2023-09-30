@@ -12,7 +12,7 @@
 
 # Expected Output
 ```
-[*] Sending multiple passwords in the same request..☑️
+[*] Sending multiple passwords in the same request.. OK
 ✅ Successfully logged in as carlos
 [#] Use this 2aQWuvvBd0vzGRtC4UE3YSTzFzJDPx7Z session in your browser to login as carlos
 ```

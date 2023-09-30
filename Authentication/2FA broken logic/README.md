@@ -12,8 +12,8 @@
 
 # Expected Output
 ```
-1. Obtaining a valid session ..☑️
-2. GET /login2 page ..☑️
+1. Obtaining a valid session.. OK
+2. GET /login2 page.. OK
 3. Start brute forcing mfa-code ..
 [*] 1467 => Incorrect
 [*] 1468 => Correct

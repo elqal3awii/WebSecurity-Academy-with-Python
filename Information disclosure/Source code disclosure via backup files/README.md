@@ -25,5 +25,5 @@
 5. Fetching the backup file.. OK
 6. Extracting key .. OK => xydew2o4wwjnyn3z444f8rn3pdad1ld2
 7. Submitting solution.. OK
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

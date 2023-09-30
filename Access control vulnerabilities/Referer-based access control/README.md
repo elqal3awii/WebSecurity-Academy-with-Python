@@ -17,5 +17,5 @@
 ```
 1. Logging in as wiener.. OK
 2. Upgrading wiener to be an admin by adding Referer header.. OK
-[#] Check your browser, it should be marked now as solved
+🗹 Check your browser, it should be marked now as solved
 ```

