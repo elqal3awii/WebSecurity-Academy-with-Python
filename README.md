@@ -1,7 +1,7 @@
 ![Static Badge](https://img.shields.io/badge/Developed%20on-GNU%20Linux-red)
 ![Static Badge](https://img.shields.io/badge/Python-v3.11.5-bright)
 ![Static Badge](https://img.shields.io/badge/License-GPLv3-blue)
-![Static Badge](https://img.shields.io/badge/Number%20of%20labs-50-yellow)
+![Static Badge](https://img.shields.io/badge/Number%20of%20labs-54-yellow)
 
 ![WebScurity Academy](./web-security-python.png)
 
@@ -27,10 +27,6 @@ If you don't prioritize runtime speed and aim to write a script as quickly as po
 # Error Handling
 
 Since this repository is intended for educational purposes and not for production, I have omitted some error handling, which I believe will not significantly impact your testing of the script. This decision represents a trade-off between addressing every possible scenario and prioritizing simplicity.
-
-# Coding Styles
-
-If you go through all the scripts, you may notice that they exhibit various styles. This diversity should help you observe the different ways in which scripts can be written.
 
 # Python Alternatives
 

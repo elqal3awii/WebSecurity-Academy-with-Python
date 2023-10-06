@@ -90,7 +90,7 @@ except:
 
 print(Fore.WHITE + "4. Logging in as the administrator.. " + Fore.GREEN + "OK")
 
-# extract new session
+# get session cookie
 new_session = login.cookies.get("session")
 
 # set session cookie
