@@ -40,7 +40,7 @@ try:
     injection = requests.post(f"{url}/product/stock", data)
     
 except:
-    print(Fore.RED + "[!] Failed to inject the payload through exception")
+    print(Fore.RED + "[!] Failed to fetch the page with the injected payload through exception")
     exit(1)
 
 # the response contains the output of the `whoami` command
@@ -54,5 +54,5 @@ if injection.status_code == 200:
     print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 else:
-    print(Fore.RED + "[!] Failed to inject the payload")
+    print(Fore.RED + "[!] Failed to fetch the page with the injected payload")
 
