@@ -6,9 +6,11 @@
 #
 # Lab: Blind OS command injection with time delays
 #
-# Steps: 1. Inject payload into the name field when submitting a feedback
+# Steps: 1. Fetch the feedback page
+#        2. Extract csrf token and session cookie
+#        3. Inject payload into the name field when submitting a feedback
 #           to cause a 10 second delay
-#        2. Wait for the response
+#        4. Wait for the response
 #
 ###############################################################################
 
@@ -35,7 +37,7 @@ try:
     injection = requests.get(f"{url}/feedback")
     
 except:
-    print(Fore.RED + "[!] Failed to fetch the feedback page")
+    print(Fore.RED + "[!] Failed to fetch the feedback page through exception")
     exit(1)
 
 print(Fore.WHITE + "⦗1⦘ Fetching the feedback page.. " + Fore.GREEN + "OK")
