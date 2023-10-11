@@ -34,7 +34,6 @@ url = "https://0a4300db04f3e14f847af0370098005d.web-security-academy.net"
 # change this to your collaborator domain
 collaborator = "nyp4hfkvxkzpg7jqtodl1c58hznqbiz7.oastify.com"
 
-
 print(Fore.BLUE + "⟪#⟫ Injection point: " + Fore.YELLOW + "name")
 
 try:
