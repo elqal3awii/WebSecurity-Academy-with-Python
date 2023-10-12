@@ -8,7 +8,7 @@
 #
 # Steps: 1. Inject a single quote in the product ID parameter to cause an error
 #        2. Extract the framework name
-#        3. Submit solution
+#        3. Submit the solution
 #
 ####################################################################################
 
@@ -51,14 +51,14 @@ if inject_payload.status_code == 500:
     }
 
     try:
-        # submit solution
+        # submit the solution
         submit_answer = requests.post(f"{url}/submitsolution", data)  
 
     except:
-        print(Fore.RED + "[!] Failed to submit solution")
+        print(Fore.RED + "[!] Failed to submit the solution")
         exit(1)
 
-    print(Fore.WHITE + "3. Submitting solution.. " + Fore.GREEN + "OK")
+    print(Fore.WHITE + "3. Submitting the solution.. " + Fore.GREEN + "OK")
     print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 else:

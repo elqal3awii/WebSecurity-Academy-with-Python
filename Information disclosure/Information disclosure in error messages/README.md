@@ -2,7 +2,7 @@
 
 1. Inject a single quote in the product ID parameter to cause an error
 2. Extract the framework name
-3. Submit solution
+3. Submit the solution
 
 # Run Script
 
@@ -18,6 +18,6 @@
 ```
 1. Injecting the payload.. OK
 2. Extracting the framework name.. OK => Apache Struts *.*.*
-3. Submitting solution.. OK
+3. Submitting the solution.. OK
 🗹 Check your browser, it should be marked now as solved
 ```

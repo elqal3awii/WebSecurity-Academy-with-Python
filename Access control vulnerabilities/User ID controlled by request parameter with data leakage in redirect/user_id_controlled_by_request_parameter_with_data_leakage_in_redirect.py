@@ -9,7 +9,7 @@
 # Steps: 1. Fetch carlos profile
 #        2. Extract the API key from response body before
 #           redirecting to login page
-#        3. Submit solution
+#        3. Submit the solution
 #
 ###############################################################################
 
@@ -52,14 +52,14 @@ if carlos_profile.status_code == 302:
     }
     
     try:
-        # submit solution
+        # submit the solution
         requests.post(f"{url}/submitSolution", data)
 
     except:
-        print(Fore.RED + "[!] Failed to submit solution through exception")
+        print(Fore.RED + "[!] Failed to submit the solution through exception")
         exit(1)
 
-    print(Fore.WHITE + "3. Submitting solution.. " + Fore.GREEN + "OK")
+    print(Fore.WHITE + "3. Submitting the solution.. " + Fore.GREEN + "OK")
     print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
     
 else:

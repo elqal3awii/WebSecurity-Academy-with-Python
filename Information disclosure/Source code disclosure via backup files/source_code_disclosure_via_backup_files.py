@@ -10,7 +10,7 @@
 #        2. List the hidden directory
 #        3. Fetch the hidden backup file
 #        4. Extract the key
-#        5. Submit solution
+#        5. Submit the solution
 #
 #################################################################
 
@@ -86,12 +86,12 @@ data = {
 }
 
 try:  
-    # submit solution
+    # submit the solution
     submit_answer = requests.post(f"{url}/submitsolution", data)  
 
 except:
-    print(Fore.RED + "[!] Failed to submit solution through exception")
+    print(Fore.RED + "[!] Failed to submit the solution through exception")
     exit(1)
 
-print(Fore.WHITE + "7. Submitting solution.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "7. Submitting the solution.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")

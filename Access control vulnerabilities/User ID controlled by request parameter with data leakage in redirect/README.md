@@ -2,7 +2,7 @@
 
 1. Fetch carlos profile
 2. Extract the API key from response body before redirecting to login page
-3. Submit solution
+3. Submit the solution
 
 # Run Script
 
@@ -18,6 +18,6 @@
 ```
 1. Fetching carlos profile page.. OK
 2. Extracting the API key from response body before redirecting.. OK
-3. Submitting solution.. OK
+3. Submitting the solution.. OK
 🗹 Check your browser, it should be marked now as solved
 ```

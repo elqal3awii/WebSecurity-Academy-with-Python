@@ -9,7 +9,7 @@
 # Steps: 1. Check the source code of a product page
 #        2. GET the href of the commented a tag named "Debug"
 #        3. Extract the secret key
-#        4. submit solution
+#        4. submit the solution
 #
 ####################################################################
 
@@ -65,14 +65,14 @@ data = {
 }
 
 try:
-    # submit solution
+    # submit the solution
     submit_answer = requests.post(f"{url}/submitsolution", data)
 
 except:
-    print(Fore.RED + "[!] Failed to submit solution through exception")
+    print(Fore.RED + "[!] Failed to submit the solution through exception")
     exit(1)
 
-print(Fore.WHITE + "5. Submitting solution.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "5. Submitting the solution.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

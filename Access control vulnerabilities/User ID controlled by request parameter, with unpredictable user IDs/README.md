@@ -4,7 +4,7 @@
 2. Extract carlos GUID from source code
 3. Fetch carlos profile using his GUID
 4. Extract the API key
-5. Submit solution
+5. Submit the solution
 
 # Run Script
 
@@ -22,6 +22,6 @@
 2. Extracting carlos GUID from source code.. OK
 3. Fetching carlos profile page.. OK
 4. Extracting the API key.. OK
-5. Submitting solution.. OK
+5. Submitting the solution.. OK
 🗹 Check your browser, it should be marked now as solved
 ```

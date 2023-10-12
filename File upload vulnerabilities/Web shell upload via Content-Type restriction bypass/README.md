@@ -6,7 +6,7 @@
 4. Fetch wiener profile
 5. Upload the shell file with the Content-Type changed
 6. Fetch the uploaded shell file to read the secret
-7. Submit solution 
+7. Submit the solution 
 
 
 # Run Script
@@ -28,6 +28,6 @@
 ⦗5⦘ Uploading the shell file with the Content-Type changed.. OK
 ⦗6⦘ Fetching the uploaded shell file to read the secret.. OK
 ❯ Secret: EbjlyC2Jv4I1VisOiK5WgyvEtQUsrGq1
-⦗7⦘ Submitting solution.. OK
+⦗7⦘ Submitting the solution.. OK
 🗹 Check your browser, it should be marked now as solved
 ```

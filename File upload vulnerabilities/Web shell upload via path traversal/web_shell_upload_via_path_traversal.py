@@ -12,7 +12,7 @@
 #        4. Fetch wiener profile
 #        5. Upload the shell file via path traversal
 #        6. Fetch the uploaded shell file to read the secret
-#        7. Submit solutions
+#        7. Submit the solution
 #
 ###################################################################
 
@@ -144,14 +144,14 @@ data = {
 }
 
 try:
-    # submit solution
+    # submit the solution
     requests.post(f"{url}/submitSolution", data)
 
 except:
-    print(Fore.RED + "[!] Failed to submit solution through exception")
+    print(Fore.RED + "[!] Failed to submit the solution through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗7⦘ Submitting solution.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗7⦘ Submitting the solution.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

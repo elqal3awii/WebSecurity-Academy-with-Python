@@ -10,7 +10,7 @@
 #        2. Extract carlos GUID from source code
 #        3. Fetch carlos profile using his GUID
 #        4. Extract the API key
-#        5. Submit solution
+#        5. Submit the solution
 #
 ###############################################################################
 
@@ -66,14 +66,14 @@ data = {
 }
 
 try:
-    # submit solution
+    # submit the solution
     requests.post(f"{url}/submitSolution", data)
     
 except:
-    print(Fore.RED + "[!] Failed to submit solution through exception")
+    print(Fore.RED + "[!] Failed to submit the solution through exception")
     exit(1)
 
-print(Fore.WHITE + "5. Submitting solution.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "5. Submitting the solution.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

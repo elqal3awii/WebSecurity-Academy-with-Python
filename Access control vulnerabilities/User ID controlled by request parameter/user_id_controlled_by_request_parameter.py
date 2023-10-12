@@ -8,7 +8,7 @@
 #
 # Steps: 1. Fetch the carlos profile using id URL parameter
 #        2. Extract the API key
-#        3. Submit solution
+#        3. Submit the solution
 #
 #################################################################
 
@@ -49,14 +49,14 @@ data = {
 }
 
 try:
-    # submit solution
+    # submit the solution
     requests.post(f"{url}/submitSolution", data)
     
 except:
-    print(Fore.RED + "[!] Failed to submit solution through exception")
+    print(Fore.RED + "[!] Failed to submit the solution through exception")
     exit(1)
 
-print(Fore.WHITE + "3. Submitting solution.. " + Fore.GREEN + "OK")        
+print(Fore.WHITE + "3. Submitting the solution.. " + Fore.GREEN + "OK")        
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 
