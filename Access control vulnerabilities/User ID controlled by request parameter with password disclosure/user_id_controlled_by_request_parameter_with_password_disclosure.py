@@ -54,7 +54,7 @@ except:
 
 print(Fore.WHITE + "3. Fetching login page to get valid session and csrf token.. " + Fore.GREEN + "OK")
 
-# extract the session cookie
+# get session cookie
 session = get_login.cookies.get("session")
 
 # extract the csrf token
@@ -84,7 +84,7 @@ except:
 if login.status_code == 302:
     print(Fore.WHITE + "4. Logging in as administrator.. " + Fore.GREEN + "OK")
     
-    # extract the new session
+    # get the new session
     new_session = login.cookies.get("session")
     
     # set session cookie

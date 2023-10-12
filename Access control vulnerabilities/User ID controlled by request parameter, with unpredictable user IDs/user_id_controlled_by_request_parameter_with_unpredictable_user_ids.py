@@ -28,7 +28,7 @@ from colorama import Fore
 ###########
 
 # change this to your lab URL
-url = "https://0a0900330441f9d080dd944600cb00c8.web-security-academy.net"
+url = "https://0af100ef032d2661817dda5c0059000e.web-security-academy.net"
 
 try:  
     # fetch a post published by carlos
@@ -67,7 +67,7 @@ data = {
 
 try:
     # submit solution
-    submit_solution = requests.post(f"{url}/submitSolution", data)
+    requests.post(f"{url}/submitSolution", data)
     
 except:
     print(Fore.RED + "[!] Failed to submit solution through exception")

@@ -74,7 +74,7 @@ except:
 if post_login.status_code == 302:
     print(Fore.WHITE + "3. Logging in as wiener.. " + Fore.GREEN + "OK")
     
-    # extract the new session
+    # get the new session
     new_session = post_login.cookies.get("session")  
     
     print(Fore.WHITE + "4. Getting a new session as wiener.. " + Fore.GREEN + "OK")
