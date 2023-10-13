@@ -6,7 +6,7 @@
 4. Fetch wiener profile
 5. Upload the shell file via obfuscated file extension
 6. Fetch the uploaded shell file to read the secret
-7. Submit solution 
+7. Submit the solution 
 
 
 # Run Script
