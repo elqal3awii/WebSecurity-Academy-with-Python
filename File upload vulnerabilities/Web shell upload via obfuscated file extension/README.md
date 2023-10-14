@@ -15,7 +15,7 @@
 2. Start script
 
 ```
-~$ cargo run
+~$ python web_shell_upload_via_obfuscated_file_extension.py
 ```
 
 # Expected Output
