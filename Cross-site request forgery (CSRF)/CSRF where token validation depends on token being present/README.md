@@ -1,6 +1,6 @@
 # Hack Steps
 
-1. Craft an HTML form for changing the email address that includes an auto-submit script
+1. Craft an HTML form for changing the email address that includes an auto-submit script and doesn't contain the csrf token
 2. Deliver the exploit to the victim
 3. The victim's email will be changed after he trigger the exploit
 
@@ -11,7 +11,7 @@
 3. Start script
 
 ```
-~$ python csrf_vulnerability_with_no_defenses.py
+~$ python csrf_where_token_validation_depends_on_token_being_present.py
 ```
 
 # Expected Output

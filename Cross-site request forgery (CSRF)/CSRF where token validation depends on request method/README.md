@@ -1,7 +1,8 @@
 # Hack Steps
 
-1. Deliver the exploit to the victim
-2. The victim's email will be changed after he trigger the exploit
+1. Craft an HTML form for changing the email address that includes an auto-submit script and uses the GET method rather than POST
+2. Deliver the exploit to the victim
+3. The victim's email will be changed after he trigger the exploit
 
 # Run Script
 
