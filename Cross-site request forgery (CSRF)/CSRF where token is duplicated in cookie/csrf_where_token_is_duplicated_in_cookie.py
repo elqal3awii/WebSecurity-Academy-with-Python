@@ -38,7 +38,7 @@ lab_url = "https://0a8900e20368d3af894bf9b1003b009e.web-security-academy.net"
 exploit_server_url = "https://exploit-0aa700020340d3e78976f8dd01e70073.exploit-server.net"
 
 # the header of your exploit sever response
-exploit_server_head = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"""
+exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
     
 try:  
     # fetch login page

