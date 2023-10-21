@@ -1,6 +1,6 @@
 # Hack Steps
 
-1. Craft an HTML form for changing the email address with an auto-submit script and use the GET method rather than POST as the form method
+1. Craft an HTML form for changing the email address with an auto-submit script and a meta tag that drops the Referer header from the request
 2. Deliver the exploit to the victim
 3. The victim's email will be changed after he trigger the exploit
 
@@ -11,7 +11,7 @@
 3. Start script
 
 ```
-~$ python csrf_where_token_validation_depends_on_request_method.py
+~$ python csrf_where_referer_validation_depends_on_header_being_present.py
 ```
 
 # Expected Output

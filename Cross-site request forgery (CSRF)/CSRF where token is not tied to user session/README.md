@@ -5,7 +5,7 @@
 3. Login as wiener
 4. Fetch wiener profile
 5. Extract the csrf token that is needed for email update
-6. Craft an HTML form for changing the email address that includes an auto-submit script and contains the extracted csrf token
+6. Craft an HTML form for changing the email address with an auto-submit script and include the extracted csrf token in the form
 7. Deliver the exploit to the victim
 8. The victim's email will be changed after he trigger the exploit
 

