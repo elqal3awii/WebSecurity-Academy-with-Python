@@ -10,7 +10,7 @@
 #        2. Craft an HTML form for changing the email address with an auto-submit 
 #           script that changes the Referer header value using the history.pushState() method
 #        3. Deliver the exploit to the victim
-#        4. The victim's email will be changed after he trigger the exploit
+#        4. The victim's email will be changed after they trigger the exploit
 #
 ##################################################################################################
 
@@ -70,7 +70,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "❯❯ Delivering the exploit to the victim.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 The victim's email will be changed after he trigger the exploit") 
+print(Fore.WHITE + "🗹 The victim's email will be changed after they trigger the exploit") 
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

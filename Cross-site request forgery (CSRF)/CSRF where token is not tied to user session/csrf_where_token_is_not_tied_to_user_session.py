@@ -14,7 +14,7 @@
 #        6. Craft an HTML form for changing the email address with an auto-submit 
 #           script and include the extracted csrf token in the form
 #        7. Deliver the exploit to the victim
-#        8. The victim's email will be changed after he trigger the exploit
+#        8. The victim's email will be changed after they trigger the exploit
 #
 ######################################################################################
 
@@ -130,7 +130,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "⦗6⦘ Delivering the exploit to the victim.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 The victim's email will be changed after he trigger the exploit") 
+print(Fore.WHITE + "🗹 The victim's email will be changed after they trigger the exploit") 
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

