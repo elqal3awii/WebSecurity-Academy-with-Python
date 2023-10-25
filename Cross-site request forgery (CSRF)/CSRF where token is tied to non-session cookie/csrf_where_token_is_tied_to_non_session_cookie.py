@@ -63,7 +63,7 @@ cookies = {
 }
 
 # extract the csrf token
-csrf_token = re.findall("csrf.+value=(.+)>", get_login.content.decode())[0]
+csrf_token = re.findall("csrf.+value=(.+)>", get_login.text)[0]
 
 print(Fore.WHITE + "⦗2⦘ Extracting csrf token, session cookie and csrf key cookie.. " + Fore.GREEN + "OK")
 
@@ -106,7 +106,7 @@ print(Fore.WHITE + "⦗4⦘ Fetching wiener profile.. " + Fore.GREEN + "OK")
 csrf_key = wiener.cookies.get("csrfKey")
 
 # extract the csrf token that is needed for email update
-csrf_token = re.findall("csrf.+value=(.+)>", wiener.content.decode())[0]
+csrf_token = re.findall("csrf.+value=(.+)>", wiener.text)[0]
 
 print(Fore.WHITE + "⦗5⦘ Extracting the csrf token that is needed for email update.. " + Fore.GREEN + "OK")
 

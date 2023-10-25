@@ -64,7 +64,7 @@ for (index, code) in enumerate(range(0, 10000)):
     get_login_session = get_login_res.cookies.get("session")  
         
     # extract csrf token
-    get_login_token = re.findall("csrf.+value=\"(.+)\"", get_login_res.content.decode())[0]
+    get_login_token = re.findall("csrf.+value=\"(.+)\"", get_login_res.text)[0]
     
     # set session cookie
     login_cookies = {
@@ -111,7 +111,7 @@ for (index, code) in enumerate(range(0, 10000)):
             continue
     
         # extract csrf token
-        get_login2_token = re.findall("csrf.+value=\"(.+)\"", get_login2_res.content.decode())[0]  
+        get_login2_token = re.findall("csrf.+value=\"(.+)\"", get_login2_res.text)[0]  
         
         # set data to send via POST
         data = {

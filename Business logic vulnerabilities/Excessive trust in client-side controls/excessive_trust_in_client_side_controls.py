@@ -47,7 +47,7 @@ print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")
 session = get_login.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
 print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
 
@@ -70,7 +70,6 @@ try:
 except:
     print(Fore.RED + "[!] Failed to login as wiener through exception")
     exit(1)
-
 
 print(Fore.WHITE + "⦗3⦘ Logging in as wiener.. " + Fore.GREEN + "OK")
 
@@ -111,7 +110,7 @@ except:
 print(Fore.WHITE + "⦗5⦘ Fetching wiener's cart.. " + Fore.GREEN + "OK")
 
 # extract the csrf token needed for placing order
-csrf = re.findall("csrf.+value=\"(.+)\"", wiener.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", wiener.text)[0]
 
 print(Fore.WHITE + "⦗6⦘ Extracting csrf token needed for placing order.. " + Fore.GREEN + "OK")
 

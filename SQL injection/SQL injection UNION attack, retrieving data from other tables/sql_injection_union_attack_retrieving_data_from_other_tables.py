@@ -64,7 +64,7 @@ print(Fore.WHITE + "2. Fetching login page.. " + Fore.GREEN + "OK")
 session = fetch_login.cookies.get("session")
 
 # extract csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.text)[0]
 
 print(Fore.WHITE + "3. Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
 

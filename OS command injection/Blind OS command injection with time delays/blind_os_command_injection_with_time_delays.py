@@ -46,7 +46,7 @@ print(Fore.WHITE + "⦗1⦘ Fetching the feedback page.. " + Fore.GREEN + "OK")
 session = injection.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", injection.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", injection.text)[0]
 
 print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
 

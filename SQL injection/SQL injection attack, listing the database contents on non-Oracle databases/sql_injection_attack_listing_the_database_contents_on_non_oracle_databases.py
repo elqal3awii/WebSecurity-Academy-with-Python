@@ -31,7 +31,7 @@ import re
 #########
 
 # change this to your lab URL
-url = "https://0ad6006704d87ca7837037f000b00048.web-security-academy.net"
+url = "https://0a13000b030e496283a75aaf00cf0078.web-security-academy.net"
 
 print(Fore.BLUE + "[#] Injection parameter: " + Fore.YELLOW + "category")
 
@@ -104,7 +104,7 @@ print(Fore.WHITE + "4. Fetching login page.. " + Fore.GREEN + "OK")
 session = fetch_login.cookies.get("session")
 
 # extract csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.text)[0]
 
 print(Fore.WHITE + "5. Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
 

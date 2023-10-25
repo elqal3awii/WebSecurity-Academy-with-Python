@@ -76,7 +76,7 @@ print(Fore.WHITE + "6. Fetching login page to get a valid session and csrf token
 session = get_login.cookies.get("session")
 
 # extract csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
 # data to send via POST
 data = {

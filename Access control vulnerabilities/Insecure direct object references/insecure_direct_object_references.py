@@ -59,7 +59,7 @@ print(Fore.WHITE + "3. Fetching login page to get valid session and csrf token..
 session = get_login.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
 # set credentials
 data = {

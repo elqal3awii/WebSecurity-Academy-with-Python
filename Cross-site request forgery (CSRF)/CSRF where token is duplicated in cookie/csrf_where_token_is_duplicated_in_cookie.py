@@ -54,7 +54,7 @@ print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")
 session = get_login.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
 # set cookies
 cookies = {
@@ -100,7 +100,7 @@ except:
 print(Fore.WHITE + "⦗4⦘ Fetching wiener profile.. " + Fore.GREEN + "OK")
 
 # extract the csrf token that is needed for email update
-csrf = re.findall("csrf.+value=\"(.+)\"", wiener.content.decode())[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", wiener.text)[0]
 
 print(Fore.WHITE + "⦗5⦘ Extracting the csrf token that is needed for email update.. " + Fore.GREEN + "OK")
 
