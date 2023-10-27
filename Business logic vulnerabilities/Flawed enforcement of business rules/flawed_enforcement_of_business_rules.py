@@ -35,11 +35,11 @@ from colorama import Fore
 url = "https://0ad400dd03cbab7582d960ff00df0007.web-security-academy.net"
 
 try:  
-    # fetch login page
+    # fetch the login page
     get_login = requests.get(f"{url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1) 
 
 print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")

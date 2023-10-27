@@ -62,7 +62,7 @@ admin_pass = admin_conf.split("=")[1].split("\n")[0]
 print(Fore.WHITE + "5. Extracting the administrator password.. " + Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + admin_pass)
 
 try:
-    # fetch login page
+    # fetch the login page
     get_login = requests.get(f"https://{domain}/login")
 
 except:

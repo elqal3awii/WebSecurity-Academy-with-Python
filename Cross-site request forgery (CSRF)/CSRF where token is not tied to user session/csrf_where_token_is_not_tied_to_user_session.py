@@ -40,11 +40,11 @@ exploit_server_url = "https://exploit-0a2e0078045bb54484d326d501bc0000.exploit-s
 exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
     
 try:  
-    # fetch login page
+    # fetch the login page
     get_login = requests.get(f"{lab_url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1) 
 
 print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")

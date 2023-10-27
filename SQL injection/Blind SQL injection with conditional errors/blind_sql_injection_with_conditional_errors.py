@@ -126,11 +126,11 @@ password_length = determin_password_length(url)
 admin_password = brute_force_password(url, password_length)
 
 try:  
-    # fetch login page
+    # fetch the login page
     fetch_login = requests.get(f"{url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1)
     
 print(Fore.WHITE + "\n3. Fetching login page.. " + Fore.GREEN + "OK")

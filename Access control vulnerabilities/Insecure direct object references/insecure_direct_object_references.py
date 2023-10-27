@@ -46,11 +46,11 @@ print(Fore.WHITE + "2. Extracting password from the log file.. " +
         Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + carlos_pass)
 
 try:  
-    # fetch login page to get valid session and csrf token
+    # fetch the login page to get valid session and csrf token
     get_login = requests.get(f"{url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1)
 
 print(Fore.WHITE + "3. Fetching login page to get valid session and csrf token.. " + Fore.GREEN + "OK")

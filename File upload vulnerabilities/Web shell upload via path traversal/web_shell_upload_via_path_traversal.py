@@ -6,7 +6,7 @@
 #
 # Lab: Web shell upload via path traversal
 #
-# Steps: 1. Fetch login page
+# Steps: 1. fetch the login page
 #        2. Extract csrf token and session cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
@@ -33,11 +33,11 @@ from colorama import Fore
 url = "https://0a690019043981aa8bdbca8500e800b0.web-security-academy.net"
 
 try:  
-    # fetch login page
+    # fetch the login page
     get_login = requests.get(f"{url}/login")
 
 except:
-    print(Fore.RED + "[!] Failed to fetch login page through exception")
+    print(Fore.RED + "[!] Failed to fetch the login page through exception")
     exit(1) 
 
 print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")
