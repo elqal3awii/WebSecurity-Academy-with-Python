@@ -7,7 +7,7 @@
 # Lab: CSRF where token is duplicated in cookie
 #
 # Steps: 1. Fetch the login page
-#        2. Extract csrf token and session cookie
+#        2. Extract the csrf token and session cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
 #        5. Extract the csrf token that is needed for email update
@@ -62,7 +62,7 @@ cookies = {
     "csrf": csrf
 }
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {

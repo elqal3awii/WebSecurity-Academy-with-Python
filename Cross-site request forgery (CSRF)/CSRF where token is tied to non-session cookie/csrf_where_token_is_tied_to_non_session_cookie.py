@@ -7,7 +7,7 @@
 # Lab: CSRF where token is tied to non-session cookie
 #
 # Steps: 1. Fetch the login page
-#        2. Extract csrf token, session cookie and csrf key cookie
+#        2. Extract the csrf token, session cookie and csrf key cookie
 #        3. Login as wiener
 #        4. Fetch wiener profile
 #        5. Extract the csrf token that is needed for email update
@@ -65,7 +65,7 @@ cookies = {
 # extract the csrf token
 csrf_token = re.findall("csrf.+value=(.+)>", get_login.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token, session cookie and csrf key cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token, session cookie and csrf key cookie.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {

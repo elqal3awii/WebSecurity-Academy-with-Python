@@ -4,7 +4,7 @@
 2. POST /login with valid credentials, extracted session and the csrf token
 3. Obtain the new session
 4. GET /login2 with the new session
-5. Extract csrf token from the body of /login2
+5. Extract the csrf token from the body of /login2
 6. POST the mfa-code with the new session and the new extracted csrf token
 7. Repeat the process with all possbile numbers 
 

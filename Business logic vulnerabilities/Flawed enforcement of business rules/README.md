@@ -1,11 +1,11 @@
 # Hack Steps
 
 1. Fetch the login page
-2. Extract csrf token and session cookie
+2. Extract the csrf token and session cookie
 3. Login as wiener
 4. Add the leather jacket to the cart
 5. Fetch wiener's cart
-6. Extract csrf token needed for applying coupons and placing order
+6. Extract the csrf token needed for applying coupons and placing order
 7. Apply the coupons one after another repeatedly for a few times
 8. Place order
 9. Confirm order
@@ -23,11 +23,11 @@
 
 ```
 ⦗1⦘ Fetching the login page.. OK
-⦗2⦘ Extracting csrf token and session cookie.. OK
+⦗2⦘ Extracting the csrf token and session cookie.. OK
 ⦗3⦘ Logging in as wiener.. OK
 ⦗4⦘ Adding the leather jacket to the cart.. OK
 ⦗5⦘ Fetching wiener's cart.. OK
-⦗6⦘ Extracting csrf token needed for applying coupons and placing order.. OK
+⦗6⦘ Extracting the csrf token needed for applying coupons and placing order.. OK
 ⦗7⦘ Applying the coupon NEWCUST5 (1/8)..
 ⦗7⦘ Applying the coupon SIGNUP30 (2/8)..
 ⦗7⦘ Applying the coupon NEWCUST5 (3/8)..
