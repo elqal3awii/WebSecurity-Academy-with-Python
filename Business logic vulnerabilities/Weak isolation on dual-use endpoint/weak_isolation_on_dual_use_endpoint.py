@@ -38,7 +38,7 @@ url = "https://0a55001304cfdb95812fd9710008005e.web-security-academy.net"
 
 try:  
     # fetch the login page
-    get_login = requests.get(f"{url}/login")
+    login_page = requests.get(f"{url}/login")
 
 except:
     print(Fore.RED + "[!] Failed to fetch the login page through exception")
@@ -47,10 +47,10 @@ except:
 print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")
 
 # get session cookie
-session = get_login.cookies.get("session")
+session = login_page.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", login_page.text)[0]
 
 print(Fore.WHITE + "⦗2⦘ Extracting the csrf token and session cookie to login.. " + Fore.GREEN + "OK")
 
@@ -123,7 +123,7 @@ print(Fore.WHITE + "⦗6⦘ Changing the administrator's password to " + Fore.YE
 
 try:  
     # fetch the login page
-    get_login = requests.get(f"{url}/login")
+    login_page = requests.get(f"{url}/login")
 
 except:
     print(Fore.RED + "[!] Failed to fetch the login page through exception")
@@ -132,10 +132,10 @@ except:
 print(Fore.WHITE + "⦗7⦘ Fetching the login page.. " + Fore.GREEN + "OK")
 
 # get session cookie
-session = get_login.cookies.get("session")
+session = login_page.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", login_page.text)[0]
 
 print(Fore.WHITE + "⦗8⦘ Extracting the csrf token and session cookie to login.. " + Fore.GREEN + "OK")
 

