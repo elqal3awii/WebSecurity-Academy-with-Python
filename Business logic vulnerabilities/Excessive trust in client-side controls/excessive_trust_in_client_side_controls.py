@@ -1,6 +1,6 @@
 ################################################################################
 #
-# Author: Ahmed Elqalawy (@elqal3awii)
+# Author: Ahmed Elqalaawy (@elqal3awii)
 #
 # Date: 25/10/2023
 #
@@ -133,10 +133,10 @@ try:
     # confirm order to mark the lab as solved.
     # without this request the leather jacket will be purchased
     # and your credit will be decreased but the lab will sill be unsolved
-    wiener = requests.get(f"{url}/cart/order-confirmation?order-confirmed=true", cookies=cookies)
+    requests.get(f"{url}/cart/order-confirmation?order-confirmed=true", cookies=cookies)
     
 except:
-    print(Fore.RED + "[!] Failed to fetch wiener's cart through exception")
+    print(Fore.RED + "[!] Failed to confirm order through exception")
     exit(1)
 
 print(Fore.WHITE + "⦗8⦘ Confirming order.. " + Fore.GREEN + "OK")

