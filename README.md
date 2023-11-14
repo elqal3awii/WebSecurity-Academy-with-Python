@@ -2,7 +2,7 @@
 ![Static Badge](https://img.shields.io/badge/Python-v3.x-bright)
 ![Static Badge](https://img.shields.io/badge/License-GPLv3-yellow)
 ![Static Badge](https://img.shields.io/badge/Topics-13-red)
-![Static Badge](https://img.shields.io/badge/Labs-112-blue)
+![Static Badge](https://img.shields.io/badge/Labs-113-blue)
 
 ![WebScurity Academy](./web-security-python.png)
 
