@@ -31,7 +31,7 @@ payload = "<script>alert(1)</script>"
 
 try:
     # fetch the page with the injected payload
-    res = requests.get(f"{url}?search={payload}")
+    requests.get(f"{url}?search={payload}")
 
 except:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload through exception")
