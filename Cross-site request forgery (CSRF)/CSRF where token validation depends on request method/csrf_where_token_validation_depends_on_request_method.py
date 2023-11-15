@@ -62,7 +62,7 @@ data = {
 
 try:
     # deliver the exploit to the victim
-    res = requests.post(exploit_server_url, data)
+    requests.post(exploit_server_url, data)
 
 except:
     print(Fore.RED + "[!] Failed to deliver the exploit to the victim through exception")

@@ -31,10 +31,10 @@ import re
 #########
 
 # change this to your lab URL
-lab_url = "https://0a7e007604a6b5fb84dd27e400bd0065.web-security-academy.net"
+lab_url = "https://0ad300d404ada36d80e7212f00a00087.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0a2e0078045bb54484d326d501bc0000.exploit-server.net"
+exploit_server_url = "https://exploit-0a07001904f7a34180eb20f501e00027.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
@@ -123,7 +123,7 @@ data = {
 
 try:
     # deliver the exploit to the victim
-    res = requests.post(exploit_server_url, data)
+    requests.post(exploit_server_url, data)
 
 except:
     print(Fore.RED + "[!] Failed to deliver the exploit to the victim through exception")
