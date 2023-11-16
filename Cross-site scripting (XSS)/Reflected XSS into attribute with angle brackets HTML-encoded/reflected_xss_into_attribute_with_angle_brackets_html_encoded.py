@@ -24,7 +24,7 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-url = "https://0afc003703efec5581123e66003300f4.web-security-academy.net"
+url = "https://0a74002304b611e882dc8dd1009400b5.web-security-academy.net"
 
 # payload to call the alert function
 payload = """ " autofocus onfocus="alert(1) """
