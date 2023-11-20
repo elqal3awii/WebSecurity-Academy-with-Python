@@ -81,7 +81,7 @@ except:
 # if response is OK
 if injection.status_code == 200:
     print(Fore.WHITE + "⦗3⦘ Injecting payload to cause a 10 second delay (wait).. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload")

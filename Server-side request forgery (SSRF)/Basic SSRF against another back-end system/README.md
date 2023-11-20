@@ -21,5 +21,5 @@
                             ....................
 ⦗1⦘ Injecting payload to scan the internal netwrok (192.168.0.218:8080/admin).. OK
 ⦗2⦘ Deleting carlos from the admin interface.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

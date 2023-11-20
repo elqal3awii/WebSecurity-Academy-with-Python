@@ -22,5 +22,5 @@
 3. Fetching login page to get valid session and csrf token.. OK
 4. Logging in as administrator.. OK
 5. Deleting carlos.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

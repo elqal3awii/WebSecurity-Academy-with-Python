@@ -181,6 +181,6 @@ except:
     exit(1)
 
 print(Fore.WHITE + "⦗12⦘ Placing the last encoded value in the stay-logged-in cookie and delete carlos.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 

@@ -17,5 +17,5 @@
 ```
 ❯ Injection parameter: category
 ❯ Injecting payload to retrieve unreleased products.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

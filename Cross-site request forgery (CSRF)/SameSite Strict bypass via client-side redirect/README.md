@@ -19,5 +19,5 @@
 ```
 ❯❯ Delivering the exploit to the victim.. OK
 🗹 The victim's email will be changed after they trigger the exploit
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

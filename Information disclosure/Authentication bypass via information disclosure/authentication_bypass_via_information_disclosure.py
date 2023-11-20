@@ -100,7 +100,7 @@ if post_login.status_code == 302:
 
     print(Fore.WHITE + "5. Bypassing admin access using custom header.. " + Fore.GREEN + "OK")
     print(Fore.WHITE + "6. Deleting carlos.. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to login as wiener")

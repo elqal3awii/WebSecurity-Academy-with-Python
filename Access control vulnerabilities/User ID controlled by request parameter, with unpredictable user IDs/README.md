@@ -23,5 +23,5 @@
 3. Fetching carlos profile page.. OK
 4. Extracting the API key.. OK
 5. Submitting the solution.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

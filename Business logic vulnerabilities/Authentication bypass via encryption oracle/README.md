@@ -37,5 +37,5 @@
 ⦗10⦘ Decoding the notification cookie with base64.. OK
 ⦗11⦘ Removing the first two blocks and encode the remaining blocks.. OK => wpM5mrYZ8yTjJag3UH01LKks2N8HfkKlEmxlakgwXsc=
 ⦗12⦘ Placing the last encoded value in the stay-logged-in cookie and delete carlos.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

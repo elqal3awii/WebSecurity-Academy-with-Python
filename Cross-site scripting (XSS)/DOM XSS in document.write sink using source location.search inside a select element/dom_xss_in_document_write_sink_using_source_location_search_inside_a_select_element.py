@@ -38,7 +38,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "❯❯ Injecting payload in the storeId query parameter to call the alert function.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 
 

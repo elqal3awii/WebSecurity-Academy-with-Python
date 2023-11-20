@@ -59,7 +59,7 @@ if inject_payload.status_code == 500:
         exit(1)
 
     print(Fore.WHITE + "3. Submitting the solution.. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to inject the payload to make an interanl server error")

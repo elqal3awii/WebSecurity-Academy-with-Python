@@ -94,7 +94,7 @@ except:
 whoami = injection.text
 
 print(Fore.WHITE + "⦗4⦘ Reading " + file_name + ".. " + Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + whoami, end="", flush=True)
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 
 

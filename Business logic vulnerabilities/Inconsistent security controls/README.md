@@ -40,5 +40,5 @@
 ⦗11⦘ Extracting the csrf token needed for email update.. OK
 ⦗12⦘ Updating the email to attacker@dontwannacry.com.. OK
 ⦗13⦘ Deleting carlos from the admin panel.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

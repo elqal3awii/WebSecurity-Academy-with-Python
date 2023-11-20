@@ -21,5 +21,5 @@
 2. Extracting the admin panel path from the source code.. OK => /admin-7qbkln
 3. Fetching the admin panel.. OK
 4. Deleting carlos.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

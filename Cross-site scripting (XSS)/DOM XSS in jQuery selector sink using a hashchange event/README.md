@@ -19,5 +19,5 @@
 ```
 ❯❯ Delivering the exploit to the victim.. OK
 🗹 The print() function will be called after they trigger the exploit
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

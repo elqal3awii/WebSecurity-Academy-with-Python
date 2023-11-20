@@ -19,5 +19,5 @@
 ⦗1⦘ Fetching a post page.. OK
 ⦗2⦘ Extracting the session cookie and the csrf token to post a comment.. OK
 ⦗3⦘ Posting a comment with the injected payload in the comment field.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

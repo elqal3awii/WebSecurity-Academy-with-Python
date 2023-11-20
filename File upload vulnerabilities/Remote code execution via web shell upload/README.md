@@ -29,5 +29,5 @@
 ⦗6⦘ Fetching the uploaded shell file to read the secret.. OK
 ❯ Secret: EbjlyC2Jv4I1VisOiK5WgyvEtQUsrGq1
 ⦗7⦘ Submitting the solution.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

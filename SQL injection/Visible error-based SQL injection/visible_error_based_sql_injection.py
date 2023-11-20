@@ -116,7 +116,7 @@ if len(admin_password) != 0:
         exit(1)
 
     print(Fore.WHITE + "6. Fetching the administrator profile.. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] No password is found")

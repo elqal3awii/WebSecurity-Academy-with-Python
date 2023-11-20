@@ -66,7 +66,7 @@ if login.status_code == 302:
         exit(1)
 
     print(Fore.WHITE + "2. Upgrading wiener to be an admin by adding Referer header.. " + Fore.GREEN + "OK")    
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to login as wiener")

@@ -18,5 +18,5 @@
 [#] Injection point: TrackingId
 1. Injecting payload to cause a 10 seconds delay.. OK
 2. Waiting for the response.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

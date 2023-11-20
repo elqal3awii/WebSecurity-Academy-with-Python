@@ -35,5 +35,5 @@
 ⦗7⦘ Applying the coupon SIGNUP30 (8/8).. OK
 ⦗8⦘ Placing order.. OK
 ⦗9⦘ Confirming order.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

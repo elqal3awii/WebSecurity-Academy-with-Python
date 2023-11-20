@@ -21,5 +21,5 @@
 ⦗1⦘ Fetching the feedback page.. OK
 ⦗2⦘ Extracting the csrf token and session cookie.. OK
 ⦗3⦘ Injecting payload to cause a 10 second delay (wait).. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

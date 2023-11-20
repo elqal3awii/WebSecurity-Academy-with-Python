@@ -49,6 +49,6 @@ except:
 
 print(Fore.WHITE + "❯ Injecting payload to cause an HTTP request to the burp collaborator.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 Check your burp collaborator for the HTTP request")
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 

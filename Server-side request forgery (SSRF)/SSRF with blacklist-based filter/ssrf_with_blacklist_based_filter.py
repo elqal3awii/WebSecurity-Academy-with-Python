@@ -45,6 +45,6 @@ except:
     exit(1)
 
 print(Fore.WHITE + "❯ Injecting payload to delete carlos using SSRF with input filter bypass.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 

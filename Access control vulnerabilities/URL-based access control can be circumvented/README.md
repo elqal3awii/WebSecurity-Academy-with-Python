@@ -17,5 +17,5 @@
 ```
 1. Fetching admin panel.. OK
 2. Deleting carlos.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

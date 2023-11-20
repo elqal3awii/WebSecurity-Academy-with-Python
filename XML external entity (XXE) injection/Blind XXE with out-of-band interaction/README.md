@@ -19,5 +19,5 @@
 ⟪#⟫ Injection point: productId
 ❯ Injecting payload to issue a DNS lookup to burp collaborator using an external entity.. OK
 🗹 Check your burp collaborator for the DNS lookup
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

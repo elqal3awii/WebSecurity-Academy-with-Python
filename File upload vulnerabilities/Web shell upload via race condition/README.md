@@ -31,5 +31,5 @@
 ❯ Secret: 2ds7AZuX7upUjFQrnHD9GwcgidVwtMtu
 ⦗5⦘ Uploading the shell file via race condition (3/10).. OK
 ⦗7⦘ Submitting the solution.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

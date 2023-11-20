@@ -21,5 +21,5 @@
 ⦗2⦘ Extracting the csrf token and session cookie.. OK
 ⦗3⦘ Logging in as wiener.. OK
 ⦗4⦘ Deleting carlos from the admin panel directly without selecting a role.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

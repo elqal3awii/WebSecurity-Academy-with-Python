@@ -28,5 +28,5 @@
 5. Extracting the csrf token and session cookie.. OK
 6. Logging in as the administrator.. OK
 7. Fetching the administrator profile.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

@@ -19,5 +19,5 @@
 ⟪#⟫ Injection parameter: filename
 ⦗1⦘ Injecting payload to retrieve the content of /etc/passwd.. OK
 ⦗2⦘ Extracting the first line as a proof.. OK => root:x:0:0:root:/root:/bin/bash
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

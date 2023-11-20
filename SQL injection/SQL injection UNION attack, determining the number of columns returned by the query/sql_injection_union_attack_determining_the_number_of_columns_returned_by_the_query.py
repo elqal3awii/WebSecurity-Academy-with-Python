@@ -56,7 +56,7 @@ for i in range(1, 10):
     # if the response is successful with no error text
     if len(internal_error_text) == 0:
         print(Fore.WHITE + "[#] Number of columns: " + Fore.GREEN + str(i))
-        print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+        print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
         
         break
     

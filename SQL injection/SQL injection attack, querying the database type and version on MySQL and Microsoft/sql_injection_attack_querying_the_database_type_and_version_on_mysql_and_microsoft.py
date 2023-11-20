@@ -43,7 +43,7 @@ print(Fore.WHITE + "1. Injecting payload in 'category' query parameter.. " + For
 # if response is OK
 if injection.status_code == 200:
     print(Fore.WHITE + "2. Retrieving database version in the response.. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to inject the payload")

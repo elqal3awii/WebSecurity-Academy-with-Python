@@ -51,7 +51,7 @@ print(Fore.WHITE + "❯ Injection point: " + Fore.YELLOW + "storeId")
 # if response is OK
 if injection.status_code == 200:
     print(Fore.WHITE + "❯ Injecting payload to execute the `whoami` command.. " + Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + whoami, end="", flush=True)
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload")

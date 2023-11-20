@@ -66,5 +66,5 @@
 ⦗12⦘ Adding the leather jacket the cart.. OK
 ⦗13⦘ Placing order.. OK
 ⦗14⦘ Confirming order.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

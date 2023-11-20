@@ -75,7 +75,7 @@ except:
 
 print(Fore.WHITE + "❯❯ Delivering the exploit to the victim.. " + Fore.GREEN + "OK")
 print(Fore.WHITE + "🗹 The victim's email will be changed after they trigger the exploit") 
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 
 

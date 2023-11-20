@@ -102,7 +102,7 @@ if login.status_code == 302:
         exit(1)
 
     print(Fore.WHITE + "5. Fetching carlos profile.. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to login as carlos")

@@ -214,4 +214,4 @@ except:
     exit(1)
 
 print(Fore.WHITE + "⦗13⦘ Deleting carlos from the admin panel.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")

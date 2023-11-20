@@ -23,5 +23,5 @@
 ⦗3⦘ Logging in as wiener.. OK
 ⦗4⦘ Adding the leather jacket to the cart.. OK
 ⦗5⦘ Confirming order directly without checking out.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

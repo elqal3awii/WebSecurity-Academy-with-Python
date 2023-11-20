@@ -50,7 +50,7 @@ except:
 # if the response is OK after the delay
 if make_delay.status_code == 200:
     print(Fore.WHITE + "2. Waiting for the response.. " + Fore.GREEN + "OK")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload")

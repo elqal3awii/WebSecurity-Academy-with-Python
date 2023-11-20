@@ -10,7 +10,7 @@
 2. Start script
 
 ```
-~$ python stored_xss_into_anchor_href_attribute_with_double_quotes_html_encoded.py
+~$ python stored_dom_xss.py
 ```
 
 # Expected Output

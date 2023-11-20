@@ -19,5 +19,5 @@
 ⟪#⟫ Injection point: Referer header
 ❯ Injecting payload to cause an HTTP request to the burp collaborator.. OK
 🗹 Check your burp collaborator for the HTTP request
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

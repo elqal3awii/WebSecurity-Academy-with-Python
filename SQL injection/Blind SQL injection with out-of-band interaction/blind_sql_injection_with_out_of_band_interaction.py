@@ -52,7 +52,7 @@ except:
 if dns_lookup.status_code == 200:
     print(Fore.WHITE + "[*] Injecting payload to make a DNS lookup.. " + Fore.GREEN + "OK")
     print(Fore.WHITE + "[#] Check the DNS lookup in your burp collaborator")
-    print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+    print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 else:
     print(Fore.RED + "[!] Failed to fetch the page with the injected payload")

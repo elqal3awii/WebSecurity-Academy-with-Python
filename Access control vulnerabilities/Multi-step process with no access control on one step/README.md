@@ -17,5 +17,5 @@
 ```
 1. Logging in as wiener.. OK
 2. Upgrading wiener to be an admin bypassing the first step.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

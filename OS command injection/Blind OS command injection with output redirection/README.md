@@ -23,5 +23,5 @@
 ⦗2⦘ Extracting the csrf token and session cookie.. OK
 ⦗3⦘ Injecting payload to execute the `whoami` command and redirect the output to whoami.txt.. OK
 ⦗4⦘ Reading whoami.txt.. OK => peter-0jgr96
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

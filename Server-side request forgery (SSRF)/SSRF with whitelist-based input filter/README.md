@@ -17,5 +17,5 @@
 ```
 ⟪#⟫ Injection point: stockApi
 ❯ Injecting payload to delete carlos using SSRF with whitelist-based input filter bypass.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

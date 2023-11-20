@@ -16,5 +16,5 @@
 
 ```
 ❯❯ Injecting payload in the search query parameter to call the alert function.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

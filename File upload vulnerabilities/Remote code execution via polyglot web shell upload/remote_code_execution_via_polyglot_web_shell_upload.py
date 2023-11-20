@@ -175,7 +175,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "⦗10⦘ Submitting the solution.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 # change the image extension back to its original one
 # if you are still a windows user, changing 'mv' to 'move' should make the script still work

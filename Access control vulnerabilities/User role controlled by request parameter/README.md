@@ -19,5 +19,5 @@
 1. Changing the cookie 'Admin' to 'true'.. OK
 2. Fetching the admin panel.. OK
 3. Deleting carlos.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

@@ -17,5 +17,5 @@
 ```
 ❯ Injection point: storeId
 ❯ Injecting payload to execute the `whoami` command.. OK => peter-neh7X6
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

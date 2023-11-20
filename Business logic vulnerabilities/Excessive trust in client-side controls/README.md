@@ -29,5 +29,5 @@
 ⦗6⦘ Extracting the csrf token needed for placing order.. OK
 ⦗7⦘ Placing order.. OK
 ⦗8⦘ Confirming order.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ```

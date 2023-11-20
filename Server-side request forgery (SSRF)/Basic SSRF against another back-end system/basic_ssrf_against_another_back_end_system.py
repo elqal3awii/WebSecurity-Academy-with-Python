@@ -65,7 +65,7 @@ for x in range(0,255):
             exit(1)
 
         print(Fore.WHITE + "⦗2⦘ Deleting carlos from the admin interface.. " + Fore.GREEN + "OK")
-        print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+        print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
         # exit from the program
         exit(0)

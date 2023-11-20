@@ -37,6 +37,6 @@
 ⦗9⦘ Fetching the uploaded image with the embedded payload to read the secret.. OK
 ❯ Secret: qSSeG8IY0ORvH4HTUKG2wVLZ8UHJR8bK
 ⦗10⦘ Submitting solution.. OK
-🗹 Check your browser, it should be marked now as solved
+🗹 The lab should be marked now as solved
 ❯ Changing the image extension back to its original one.. OK
 ```

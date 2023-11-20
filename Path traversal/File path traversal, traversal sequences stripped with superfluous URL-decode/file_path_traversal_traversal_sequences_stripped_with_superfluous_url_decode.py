@@ -47,5 +47,5 @@ print(Fore.WHITE + "⦗1⦘ Injecting payload to retrieve the content of /etc/pa
 first_line = re.findall("(.*)\n", injection.text)[0]
 
 print(Fore.WHITE + "⦗2⦘ Extracting the first line as a proof.. " +  Fore.GREEN + "OK" + Fore.WHITE + " => " + Fore.YELLOW + first_line)
-print(Fore.WHITE + "🗹 Check your browser, it should be marked now as " + Fore.GREEN + "solved")
+print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
