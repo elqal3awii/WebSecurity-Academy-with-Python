@@ -10,7 +10,7 @@
 2. Start script
 
 ```
-~$ python stored_xss_into_anchor_href_attribute_with_double_quotes_html_encoded.py
+~$ python stored_xss_into_onclick_event_with_angle_brackets_and_double_quotes_html_encoded_and_single_quotes_and_backslash_escaped.py
 ```
 
 # Expected Output
