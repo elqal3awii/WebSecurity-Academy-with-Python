@@ -1,24 +1,29 @@
 ## Hack Steps
 
-1. Change the dynamically-generating link of password change functionality via X-Forwarded-Host header to point to your exploit server
-2. Extract the temporary token from you server logs
-3. Use the token to change carlos password
+1. Make forgot-password request as carlos with the X-Forwarded-Host changed
+2. Extract the token from the server logs
+3. Change carlos password with the obtained token
+4. Login as carlos with the new password
+5. Fetch carlos profile
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
-2. Change the URL of the exploit servers
+2. Change the DOMAIN of the exploit server
 3. Start script
 
 ```
-~$ python password_reset_poisoning_via_middleware.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-1. Change the dynamically generated link via X-Forwarded-Host header.. OK
-2. Get temp-forgot-password-token of the carlos from exploit sever logs.. OK
-3. Changing the password of the carlos.. OK
-✅ Password changed to: Hacked
+⦗1⦘ Making forgot-password request as carlos with the X-Forwarded-Host changed.. OK
+⦗2⦘ Extracting the token from the server logs.. OK
+⦗3⦘ Changing carlos password with the obtained token.. OK
+🗹 Password was changed to: Hacked
+⦗4⦘ Logging in as carlos with the new password.. OK
+⦗5⦘ Fetching carlos profile.. OK
+🗹 The lab should be marked now as solved
 ```

@@ -1,7 +1,7 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch the login page
-2. Extract the csrf token, session cookie and csrf key cookie
+2. Extract the csrf token, session cookie and csrfKey cookie
 3. Login as wiener
 4. Fetch wiener profile
 5. Extract the csrf token that is needed for email update
@@ -9,21 +9,21 @@
 7. Deliver the exploit to the victim
 8. The victim's email will be changed after they trigger the exploit
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Change the URL of the exploit server
 3. Start script
 
 ```
-~$ python csrf_where_token_is_tied_to_non_session_cookie.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ⦗1⦘ Fetching the login page.. OK
-⦗2⦘ Extracting the csrf token, session cookie and csrf key cookie.. OK
+⦗2⦘ Extracting the csrf token, session cookie and csrfKey cookie.. OK
 ⦗3⦘ Logging in as wiener.. OK
 ⦗4⦘ Fetching wiener profile.. OK
 ⦗5⦘ Extracting the csrf token that is needed for email update.. OK

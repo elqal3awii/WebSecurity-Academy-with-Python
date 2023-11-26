@@ -1,25 +1,24 @@
-# Hack Steps
+## Hack Steps
 
 1. Login as wiener
 2. Change the roleid of wiener
 3. Fetch the admin panel
-4. Delete carlos
+4. Delete carlos from the admin panel
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python user_role_can_be_modified_in_user_profile.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-1. Logging in as wiener.. OK
-2. Changing roleid to 2.. OK
-3. Fetching the admin panel.. OK
-4. Deleting carlos.. OK
+⦗1⦘ Logging in as wiener.. OK
+⦗2⦘ Changing the roleid to 2.. OK
+⦗3⦘ Deleting carlos from the admin panel.. OK
 🗹 The lab should be marked now as solved
 ```

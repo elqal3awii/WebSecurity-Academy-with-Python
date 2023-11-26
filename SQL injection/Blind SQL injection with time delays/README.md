@@ -1,22 +1,21 @@
-# Hack Steps
+## Hack Steps
 
 1. Inject payload into 'TrackingId' cookie to cause a 10 seconds delay
 2. Wait for the response 
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python blind_sql_injection_with_time_delays.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-[#] Injection point: TrackingId
-1. Injecting payload to cause a 10 seconds delay.. OK
-2. Waiting for the response.. OK
+⦗#⦘ Injection point: TrackingId
+❯❯ Injecting payload to cause a 10 seconds delay.. OK
 🗹 The lab should be marked now as solved
 ```

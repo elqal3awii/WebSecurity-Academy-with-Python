@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Inject payload into 'TrackingId' cookie to make the database return an error containing the administrator password
 2. Extract the administrator password
@@ -7,24 +7,24 @@
 5. Login as the administrator
 6. Fetch the administrator profile
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python visible_error_based_sql_injection.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-[#] Injection point: TrackingId
-1. Injecting payload to retrieve the administrator password.. OK
-2. Extracting administrator password.. OK => 8j94jjw4yfqsy0uv43pf
-3. Fetching login page.. OK
-4. Extracting the csrf token and session cookie.. OK
-5. Logging in as the administrator.. OK
-6. Fetching the administrator profile.. OK
+⦗#⦘ Injection point: TrackingId
+⦗1⦘ Injecting payload to retrieve the administrator password.. OK
+⦗2⦘ Extracting administrator password.. OK => qp2yfxebb69cn3a4fjyi
+⦗3⦘ Fetching the login page.. OK
+⦗4⦘ Extracting the csrf token and session cookie.. OK
+⦗5⦘ Logging in as administrator.. OK
+⦗6⦘ Fetching the administrator profile.. OK
 🗹 The lab should be marked now as solved
 ```

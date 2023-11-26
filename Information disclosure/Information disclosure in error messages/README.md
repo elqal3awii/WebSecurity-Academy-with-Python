@@ -1,23 +1,23 @@
-# Hack Steps
+## Hack Steps
 
-1. Inject a single quote in the product ID parameter to cause an error
+1. Inject a single quote in the productId parameter to cause an error
 2. Extract the framework name
 3. Submit the solution
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python information_disclosure_in_error_messages.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-1. Injecting the payload.. OK
-2. Extracting the framework name.. OK => Apache Struts *.*.*
-3. Submitting the solution.. OK
+⦗1⦘ Injecting a single quote in the productId parameter to cause an error.. OK
+⦗2⦘ Extracting the framework name.. OK => Apache Struts 2 2.3.31
+⦗3⦘ Submitting the solution.. OK
 🗹 The lab should be marked now as solved
 ```

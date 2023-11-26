@@ -1,21 +1,20 @@
-# Hack Steps
+## Hack Steps
 
-1. Fetch admin panel via X-Original-URL header
-2. Delete carlos
+1. Add the X-Original-URL header to the request
+2. Delete carlos from the admin panel
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$  python url_based_access_control_can_be_circumvented.py
+~$  python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-1. Fetching admin panel.. OK
-2. Deleting carlos.. OK
+❯❯ Deleting carlos with X-Original-URL header in the request.. OK
 🗹 The lab should be marked now as solved
 ```

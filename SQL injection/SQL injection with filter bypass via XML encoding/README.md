@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Inject payload into storeId XML element to retrieve administrator password using UNION-based attack
 2. Extract administrator password from the response body
@@ -7,25 +7,25 @@
 5. Login as the administrator
 6. Fetch the administrator profile
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python sql_injection_with_filter_bypass_via_xml_encoding.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-[#] Injection point: storeId
-1. Injecting payload to retrieve administrator password using UNION-based attack.. OK
-2. Extracting administrator password from the response.. OK
-3. Fetching login page.. OK
-4. Extracting the csrf token and session cookie.. OK
-5. Logging in as the administrator.. OK
-6. Fetching the administrator profile.. OK
+⦗#⦘ Injection point: storeId
+⦗1⦘ Injecting payload to retrieve administrator password using UNION-based attack.. OK
+⦗2⦘ Extracting administrator password from the response.. OK => qfxqd57jmq5y5nbgjrfe
+⦗3⦘ Fetching the login page.. OK
+⦗4⦘ Extracting the csrf token and session cookie.. OK
+⦗5⦘ Logging in as administrator.. OK
+⦗6⦘ Fetching the administrator profile.. OK
 🗹 The lab should be marked now as solved
 ```
 

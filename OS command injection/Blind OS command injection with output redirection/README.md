@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch the feedback page
 2. Extract the csrf token and session cookie
@@ -6,19 +6,19 @@
 4. Read the new created file
 
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python blind_os_command_injection_with_output_redirection.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-⟪#⟫ Injection point: name
+⦗#⦘ Injection point: name
 ⦗1⦘ Fetching the feedback page.. OK
 ⦗2⦘ Extracting the csrf token and session cookie.. OK
 ⦗3⦘ Injecting payload to execute the `whoami` command and redirect the output to whoami.txt.. OK

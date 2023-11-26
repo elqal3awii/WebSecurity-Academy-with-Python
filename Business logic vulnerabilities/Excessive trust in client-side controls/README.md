@@ -1,6 +1,6 @@
-# Hack Steps
+## Hack Steps
 
-1. fetch the login page
+1. Fetch the login page
 2. Extract the csrf token and session cookie
 3. Login as wiener
 4. Add the leather jacket to the cart with a modified price
@@ -9,16 +9,16 @@
 7. Place order
 8. Confirm order
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python excessive_trust_in_client_side_controls.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ⦗1⦘ Fetching the login page.. OK

@@ -1,29 +1,35 @@
-# Hack Steps
-1. Brute force carlos password
-2. After every 2 tries, login with correct credentials to bypass blocking
+## Hack Steps
 
-# Run Script
+1. Read password list
+2. Brute force carlos password (login with as wiener before each try to bypass blocking)
+3. Fetch carlos profile
+
+## Run Script
+
 1. Change the URL of the lab
-2. Change the PATH of your password list
+2. Make sure the passwords file exists in the root directory (Authentication directory) or change its path accordingly
 3. Start script
+
 ```
-~$ python broken_brute_force_protection_ip_block.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
+
 ```
-✅ Valid user: carlos
-Elapsed:   0 minutes || Failed:   0 || Trying (47/102):                                     
-
-✅ Login successfully: username: ae, password: robert
-✅ Finished in: 0 minutes
-
-Restults was saved to: results
-
-[!] Failed password count: 0 
-[!] Failed password : []
+⦗1⦘ Reading password list.. OK
+⦗2⦘ Brute forcing carlos password.. 
+❯❯ Elapsed: 51 seconds || Trying (73/100): ginger
+⦗#⦘ Making a successful login.. OK
+❯❯ Elapsed: 53 seconds || Trying (75/100): joshua
+🗹 Correct password: joshua
+⦗3⦘ Fetching carlos profile.. OK
+🗹 Finished in: 53 seconds
+🗹 The lab should be marked now as solved
 ```
-# Test Samples
+
+## Test Samples
+
 This test is done using only 100 passwods. What about 10K passwords?
 Or what about 100K passwords?
 

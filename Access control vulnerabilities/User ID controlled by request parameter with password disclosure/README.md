@@ -1,26 +1,27 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch administrator page via URL id parameter
 2. Extract the password from source code
-3. Login as administrator
-4. Delete carlos
+3. Fetch the login page to get a valid session and the csrf token
+4. Login as administrator
+5. Delete carlos
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python user_id_controlled_by_request_parameter_with_password_disclosure.py
+~$ python mian.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-1. Fetching administrator profile page.. OK
-2. Extracting password from source code.. OK => 3gaulaq4bt7xwrt1utec
-3. Fetching login page to get valid session and csrf token.. OK
-4. Logging in as administrator.. OK
-5. Deleting carlos.. OK
+⦗1⦘ Fetching administrator profile page.. OK
+⦗2⦘ Extracting password from source code.. OK => nmdgmr7vfboi7zme7z42
+⦗3⦘ Fetching the login page to get a valid session and the csrf token.. OK
+⦗4⦘ Logging in as administrator.. OK
+⦗5⦘ Deleting carlos.. OK
 🗹 The lab should be marked now as solved
 ```

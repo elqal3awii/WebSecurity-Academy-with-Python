@@ -1,23 +1,29 @@
 ## Hack Steps
-1. Exploit XSS vulnerability in comment functionlity
-2. Extract victim cookie from the exploit server logs
-3. Decode the cookie to get the hashed password
-4. Crack the hash to get the plain password
 
-# Run Script
+1. Post a comment with a malicious XSS payload
+2. Fetch the exploit sever logs
+3. Extract the encoded cookie from logs
+4. Decode the encoded cookie
+5. Crack this hash using any online hash cracker
+
+## Run Script
+
 1. Change the URL of the lab
 2. Change the URL of the exploit server
 3. Start script
+
 ```
-~$ python offline_password_cracking.py
+~$ python main.py
 ```
 
-# Expected Output
-```
-1. Exploit XSS in comment functionality.. OK
-2. Get stay-logged-in cookie of the victim from exploit sever logs.. OK
-3. Decoding the encrypted cookie.. OK
-✅ Password hash: 26323c16d5f4dabff3bb136f2460a943
-Crack this hash using any online hash cracker
-```
+## Expected Output
 
+```
+⦗1⦘ Posting a comment with a malicious XSS payload.. OK
+⦗2⦘ Fetching the exploit sever logs.. OK
+⦗3⦘ Extracting the encoded cookie from logs.. OK
+⦗4⦘ Decoding the encoded cookie.. OK
+🗹 Password hash: 26323c16d5f4dabff3bb136f2460a943
+⦗#⦘ Crack this hash using any online hash cracker
+```
+s

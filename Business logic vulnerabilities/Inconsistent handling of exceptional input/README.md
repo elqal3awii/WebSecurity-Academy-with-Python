@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch the register page
 2. Extract the csrf token and session cookie to register a new account
@@ -11,17 +11,17 @@
 9. Login to the new account
 10. Delete carlos from the admin panel
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Change the domain of the exploit server
 3. Start script
 
 ```
-~$ python inconsistent_handling_of_exceptional_input.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ⦗1⦘ Fetching the register page.. OK

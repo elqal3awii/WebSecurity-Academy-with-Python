@@ -1,20 +1,20 @@
-# Hack Steps
+## Hack Steps
 
 1. Craft an HTML form for changing the email address with an auto-submit script and a meta tag that drops the Referer header from the request
 2. Deliver the exploit to the victim
 3. The victim's email will be changed after they trigger the exploit
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Change the URL of the exploit server
 3. Start script
 
 ```
-~$ python csrf_where_referer_validation_depends_on_header_being_present.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ❯❯ Delivering the exploit to the victim.. OK

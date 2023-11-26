@@ -1,20 +1,20 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch the login page
 2. Extract the csrf token and session cookie to login
 3. Login as wiener
 4. Delete carlos from the admin panel directly without selecting a role
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python authentication_bypass_via_flawed_state_machine.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ⦗1⦘ Fetching the login page.. OK

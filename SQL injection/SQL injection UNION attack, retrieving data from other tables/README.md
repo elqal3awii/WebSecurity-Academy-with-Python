@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Inject payload into 'category' query parameter to retrieve administrator password from users table
 2. Fetch the login page
@@ -6,23 +6,23 @@
 4. Login as the administrator
 5. Fetch the administrator profile
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Start script
 
 ```
-~$ python sql_injection_union_attack_retrieving_data_from_other_tables.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
-[#] Injection parameter: category
-1. Retrieving administrator password from users table.. OK => t3yxp9s4v7qgq4valov0
-2. Fetching login page.. OK
-3. Extracting the csrf token and session cookie.. OK
-4. Logging in as the administrator.. OK
-5. Fetching the administrator profile.. OK
+⦗#⦘ Injection parameter: category
+⦗1⦘ Retrieving administrator password from users table.. OK => ea8i69juc9uio1fgpabz
+⦗2⦘ Fetching the login page.. OK
+⦗3⦘ Extracting the csrf token and session cookie.. OK
+⦗4⦘ Logging in as the administrator.. OK
+⦗5⦘ Fetching the administrator profile.. OK
 🗹 The lab should be marked now as solved
 ```

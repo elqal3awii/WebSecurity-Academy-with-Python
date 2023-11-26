@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch the login page
 2. Extract the csrf token and session cookie
@@ -9,17 +9,17 @@
 7. Deliver the exploit to the victim
 8. The victim's email will be changed after they trigger the exploit
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Change the URL of the exploit server
 3. Start script
 
 ```
-~$ python csrf_where_token_is_duplicated_in_cookie.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ⦗1⦘ Fetching the login page.. OK

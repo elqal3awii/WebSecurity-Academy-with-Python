@@ -1,4 +1,4 @@
-# Hack Steps
+## Hack Steps
 
 1. Fetch the login page
 2. Extract the csrf token and session cookie
@@ -16,17 +16,17 @@
 14. Plac order
 15. Confirm order
 
-# Run Script
+## Run Script
 
 1. Change the URL of the lab
 2. Change the domain of the exploit server
 3. Start script
 
 ```
-~$ python infinite_money_logic_flaw.py
+~$ python main.py
 ```
 
-# Expected Output
+## Expected Output
 
 ```
 ⦗1⦘ Fetching the login page.. OK

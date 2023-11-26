@@ -1,19 +1,25 @@
-# Hack Steps
-1. Login as carlos
-2. Extract the session from the Set-Cookie header
-3. Request /login2 using the extracted session
-4. Request /my-account directly bypassing 2FA
+## Hack Steps
 
-# Run Script
+1. Login as carlos
+2. Get the session cookie
+3. Fetch the profile page directly bypassing 2FA
+4. Extract the name 'carlos' to make sure you logged in as him
+
+## Run Script
+
 1. Change the URL of the lab
 2. Start script
+
 ```
-~$ python 2fa_simple_bypass.py
+~$ python main.py
 ```
-# Expected output
+
+## Expected output
+
 ```
-1. Logged in as carlos.. OK
-2. GET /login2 using extracted session.. OK
-3. GET /my-account directly bypassing 2FA.. OK
-✅ Logged in successfully as Carlos
+⦗1⦘ Logging in as carlos.. OK
+⦗2⦘ Fetching the profile page directly bypassing 2FA.. OK
+⦗3⦘ Extracting the name 'carlos' to make sure you logged in as him.. OK
+🗹 Logged in successfully as carlos
+🗹 The lab should be marked now as solved
 ```
