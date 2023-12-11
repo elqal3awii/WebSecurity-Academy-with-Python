@@ -1,8 +1,8 @@
 ![Static Badge](https://img.shields.io/badge/Developed%20on-GNU%20Linux-red)
 ![Static Badge](https://img.shields.io/badge/Python-v3.x-bright)
 ![Static Badge](https://img.shields.io/badge/License-GPLv3-yellow)
-![Static Badge](https://img.shields.io/badge/Topics-14-red)
-![Static Badge](https://img.shields.io/badge/Labs-136-blue)
+![Static Badge](https://img.shields.io/badge/Topics-15-red)
+![Static Badge](https://img.shields.io/badge/Labs-137-blue)
 
 ![WebScurity Academy](./web-security-python.png)
 
@@ -16,6 +16,10 @@ You can, of course, solve the labs using Burp Suite, but this repository is for 
 
 This repository assumes that you already know how to solve the labs and want to solve them using scripts in order to practice writing robust ones.
 You may not find a detailed description of how the labs should be solved but you will find a detailed description of how the scripts were written.
+
+## Trivial Labs
+
+There are some labs that you may find trivial in their solutions and don't necessarily require a script. In fact, solving them without a script might be faster and easier. I have only written scripts for these labs for the completeness of this repository. Feel free to skip them if you prefer.
 
 ## Python for Penetration Testing 👨🏻‍💻
 
