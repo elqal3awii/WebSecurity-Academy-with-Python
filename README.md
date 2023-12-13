@@ -1,8 +1,8 @@
 ![Static Badge](https://img.shields.io/badge/Developed%20on-GNU%20Linux-red)
 ![Static Badge](https://img.shields.io/badge/Python-v3.x-bright)
 ![Static Badge](https://img.shields.io/badge/License-GPLv3-yellow)
-![Static Badge](https://img.shields.io/badge/Topics-15-red)
-![Static Badge](https://img.shields.io/badge/Labs-141-blue)
+![Static Badge](https://img.shields.io/badge/Topics-16-red)
+![Static Badge](https://img.shields.io/badge/Labs-142-blue)
 
 ![WebScurity Academy](./web-security-python.png)
 
@@ -21,14 +21,6 @@ You may not find a detailed description of how the labs should be solved but you
 
 There are some labs that you may find trivial in their solutions and don't necessarily require a script. In fact, solving them without a script might be faster and easier. I have only written scripts for these labs for the completeness of this repository. Feel free to skip them if you prefer.
 
-## Python for Penetration Testing 👨🏻‍💻
-
-Python is very easy to learn and you can write a script in a few minutes capable of doing interesting things.
-
-As a penetration tester, you care about how fast you can write a script, and sometimes what matters to you is speed and efficiency rather than ease of writing scripts. If you want to write a script as quickly as possible, then Python will be your best friend. However, if you are looking for efficiency and robustness in your script, there are better options available than Python.
-
-If you don't prioritize runtime speed and aim to write a script as quickly as possible, then this repository may assist you.
-
 ## Error Handling
 
 Since this repository is intended for educational purposes and not for production, I have omitted some error handling, which I believe will not significantly impact your testing of the script. This decision represents a trade-off between addressing every possible scenario and prioritizing simplicity.
@@ -40,7 +32,9 @@ Your feedback is valuable, and I appreciate your contributions to enhance the le
 
 ## Python Alternatives
 
-If you are a penetration tester and are looking for more robust and faster scripts in terms of runtime, I recommend checking out the [WebSecurity Academy with Rust](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust) repository in which I have solved the same labs using **Rust** in both single-threaded and multi-threaded programming approaches.
+If your goal is to quickly write a script, then Python will be your best friend. However, if you prioritize efficiency, seeking faster runtime and script robustness, there are better options available than Python
+
+I recommend checking out the [WebSecurity Academy with Rust](https://github.com/elqal3awii/WebSecurity-Academy-with-Rust) repository in which I have solved the same labs using **Rust** in both single-threaded and multi-threaded programming approaches.
 
 ## Support & Star ✨
 
