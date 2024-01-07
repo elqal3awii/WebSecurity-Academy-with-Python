@@ -18,7 +18,7 @@ While I've written **Hack Steps** for each lab to guide you in writing scripts, 
 
 I utilized the Burp Collaborator in labs requiring out-of-band interactions. To follow these labs, you'll need a licensed version of Burp Pro, or you can modify the scripts to utilize a remote server under your control.
 
-## Trivial Labs
+## Easy Labs
 
 There are some labs that you may find trivial in their solutions and don't necessarily require a script. In fact, solving them without a script might be faster and easier. I have only written scripts for these labs for the completeness of this repository. Feel free to skip them if you prefer.
 
